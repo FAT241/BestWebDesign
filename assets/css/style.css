@@ -1,0 +1,85 @@
+* {
+	box-sizing: border-box;
+}
+:root {
+	--primary-color: #0f1b4c;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	font-family: "DVN-Poppins";
+}
+
+/* Common */
+
+.btn {
+	display: inline-block;
+	padding: 18px 16px;
+	border-radius: 8px;
+	min-width: 98px;
+	background: var(--primary-color);
+	color: #fff;
+	text-align: center;
+	font-size: 1.4rem;
+	font-weight: 600;
+}
+
+.btn:hover {
+	opacity: 0.9;
+}
+
+a {
+	text-decoration: none;
+}
+
+.content {
+	width: 1110px;
+	/* Cách phóng to thu nhỏ */
+	max-width: calc(100% - 48px);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Header */
+.header {
+	background-color: #e6f0ff;
+	height: 100vh;
+}
+
+.navbar {
+	display: flex;
+	align-items: center;
+	padding-top: 38px;
+}
+
+.navbar ul {
+	display: flex;
+	margin-left: 50px;
+}
+
+.navbar ul a {
+	font-weight: 600;
+	font-size: 1.4rem;
+	color: #4f5361;
+	padding: 8px 14px;
+}
+
+.navbar .action {
+	font-weight: 600;
+	margin-left: auto;
+}
+
+.navbar .action-link {
+	color: var(--primary-color);
+	font-size: 1.4rem;
+	font-weight: 600;
+}
+
+.navbar .action-btn {
+	padding: 13px 16px;
+	margin-left: 18px;
+}
