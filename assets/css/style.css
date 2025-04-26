@@ -125,7 +125,7 @@ h1 {
 .impact-card::before {
 	position: absolute;
 	content: "";
-	background-color: #eec935;
+	background-color: #eecd48;
 	width: 0;
 	top: 0;
 	bottom: 0;
