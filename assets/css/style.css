@@ -1,0 +1,314 @@
+/* Variable */
+:root {
+	--color-primary: #4a90e2;
+	--color-secondary: #f7e7a9;
+}
+
+* {
+	/* margin: 0;
+	padding: 0; */
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Be Vietnam Pro", sans-serif;
+	letter-spacing: 0.7px;
+	/* border: 2px dashed blue; */
+}
+
+body::selection {
+	background-color: #1cb78d;
+	color: #fff;
+}
+
+/* Common */
+/* Nút dùng chung */
+.btn-custom {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	padding: 10px 20px;
+	font-family: "Be Vietnam Pro", sans-serif;
+	font-weight: 600;
+	font-size: 1.1rem;
+	letter-spacing: 0.75px;
+	text-decoration: none;
+	color: var(--color-primary);
+	background: var(--color-secondary);
+	border: 2px solid var(--color-primary);
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+/* Hiệu ứng màu chạy từ hai bên khi hover */
+.btn-custom::before,
+.btn-custom::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	width: 0;
+	height: 100%;
+	background: var(--color-primary);
+	transition: width 0.3s ease-in-out;
+	z-index: -1; /* Đặt phía sau nội dung */
+}
+
+.btn-custom::before {
+	left: 0;
+}
+
+.btn-custom::after {
+	right: 0;
+}
+
+.btn-custom:hover {
+	color: #f7e7a9;
+	background: #4a90e2;
+	transform: scale(1.05);
+}
+
+.btn-custom:hover::before,
+.btn-custom:hover::after {
+	width: 50%;
+}
+
+/* Hiệu ứng khi nhấn */
+.btn-custom:active {
+	transform: scale(0.95); /* Thu nhỏ nhẹ khi nhấn */
+}
+
+.container-custom {
+	/* border: 2px solid red; */
+	width: 100%;
+	max-width: 1250px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.img-custom {
+	padding: 0;
+	max-width: 100%;
+	height: auto;
+}
+
+.heading-custom {
+	margin-bottom: 18px;
+	transition: transform 0.3s ease;
+	font-family: "Quicksand", sans-serif;
+	font-size: 38px;
+	font-weight: 600;
+	line-height: 1.5;
+	color: var(--color-primary);
+}
+
+.heading-custom:hover {
+	transform: scale(1.05); /* Phóng to nhẹ */
+}
+
+.lead {
+	margin: 0;
+	padding-right: 18px;
+	font-size: 18px;
+	line-height: 1.6;
+}
+
+.margin-section {
+	margin-top: 120px;
+}
+
+.btn {
+	margin: 0 3px 0 3px;
+}
+
+/* Header */
+.navbar-expand .navbar-nav .nav-link {
+	padding: 0;
+}
+
+.logo-brand {
+	margin-right: 2px;
+	color: #fff;
+}
+
+/* Navbar */
+.nav-link {
+	margin-right: 12px;
+	font-weight: 500;
+	position: relative;
+	transition: color 0.3s;
+}
+
+.nav-link.active {
+	color: var(--color-primary);
+	font-weight: 600;
+}
+
+.background-btn-register {
+	background-color: var(--color-primary);
+}
+
+.border-btn-login {
+	border-color: var(--color-primary);
+}
+
+/* Hiệu ứng gạch chân gradient khi hover */
+.nav-link::after {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 2px;
+	bottom: -2px;
+	left: 0;
+	background: linear-gradient(to right, var(--color-secondary), var(--color-primary));
+	transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+	width: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active:hover {
+	color: var(--color-primary);
+}
+
+/* Tắt hiệu ứng gạch chân khi menu ở chế độ toggle (collapse mở) */
+.navbar-collapse.show .nav-link::after,
+.navbar-collapse.show .nav-link:hover::after {
+	content: none;
+}
+
+/* Search button  */
+.input-group {
+	overflow: hidden;
+	max-width: 250px;
+}
+
+.form-control:focus {
+	box-shadow: rgba(0, 0, 0, 0.2) 0px -50px 36px -28px inset !important;
+}
+
+/* Nút đăng ký, đăng nhập */
+.btn-login:hover {
+	color: #fff !important ;
+	background-color: var(--color-primary);
+}
+
+.btn-register:hover {
+	background-color: #296bb6;
+}
+
+/* Phần Carousel */
+h1 {
+	font-family: "Quicksand", sans-serif;
+}
+
+.img-carousel {
+	height: 86vh;
+}
+
+.carousel-caption {
+	bottom: -0.75rem;
+	text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+/* Welcome section */
+.margin-lead-welcome-section {
+	margin-bottom: 28px;
+}
+
+/* Mission section */
+.mission-section {
+	padding: 4rem 0;
+	/* Nhiều layer background để tạo tam giác trên và dưới */
+	background:
+        /* Layer 1: Tam giác phía trên (giữ nguyên) */ linear-gradient(45deg, transparent 90%, var(--color-secondary) 10%),
+		/* Layer 2: Tam giác phía dưới */ linear-gradient(-135deg, transparent 90%, var(--color-secondary) 10%), /* Layer 3: Màu nền chính */ var(--color-primary);
+}
+
+/* Impact section */
+.impact-section .heading-custom {
+	margin-bottom: 50px;
+}
+.impact-card {
+	padding: 20px;
+	width: calc(33% - 12px);
+	background-color: #ffffff;
+	border-radius: 15px;
+	text-align: center;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bóng lớn để tạo cảm giác nổi */
+	transition: color 0.4s;
+}
+
+.impact-card {
+	position: relative;
+	overflow: hidden;
+}
+
+.impact-card::before {
+	position: absolute;
+	content: "";
+	background-color: #fbab7e;
+	width: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	transition: 0.6s ease;
+}
+
+.impact-card:hover::before {
+	width: 100%;
+}
+
+.impact-card:last-child {
+	margin: 0;
+}
+
+.impact-card-1 {
+	transform: rotate(-2deg);
+}
+
+.impact-card-2 {
+	transform: translate(0, 15px);
+}
+
+.impact-card-3 {
+	transform: rotate(2deg);
+}
+
+.impact-card:hover {
+	color: #fff;
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.impact-card-1:hover {
+	transform: translate(0, -10px) rotate(2deg);
+}
+
+.impact-card-2:hover {
+	transform: translateY(-15px);
+}
+
+.impact-card-3:hover {
+	transform: translate(0, -10px) rotate(-2deg);
+}
+
+.impact-icon {
+	background-color: var(--color-secondary);
+	padding: 3px;
+	width: 60px;
+	height: 60px;
+	object-fit: contain;
+	border-radius: 50%;
+	display: block;
+	margin: 0 auto 10px;
+	border: 2px solid var(--color-primary); /* Viền xanh dương */
+}
+
+
