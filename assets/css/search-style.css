@@ -1,0 +1,38 @@
+// search-style.css
+    /* Search result */
+.search-results {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    position: absolute;
+    z-index: 1000;
+    width: 300px;
+    right: 0;
+}
+
+.search-results .result-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.search-results .result-item:last-child {
+    border-bottom: none;
+}
+
+.search-results .result-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.search-results .result-item a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.search-results .result-item a:hover {
+    text-decoration: underline;
+}
