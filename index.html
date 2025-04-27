@@ -146,7 +146,7 @@
 
 		<!-- Welcome Section -->
 		<section class="welcome-section margin-section" data-aos="fade-right">
-			<div class="container container-common">
+			<div class="container common-container">
 				<div class="row align-items-center gap-4">
 					<div class="col">
 						<h2 class="common-heading">MVP – Lan tỏa tri thức, vươn xa mọi nẻo đường</h2>
@@ -165,7 +165,7 @@
 
 		<!-- Mission Section -->
 		<section class="mission-section margin-section" data-aos="fade-down">
-			<div class="container container-common">
+			<div class="container common-container">
 				<div class="row">
 					<h2 class="text-center text-light common-heading">Sứ mệnh của chúng tôi</h2>
 					<div class="col">
@@ -180,7 +180,7 @@
 
 		<!-- Impact Section -->
 		<section class="impact-section margin-section" data-aos="zoom-in">
-			<div class="container container-common">
+			<div class="container common-container">
 				<div class="row justify-content-between">
 					<h2 class="text-center common-heading">Tác động của chúng tôi</h2>
 					<!-- Thẻ 1 -->
@@ -205,14 +205,116 @@
 			</div>
 		</section>
 
-		<!-- Outstanding Volunteer Section -->
+		<!-- Volunteer Spotlight Section -->
+		<section class="volunteer-section margin-section">
+			<div class="container common-container">
+				<h2 class="common-heading text-center">Tình nguyện viên tiêu biểu</h2>
+				<!-- Carousel -->
+				<div id="volunteerCarousel" class="carousel slide" data-bs-ride="carousel">
+					<!-- Các slide -->
+					<div class="carousel-inner">
+						<!-- Slide 1 -->
+						<div class="carousel-item active">
+							<div class="card mx-auto volunteer-card">
+								<img class="card-img-top" src="./assets/img/slide-1.jpg" alt="Nguyễn Hữu Minh" />
+								<div class="card-body">
+									<h3 class="card-title">Nguyễn Hữu Minh</h3>
+									<h4 class="card-subtitle">Điều phối viên học bổng</h4>
+									<h5 class="card-text">Đã mang sách vở đến 500 em nhỏ vùng cao</h5>
+								</div>
+							</div>
+						</div>
+						<!-- Slide 2 -->
+						<div class="carousel-item">
+							<div class="card mx-auto volunteer-card">
+								<img class="card-img-top" src="./assets/img/slide-1.jpg" alt="Lê Nhuận Phát" />
+								<div class="card-body">
+									<h3 class="card-title">Lê Nhuận Phát</h3>
+									<h4 class="card-subtitle">Giáo viên tình nguyện</h4>
+									<h5 class="card-text">Dạy học miễn phí cho 200 trẻ em Tây Bắc</h5>
+								</div>
+							</div>
+						</div>
+						<!-- Slide 3 -->
+						<div class="carousel-item">
+							<div class="card mx-auto volunteer-card">
+								<img class="card-img-top" src="./assets/img/slide-1.jpg" alt="Nguyễn Hữu Việt" />
+								<div class="card-body">
+									<h3 class="card-title">Nguyễn Hữu Việt</h3>
+									<h4 class="card-subtitle">Nhà tài trợ chính</h4>
+									<h5 class="card-text">Quyên góp 150 triệu đồng xây trường học</h5>
+								</div>
+							</div>
+						</div>
+						<!-- Slide 4 -->
+						<div class="carousel-item">
+							<div class="card mx-auto volunteer-card">
+								<img class="card-img-top" src="./assets/img/slide-1.jpg" alt="Trường Phước" />
+								<div class="card-body">
+									<h3 class="card-title">Trường Phước</h3>
+									<h4 class="card-subtitle">Tình nguyện viên xây dựng</h4>
+									<h5 class="card-text">Đã xây 3 lớp học cho trẻ em vùng cao</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Nút điều hướng trái/phải -->
+					<button class="carousel-control-prev" type="button" data-bs-target="#volunteerCarousel" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#volunteerCarousel" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+				<!-- Nút điều hướng -->
+				<div class="text-center mt-4">
+					<a href="/tham-gia-tinh-nguyen" class="common-btn me-2"><i class="fas fa-users me-1"></i> Tham gia tình nguyện</a>
+					<a href="/quyen-gop" class="common-btn"><i class="fas fa-heart me-1"></i> Quyên góp ngay</a>
+				</div>
+			</div>
+		</section>
 
-		<!--  -->
+		<!-- Stories Section -->
+		<section class="stories-section margin-section">
+			<div class="container common-container">
+				<h2 class="common-heading text-center">Câu Chuyện Thành Công</h2>
+				<div class="row">
+					<div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+						<div class="story-card">
+							<img src="./assets/img/slide-3.webp" alt="Câu chuyện bé Mai" />
+							<h3>Hành Trình Của Bé Mai</h3>
+							<p>Nhờ học bổng từ Lan Tỏa, bé Mai đã có thể đến trường và mơ ước trở thành cô giáo.</p>
+						</div>
+					</div>
+					<div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+						<div class="story-card">
+							<img src="/assets/img/slide-2.webp" alt="Xây trường bản X" />
+							<p>Tình nguyện viên và nhà tài trợ cùng xây dựng một ngôi trường mới cho bản X.</p>
+						</div>
+					</div>
+					<div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+						<div class="story-card">
+							<img src="https://images.unsplash.com/photo-1517486430290-35657bdcef51?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Ngày hội sách" />
+							<p>Ngày hội sách mang 500 cuốn sách đến trẻ em vùng cao, thắp sáng tri thức.</p>
+						</div>
+					</div>
+				</div>
+				<!-- Nút Xem thêm câu chuyện -->
+				<div class="text-center mt-4">
+					<a href="/cau-chuyen" class="common-btn"><i class="fas fa-book-open me-1"></i> Xem thêm câu chuyện</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+
 		<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 		<script>
 			AOS.init();
 		</script>
-	
+
 		<!--  -->
 		<a href="https://m.me/ErasmusFade" target="_blank" class="messenger-icon">
 			<i class="fa-brands fa-facebook-messenger"></i>
