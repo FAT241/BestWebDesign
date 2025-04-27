@@ -2,6 +2,7 @@
 :root {
 	--color-primary: #4a90e2;
 	--color-secondary: #f7e7a9;
+	--color-tertiary: #e8c434;
 }
 
 * {
@@ -82,7 +83,7 @@ body::selection {
 	transform: scale(0.95);
 }
 
-.container-common {
+.common-container {
 	/* border: 2px solid red; */
 	width: 100%;
 	max-width: 1250px;
