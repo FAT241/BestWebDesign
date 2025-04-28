@@ -80,10 +80,10 @@
 							<a class="nav-link active" href="./introduce.html">Về chúng tôi</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="./donate.html">Tình nguyện</a>
+							<a class="nav-link" href="./volunteer.html">Tình nguyện</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="./volunteer.html">Ủng hộ</a>
+							<a class="nav-link" href="./donate.html">Ủng hộ</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="./stories.html">Câu chuyện</a>
@@ -92,8 +92,8 @@
 				</div>
 				<!-- Nút tìm kiếm -->
 				<div class="input-group ms-2 rounded shadow d-none d-lg-flex">
-					<input type="text" class="form-control border border-2 border-dark shadow" placeholder="Tìm kiếm..." />
-					<button class="btn btn-dark" type="submit">
+					<input type="text" id="searchInput" class="form-control border border-2 border-dark shadow" placeholder="Tìm kiếm..." />
+					<button id="searchButton" class="btn btn-dark" type="button">
 						<i class="fa-solid fa-magnifying-glass fa-xl"></i>
 					</button>
 				</div>
@@ -104,6 +104,9 @@
 				</div>
 			</div>
 		</nav>
+
+		<!-- Search Results -->
+		<div id="searchResults" class="search-results p-3 bg-light rounded shadow" style="display: none"></div>
 
 		<!--  -->
 		<h1 class="m-3">Ở ĐÂY CHƯA CÓ GÌ HẾT</h1>
