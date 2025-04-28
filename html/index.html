@@ -1,19 +1,19 @@
 <!-- Hoạt động (tình nguyện, ủng hộ) -->
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>MVP-Best Web Design</title>
-		<!-- Nhúng font chữ -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>MVP-Best Web Design</title>
+	<!-- Nhúng font chữ -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
 			href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap"
 			rel="stylesheet"
-		/>
-		<!-- Nhúng font awesome -->
-		<link
+	/>
+	<!-- Nhúng font awesome -->
+	<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 			integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -75,16 +75,16 @@
 					<!-- Link tới -->
 					<ul class="navbar-nav me-auto">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="./index.html">Trang chủ</a>
+							<a class="nav-link active" aria-current="page" href="/">Trang chủ</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="./introduce.html">Về chúng tôi</a>
+							<a class="nav-link" href="./introduce.html">Giới thiệu</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="./donate.html">Tình nguyện</a>
+							<a class="nav-link" href="./donate.html">Quyên góp</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="./volunteer.html">Ủng hộ</a>
+							<a class="nav-link" href="./volunteer.html">Tham gia tình nguyện</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="./stories.html">Câu chuyện</a>
@@ -106,179 +106,179 @@
 			</div>
 		</nav>
 
-		<!-- Phần Carousel -->
-		<div id="carouselExampleInterval" class="carousel slide position-relative" data-bs-ride="carousel" data-bs-wrap="true" data-bs-pause="false">
-			<!-- Các Slide -->
+<!-- Phần Carousel -->
+<div id="carouselExampleInterval" class="carousel slide position-relative" data-bs-ride="carousel" data-bs-wrap="true" data-bs-pause="false">
+	<!-- Các Slide -->
+	<div class="carousel-inner">
+		<div class="carousel-item active" data-bs-interval="6000">
+			<img src="../assets/img/slide-1.jpg" class="img-carousel d-block w-100 object-fit-cover" alt="" />
+			<div class="carousel-caption d-none d-md-block" style="z-index: 2">
+				<h1>Cùng Lan Tỏa Yêu Thương</h1>
+				<p>Mang giáo dục và hy vọng đến trẻ em vùng cao qua quyên góp và tình nguyện</p>
+			</div>
+		</div>
+		<div class="carousel-item" data-bs-interval="6000">
+			<img src="../assets/img/slide-2.webp" class="img-carousel d-block w-100 object-fit-cover" alt="" />
+			<div class="carousel-caption d-none d-md-block" style="z-index: 2">
+				<h1>Tác động tình nguyện</h1>
+				<p>Hơn 1.000 trẻ em đã được đi học nhờ sự hỗ trợ của cộng đồng</p>
+			</div>
+		</div>
+		<div class="carousel-item" data-bs-interval="6000">
+			<img src="../assets/img/slide-3.webp" class="img-carousel d-block w-100 object-fit-cover" alt="" />
+			<div class="carousel-caption d-none d-md-block" style="z-index: 2">
+				<h1>Hành Trình Của Bé Mai</h1>
+				<p>Nhờ học bổng, bé Mai đã có thể đến trường và mơ thành cô giáo</p>
+			</div>
+		</div>
+	</div>
+	<!-- Nút điều hướng slide -->
+	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Previous</span>
+	</button>
+	<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Next</span>
+	</button>
+
+	<!-- Overlay để làm mờ ảnh -->
+	<div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.4); z-index: 1; pointer-events: none"></div>
+</div>
+
+<!-- Welcome Section -->
+<section class="welcome-section margin-section" data-aos="fade-right">
+	<div class="container common-container">
+		<div class="row align-items-center gap-4">
+			<div class="col">
+				<h2 class="common-heading">MVP – Lan tỏa tri thức, vươn xa mọi nẻo đường</h2>
+				<p class="common-content content-welcome">
+					MVP là tổ chức từ thiện phi lợi nhuận, cam kết mang giáo dục và hy vọng đến trẻ em vùng cao. Với sự hỗ trợ của cộng đồng, chúng tôi đã giúp hơn <b>1,000 trẻ em</b> được đến
+					trường và xây dựng tương lai tươi sáng hơn.
+				</p>
+				<!-- Link -->
+				<a href="./introduce.html" class="common-btn"><i class="fa-solid fa-heart-pulse"></i>Tìm hiểu thêm</a>
+			</div>
+			<div class="col">
+				<img src="../assets/img/welcome-section.jpeg" class="common-img rounded" alt="" />
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Mission Section -->
+<section class="mission-section margin-section" data-aos="fade-down">
+	<div class="container common-container">
+		<div class="row">
+			<h2 class="text-center text-light common-heading">Sứ mệnh của chúng tôi</h2>
+			<div class="col">
+				<p class="common-content mx-auto m-0 w-75 text-center text-light">
+					Chúng tôi tin rằng mọi đứa trẻ đều xứng đáng có cơ hội học tập và phát triển toàn diện. <b>MVP</b> là cầu nối yêu thương, kết nối cộng đồng để mang sách vở, trường lớp và
+					niềm hy vọng đến với trẻ em ở những vùng cao còn nhiều khó khăn.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Impact Section -->
+<section class="impact-section margin-section" data-aos="zoom-in">
+	<div class="container common-container">
+		<div class="row justify-content-between">
+			<h2 class="text-center common-heading">Tác động của chúng tôi</h2>
+			<!-- Thẻ 1 -->
+			<div class="col-4 impact-card impact-card-1">
+				<img src="../assets/img/impact-1.png" alt="Trẻ em học tập" class="impact-icon" />
+				<h2 class="impact-heading">1000+</h2>
+				<p class="common-content">Trẻ em được hỗ trợ học bổng và đi học</p>
+			</div>
+			<!-- Thẻ 2 -->
+			<div class="col-4 impact-card impact-card-2">
+				<img src="../assets/img/impact-2.png" alt="Trẻ em học tập" class="impact-icon" />
+				<h2 class="impact-heading">500+</h2>
+				<p class="common-content">Tình nguyện viên tham gia các dự án cộng đồng.</p>
+			</div>
+			<!-- Thẻ 3 -->
+			<div class="col-4 impact-card impact-card-3">
+				<img src="../assets/img/impact-3.png" alt="Trẻ em học tập" class="impact-icon" />
+				<h2 class="impact-heading">10+</h2>
+				<p class="common-content">Ngôi trường được xây dựng tại vùng cao.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Volunteer Spotlight Section -->
+<section class="volunteer-section margin-section">
+	<div class="container common-container">
+		<h2 class="common-heading text-center">Tình nguyện viên tiêu biểu</h2>
+		<!-- Carousel -->
+		<div id="volunteerCarousel" class="carousel slide" data-bs-ride="carousel">
+			<!-- Các slide -->
 			<div class="carousel-inner">
-				<div class="carousel-item active" data-bs-interval="6000">
-					<img src="../assets/img/slide-1.jpg" class="img-carousel d-block w-100 object-fit-cover" alt="" />
-					<div class="carousel-caption d-none d-md-block" style="z-index: 2">
-						<h1>Cùng Lan Tỏa Yêu Thương</h1>
-						<p>Mang giáo dục và hy vọng đến trẻ em vùng cao qua quyên góp và tình nguyện</p>
+				<!-- Slide 1 -->
+				<div class="carousel-item active">
+					<div class="card mx-auto volunteer-card">
+						<img class="card-img-top" src="../assets/img/slide-1.jpg" alt="Nguyễn Hữu Minh" />
+						<div class="card-body">
+							<h3 class="card-title">Nguyễn Hữu Minh</h3>
+							<h4 class="card-subtitle">Điều phối viên học bổng</h4>
+							<h5 class="card-text">Đã mang sách vở đến 500 em nhỏ vùng cao</h5>
+						</div>
 					</div>
 				</div>
-				<div class="carousel-item" data-bs-interval="6000">
-					<img src="../assets/img/slide-2.webp" class="img-carousel d-block w-100 object-fit-cover" alt="" />
-					<div class="carousel-caption d-none d-md-block" style="z-index: 2">
-						<h1>Tác động tình nguyện</h1>
-						<p>Hơn 1.000 trẻ em đã được đi học nhờ sự hỗ trợ của cộng đồng</p>
+				<!-- Slide 2 -->
+				<div class="carousel-item">
+					<div class="card mx-auto volunteer-card">
+						<img class="card-img-top" src="../assets/img/slide-1.jpg" alt="Lê Nhuận Phát" />
+						<div class="card-body">
+							<h3 class="card-title">Lê Nhuận Phát</h3>
+							<h4 class="card-subtitle">Giáo viên tình nguyện</h4>
+							<h5 class="card-text">Dạy học miễn phí cho 200 trẻ em Tây Bắc</h5>
+						</div>
 					</div>
 				</div>
-				<div class="carousel-item" data-bs-interval="6000">
-					<img src="../assets/img/slide-3.webp" class="img-carousel d-block w-100 object-fit-cover" alt="" />
-					<div class="carousel-caption d-none d-md-block" style="z-index: 2">
-						<h1>Hành Trình Của Bé Mai</h1>
-						<p>Nhờ học bổng, bé Mai đã có thể đến trường và mơ thành cô giáo</p>
+				<!-- Slide 3 -->
+				<div class="carousel-item">
+					<div class="card mx-auto volunteer-card">
+						<img class="card-img-top" src="../assets/img/slide-1.jpg" alt="Nguyễn Hữu Việt" />
+						<div class="card-body">
+							<h3 class="card-title">Nguyễn Hữu Việt</h3>
+							<h4 class="card-subtitle">Nhà tài trợ chính</h4>
+							<h5 class="card-text">Quyên góp 150 triệu đồng xây trường học</h5>
+						</div>
+					</div>
+				</div>
+				<!-- Slide 4 -->
+				<div class="carousel-item">
+					<div class="card mx-auto volunteer-card">
+						<img class="card-img-top" src="../assets/img/slide-1.jpg" alt="Trường Phước" />
+						<div class="card-body">
+							<h3 class="card-title">Trường Phước</h3>
+							<h4 class="card-subtitle">Tình nguyện viên xây dựng</h4>
+							<h5 class="card-text">Đã xây 3 lớp học cho trẻ em vùng cao</h5>
+						</div>
 					</div>
 				</div>
 			</div>
-			<!-- Nút điều hướng slide -->
-			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+			<!-- Nút điều hướng trái/phải -->
+			<button class="carousel-control-prev" type="button" data-bs-target="#volunteerCarousel" data-bs-slide="prev">
 				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 				<span class="visually-hidden">Previous</span>
 			</button>
-			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+			<button class="carousel-control-next" type="button" data-bs-target="#volunteerCarousel" data-bs-slide="next">
 				<span class="carousel-control-next-icon" aria-hidden="true"></span>
 				<span class="visually-hidden">Next</span>
 			</button>
-
-			<!-- Overlay để làm mờ ảnh -->
-			<div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.4); z-index: 1; pointer-events: none"></div>
 		</div>
-
-		<!-- Welcome Section -->
-		<section class="welcome-section margin-section" data-aos="fade-right">
-			<div class="container common-container">
-				<div class="row align-items-center gap-4">
-					<div class="col">
-						<h2 class="common-heading">MVP – Lan tỏa tri thức, vươn xa mọi nẻo đường</h2>
-						<p class="common-content content-welcome">
-							MVP là tổ chức từ thiện phi lợi nhuận, cam kết mang giáo dục và hy vọng đến trẻ em vùng cao. Với sự hỗ trợ của cộng đồng, chúng tôi đã giúp hơn <b>1,000 trẻ em</b> được đến
-							trường và xây dựng tương lai tươi sáng hơn.
-						</p>
-						<!-- Link -->
-						<a href="./introduce.html" class="common-btn"><i class="fa-solid fa-heart-pulse"></i>Tìm hiểu thêm</a>
-					</div>
-					<div class="col">
-						<img src="../assets/img/welcome-section.jpeg" class="common-img rounded" alt="" />
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Mission Section -->
-		<section class="mission-section margin-section" data-aos="fade-down">
-			<div class="container common-container">
-				<div class="row">
-					<h2 class="text-center text-light common-heading">Sứ mệnh của chúng tôi</h2>
-					<div class="col">
-						<p class="common-content mx-auto m-0 w-75 text-center text-light">
-							Chúng tôi tin rằng mọi đứa trẻ đều xứng đáng có cơ hội học tập và phát triển toàn diện. <b>MVP</b> là cầu nối yêu thương, kết nối cộng đồng để mang sách vở, trường lớp và
-							niềm hy vọng đến với trẻ em ở những vùng cao còn nhiều khó khăn.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Impact Section -->
-		<section class="impact-section margin-section" data-aos="zoom-in">
-			<div class="container common-container">
-				<div class="row justify-content-between">
-					<h2 class="text-center common-heading">Tác động của chúng tôi</h2>
-					<!-- Thẻ 1 -->
-					<div class="col-4 impact-card impact-card-1">
-						<img src="../assets/img/impact-1.png" alt="Trẻ em học tập" class="impact-icon" />
-						<h2 class="impact-heading">1000+</h2>
-						<p class="common-content">Trẻ em được hỗ trợ học bổng và đi học</p>
-					</div>
-					<!-- Thẻ 2 -->
-					<div class="col-4 impact-card impact-card-2">
-						<img src="../assets/img/impact-2.png" alt="Trẻ em học tập" class="impact-icon" />
-						<h2 class="impact-heading">500+</h2>
-						<p class="common-content">Tình nguyện viên tham gia các dự án cộng đồng.</p>
-					</div>
-					<!-- Thẻ 3 -->
-					<div class="col-4 impact-card impact-card-3">
-						<img src="../assets/img/impact-3.png" alt="Trẻ em học tập" class="impact-icon" />
-						<h2 class="impact-heading">10+</h2>
-						<p class="common-content">Ngôi trường được xây dựng tại vùng cao.</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Volunteer Spotlight Section -->
-		<section class="volunteer-section margin-section">
-			<div class="container common-container">
-				<h2 class="common-heading text-center">Tình nguyện viên tiêu biểu</h2>
-				<!-- Carousel -->
-				<div id="volunteerCarousel" class="carousel slide" data-bs-ride="carousel">
-					<!-- Các slide -->
-					<div class="carousel-inner">
-						<!-- Slide 1 -->
-						<div class="carousel-item active">
-							<div class="card mx-auto volunteer-card">
-								<img class="card-img-top" src="../assets/img/slide-1.jpg" alt="Nguyễn Hữu Minh" />
-								<div class="card-body">
-									<h3 class="card-title">Nguyễn Hữu Minh</h3>
-									<h4 class="card-subtitle">Điều phối viên học bổng</h4>
-									<h5 class="card-text">Đã mang sách vở đến 500 em nhỏ vùng cao</h5>
-								</div>
-							</div>
-						</div>
-						<!-- Slide 2 -->
-						<div class="carousel-item">
-							<div class="card mx-auto volunteer-card">
-								<img class="card-img-top" src="../assets/img/slide-1.jpg" alt="Lê Nhuận Phát" />
-								<div class="card-body">
-									<h3 class="card-title">Lê Nhuận Phát</h3>
-									<h4 class="card-subtitle">Giáo viên tình nguyện</h4>
-									<h5 class="card-text">Dạy học miễn phí cho 200 trẻ em Tây Bắc</h5>
-								</div>
-							</div>
-						</div>
-						<!-- Slide 3 -->
-						<div class="carousel-item">
-							<div class="card mx-auto volunteer-card">
-								<img class="card-img-top" src="../assets/img/slide-1.jpg" alt="Nguyễn Hữu Việt" />
-								<div class="card-body">
-									<h3 class="card-title">Nguyễn Hữu Việt</h3>
-									<h4 class="card-subtitle">Nhà tài trợ chính</h4>
-									<h5 class="card-text">Quyên góp 150 triệu đồng xây trường học</h5>
-								</div>
-							</div>
-						</div>
-						<!-- Slide 4 -->
-						<div class="carousel-item">
-							<div class="card mx-auto volunteer-card">
-								<img class="card-img-top" src="../assets/img/slide-1.jpg" alt="Trường Phước" />
-								<div class="card-body">
-									<h3 class="card-title">Trường Phước</h3>
-									<h4 class="card-subtitle">Tình nguyện viên xây dựng</h4>
-									<h5 class="card-text">Đã xây 3 lớp học cho trẻ em vùng cao</h5>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Nút điều hướng trái/phải -->
-					<button class="carousel-control-prev" type="button" data-bs-target="#volunteerCarousel" data-bs-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Previous</span>
-					</button>
-					<button class="carousel-control-next" type="button" data-bs-target="#volunteerCarousel" data-bs-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Next</span>
-					</button>
-				</div>
-				<!-- Nút điều hướng -->
-				<div class="text-center mt-4">
-					<!-- Link -->
-					<a href="./volunteer.html" class="common-btn me-2"><i class="fas fa-users me-1"></i> Tham gia tình nguyện</a>
-					<a href="./donate.html" class="common-btn"><i class="fas fa-heart me-1"></i> Quyên góp ngay</a>
-				</div>
-			</div>
-		</section>
+		<!-- Nút điều hướng -->
+		<div class="text-center mt-4">
+			<!-- Link -->
+			<a href="./volunteer.html" class="common-btn me-2"><i class="fas fa-users me-1"></i> Tham gia tình nguyện</a>
+			<a href="./donate.html" class="common-btn"><i class="fas fa-heart me-1"></i> Quyên góp ngay</a>
+		</div>
+	</div>
+</section>
 
 		<!-- Stories Section -->
 		<section class="stories-section margin-section">
@@ -312,31 +312,14 @@
 			</div>
 		</section>
 
-		<!-- Partner Section -->
-		<section class="partner-section margin-section">
-			<div class="container common-container">
-				<h2 class="text-center common-heading">Đối tác đồng hành</h2>
-				<div class="row">
-					<div class="col d-flex justify-content-between">
-						<img src="https://givenow.vn/wp-content/uploads/2022/11/VNPAY-1.png" alt="VNPAY" class="" />
-						<img src="https://givenow.vn/wp-content/uploads/2022/11/VNPAY-1.png" alt="VNPAY" class="" />
-					</div>
-					<div class="col"></div>
-					<div class="col"></div>
-				</div>
-			</div>
-		</section>
-
 		<!-- Footer -->
-		<!-- AOS -->
+
 		<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 		<script>
 			AOS.init();
 		</script>
-		<!-- Script -->
-		<script src="../assets/js/search.js"></script>
-		<script src="../assets/js/stories.js"></script>
-		<!-- Messenger -->
+
+		<!--  -->
 		<a href="https://m.me/ErasmusFade" target="_blank" class="messenger-icon">
 			<i class="fa-brands fa-facebook-messenger"></i>
 		</a>
