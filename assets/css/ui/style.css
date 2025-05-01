@@ -15,6 +15,10 @@
 }
 
 /* Navbar */
+.navbar-logo {
+	height: 50px;
+}
+
 .nav-link {
 	margin-right: 12px;
 	font-weight: 500;
@@ -40,7 +44,7 @@
 	content: "";
 	position: absolute;
 	width: 0;
-	height: 2px;
+	height: 1px;
 	bottom: -2px;
 	left: 0;
 	background: linear-gradient(to right, var(--color-secondary), var(--color-primary));
@@ -190,80 +194,110 @@ h1 {
 }
 
 /* Volunteer Section */
-/* Card trong carousel */
 .volunteer-section .card {
 	background-color: #ffffff;
-	border: 2px solid;
-	border-image: linear-gradient(to right, var(--color-primary), #fff3cd) 1;
-	border-radius: 15px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	transition: transform 0.3s ease;
-	max-width: 350px;
-	height: 100%; /* Đặt chiều cao tối thiểu cho card */
-	display: flex; /* Dùng flex để căn chỉnh nội dung */
-	flex-direction: column;
-	justify-content: center; /* Đảm bảo nội dung phân bố đều */
+    border: 2px solid var(--color-primary);
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    width: 280px;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.volunteer-section .card:hover {
+	transform: translate(0, -2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+
 }
 
 /* Hình ảnh trong card */
 .volunteer-section .card-img-top {
-	width: 200px;
-	height: 200px;
+	width: 150px;
+	height: 150px;
 	object-fit: cover;
 	border-radius: 50%;
 	border: 3px solid var(--color-primary);
 	transition: transform 0.3s ease;
 	display: block;
-	margin: 20px auto 0; /* Thêm margin để căn chỉnh */
+	margin-bottom: 10px;
 }
 
-.volunteer-section .card:hover .card-img-top {
-	transform: scale(1.05);
+/* Nội dung trong card */
+.volunteer-section .card-body {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	height: 100%;
+	border-radius: 13px;
 }
 
 .volunteer-section .card-title,
 .volunteer-section .card-subtitle,
 .volunteer-section .card-text {
 	text-align: center;
-}
-
-.volunteer-section .card-subtitle,
-.volunteer-section .card-text {
-	font-weight: normal;
+	width: 100%;
 }
 
 .volunteer-section .card-title {
-	margin: 10px 0 14px 0;
-	font-size: 21px;
+	margin: 10px 0 8px 0;
+	font-size: 18px;
 	color: var(--color-primary);
 	text-transform: uppercase;
 	font-family: "Quicksand", sans-serif;
 }
 
 .volunteer-section .card-subtitle {
-	margin-bottom: 12px;
+	margin-bottom: 8px;
 	color: var(--color-tertiary);
-	font-size: 14px;
+	font-size: 13px;
 	font-family: "Be Vietnam Pro", sans-serif;
 	font-weight: 600;
 }
 
 .volunteer-section .card-text {
-	font-size: 15px;
+	font-size: 14px;
 	color: #666;
 	font-family: "Be Vietnam Pro", sans-serif;
+	margin: 0;
+	line-height: 1.4; /* Điều chỉnh khoảng cách dòng */
+	display: -webkit-box;
+	-webkit-line-clamp: 2; /* Giới hạn tối đa 2 dòng */
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis; /* Thêm dấu ... nếu nội dung quá dài */
 }
 
 /* Carousel */
-.carousel-item {
-	transition: transform 0.6s ease-in-out;
+.carousel-inner {
+	overflow: hidden; /* Đảm bảo các slide không tràn ra ngoài */
+}
+
+.volunteer-carousel-item {
+	padding-top: 10px;
+}
+
+/* Hiệu ứng fade cho carousel */
+.carousel-fade .carousel-item {
+	transition: opacity 0.6s ease-in-out;
+	opacity: 0;
+}
+
+.carousel-fade .carousel-item.active {
+	opacity: 1;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-	background-color: var(--color-primary);
 	border-radius: 50%;
 	padding: 10px;
+	filter: brightness(0.1);
 }
 
 /* Stories Section */
@@ -328,3 +362,80 @@ h1 {
 	transform: scale(1.05);
 }
 
+/* Partner Section */
+
+/* Footer Section */
+.footer-section {
+	padding: 70px 0 25px 0;
+	background: linear-gradient(to bottom, var(--color-primary) 20%, #2a6db5 80%);
+	color: #fff;
+	line-height: 1.75;
+}
+
+.footer-heading {
+	margin-bottom: 24px;
+	font-family: "Quicksand", sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	color: #fff3cd;
+}
+
+.footer-content,
+.footer-links {
+	font-size: 14px;
+	color: #fff;
+	text-decoration: none;
+}
+
+.link-1:hover,
+.link-2:hover,
+.link-3:hover,
+.link-4:hover {
+	text-decoration: underline;
+}
+
+.footer-logo-margin {
+	margin-top: -13px;
+}
+
+.footer-content-first {
+	margin-top: 18px;
+	padding-left: 10px;
+}
+
+.footer-btn {
+	font-size: 13px;
+	display: inline-flex;
+	padding: 10px 20px;
+	font-weight: 600;
+	text-decoration: none;
+	color: var(--color-primary);
+	background: var(--color-secondary);
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	position: relative;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.footer-btn:hover {
+	text-decoration: underline;
+	transform: translate(0, -2px);
+}
+
+span.address {
+	padding-left: 23px;
+}
+
+.footer-social a i {
+	transition: color 0.3s ease;
+	color: #fff;
+}
+
+.footer-social a:hover i {
+	color: var(--color-secondary);
+}
+
+.footer-padding {
+	padding-left: 20px;
+}

@@ -11,6 +11,7 @@
 
 body {
 	font-family: "Be Vietnam Pro", sans-serif;
+	line-height: 1.6;
 	letter-spacing: 0.5px;
 }
 
@@ -34,7 +35,6 @@ body::selection {
 	font-family: "Be Vietnam Pro", sans-serif;
 	font-weight: 600;
 	font-size: 1.1rem;
-	letter-spacing: 0.75px;
 	text-decoration: none;
 	color: var(--color-primary);
 	background: var(--color-secondary);
@@ -95,12 +95,12 @@ body::selection {
 
 .common-heading {
 	margin-bottom: 18px;
-	transition: transform 0.3s ease;
 	font-family: "Quicksand", sans-serif;
 	font-size: 38px;
 	font-weight: 600;
-	line-height: 1.5;
+	line-height: 1.4;
 	color: var(--color-primary);
+	transition: transform 0.3s ease;
 }
 
 .common-heading:hover {
@@ -110,7 +110,6 @@ body::selection {
 .common-content {
 	margin: 0;
 	font-size: 18px;
-	line-height: 1.6;
 }
 
 .margin-section {

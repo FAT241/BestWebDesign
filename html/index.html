@@ -57,7 +57,7 @@
 			<div class="container-fluid">
 				<!-- Logo -->
 				<a class="navbar-brand d-flex align-items-center" href="./index.html">
-					<img src="../assets/img/logo.png" alt="Logo MVP" height="55" />
+					<img class="navbar-logo" src="../assets/img/logo.png" alt="Logo MVP" />
 				</a>
 				<!-- Toggle -->
 				<button
@@ -113,7 +113,7 @@
 		<div id="carouselExampleInterval" class="carousel slide position-relative" data-bs-ride="carousel" data-bs-wrap="true" data-bs-pause="false">
 			<!-- Các Slide -->
 			<div class="carousel-inner">
-				<div class="carousel-item active" data-bs-interval="6000">
+				<div class="carousel-item carousel-item-main active" data-bs-interval="6000">
 					<img src="../assets/img/slide-1.jpg" class="img-carousel d-block w-100 object-fit-cover" alt="" />
 					<div class="carousel-caption d-none d-md-block" style="z-index: 2">
 						<h1>Cùng Lan Tỏa Yêu Thương</h1>
@@ -211,55 +211,64 @@
 			</div>
 		</section>
 
-		<!-- Volunteer Spotlight Section -->
+		<!-- Volunteer Section -->
 		<section class="volunteer-section margin-section">
 			<div class="container common-container">
 				<h2 class="common-heading text-center">Tình nguyện viên tiêu biểu</h2>
 				<!-- Carousel -->
-				<div id="volunteerCarousel" class="carousel slide" data-bs-ride="carousel">
-					<!-- Các slide -->
+				<div id="volunteerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
 					<div class="carousel-inner">
 						<!-- Slide 1 -->
-						<div class="carousel-item active">
-							<div class="card mx-auto volunteer-card">
-								<img class="card-img-top" src="../assets/img/slide-1.jpg" alt="Nguyễn Hữu Minh" />
+						<div class="carousel-item volunteer-carousel-item active w-100 d-flex justify-content-center gap-3 flex-wrap">
+							<div class="card volunteer-card">
 								<div class="card-body">
-									<h3 class="card-title">Nguyễn Hữu Minh</h3>
-									<h4 class="card-subtitle">Điều phối viên học bổng</h4>
-									<h5 class="card-text">Đã mang sách vở đến 500 em nhỏ vùng cao</h5>
+									<img class="card-img-top" src="../assets/img/volunteer-1.jpg" alt="Trương Phước" loading="lazy" />
+									<p class="card-title">Trường Phước</p>
+									<p class="card-subtitle">Tình nguyện viên xây dựng</p>
+									<p class="card-text">Mang sách đến: Xây 3 lớp học cho trẻ vùng cao</p>
+								</div>
+							</div>
+							<div class="card volunteer-card">
+								<div class="card-body">
+									<img class="card-img-top" src="../assets/img/volunteer-2.jpg" alt="Phạm Thị Hồng" loading="lazy" />
+									<p class="card-title">Phạm Thị Hồng</p>
+									<p class="card-subtitle">Tình nguyện viên dạy học</p>
+									<p class="card-text">Hỗ trợ 100 em nhỏ học đọc viết</p>
+								</div>
+							</div>
+							<div class="card volunteer-card">
+								<div class="card-body">
+									<img class="card-img-top" src="../assets/img/volunteer-3.jpg" alt="Trần Văn An" loading="lazy" />
+									<p class="card-title">Trần Văn An</p>
+									<p class="card-subtitle">Nhà tài trợ</p>
+									<p class="card-text">Tặng 300 bộ sách giáo khoa ứng dụng học</p>
 								</div>
 							</div>
 						</div>
 						<!-- Slide 2 -->
-						<div class="carousel-item">
-							<div class="card mx-auto volunteer-card">
-								<img class="card-img-top" src="../assets/img/slide-1.jpg" alt="Lê Nhuận Phát" />
+						<div class="carousel-item volunteer-carousel-item volunteer-carousel-item w-100 d-flex justify-content-center gap-3 flex-wrap">
+							<div class="card volunteer-card">
 								<div class="card-body">
-									<h3 class="card-title">Lê Nhuận Phát</h3>
-									<h4 class="card-subtitle">Giáo viên tình nguyện</h4>
-									<h5 class="card-text">Dạy học miễn phí cho 200 trẻ em Tây Bắc</h5>
+									<img class="card-img-top" src="../assets/img/volunteer-4.jpg" alt="Nguyễn Hữu Minh" loading="lazy" />
+									<p class="card-title">Nguyễn Hữu Minh</p>
+									<p class="card-subtitle">Điều phối viên học bổng</p>
+									<p class="card-text">Mang sách vở đến 500 em nhỏ vùng cao</p>
 								</div>
 							</div>
-						</div>
-						<!-- Slide 3 -->
-						<div class="carousel-item">
-							<div class="card mx-auto volunteer-card">
-								<img class="card-img-top" src="../assets/img/slide-1.jpg" alt="Nguyễn Hữu Việt" />
+							<div class="card volunteer-card">
 								<div class="card-body">
-									<h3 class="card-title">Nguyễn Hữu Việt</h3>
-									<h4 class="card-subtitle">Nhà tài trợ chính</h4>
-									<h5 class="card-text">Quyên góp 150 triệu đồng xây trường học</h5>
+									<img class="card-img-top" src="../assets/img/volunteer-5.jpg" alt="Lê Nhuận Phát" loading="lazy" />
+									<p class="card-title">Lê Nhuận Phát</p>
+									<p class="card-subtitle">Giáo viên tình nguyện</p>
+									<p class="card-text">Dạy học miễn phí cho 200 trẻ Tây Bắc</p>
 								</div>
 							</div>
-						</div>
-						<!-- Slide 4 -->
-						<div class="carousel-item">
-							<div class="card mx-auto volunteer-card">
-								<img class="card-img-top" src="../assets/img/slide-1.jpg" alt="Trường Phước" />
+							<div class="card volunteer-card">
 								<div class="card-body">
-									<h3 class="card-title">Trường Phước</h3>
-									<h4 class="card-subtitle">Tình nguyện viên xây dựng</h4>
-									<h5 class="card-text">Đã xây 3 lớp học cho trẻ em vùng cao</h5>
+									<img class="card-img-top" src="../assets/img/volunteer-6.jpg" alt="Nguyễn Hữu Việt" loading="lazy" />
+									<p class="card-title">Nguyễn Hữu Việt</p>
+									<p class="card-subtitle">Nhà tài trợ chính</p>
+									<p class="card-text">Quyên góp 150 triệu xây trường học</p>
 								</div>
 							</div>
 						</div>
@@ -276,7 +285,6 @@
 				</div>
 				<!-- Nút điều hướng -->
 				<div class="text-center mt-4">
-					<!-- Link -->
 					<a href="./volunteer.html" class="common-btn me-2"><i class="fas fa-users me-1"></i> Tham gia tình nguyện</a>
 					<a href="./donate.html" class="common-btn"><i class="fas fa-heart me-1"></i> Quyên góp ngay</a>
 				</div>
@@ -315,7 +323,62 @@
 			</div>
 		</section>
 
-		<!-- Footer -->
+		<!-- Partner Section -->
+		<section class="partner-section margin-section">
+			<div class="container common-container">
+				<!-- <h2 class="text-center common-heading">Đối tác đồng hành</h2> -->
+				<div class="row">
+					<!--  -->
+					<div class="col"></div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer Section -->
+		<footer class="footer-section">
+			<div class="container common-container">
+				<div class="row">
+					<div class="col-3">
+						<div class="d-flex align-items-center footer-logo-margin">
+							<img src="../assets/img/logo.png" alt="" height="40px" />
+							<h3 class="ms-2 mb-0 footer-heading">Lan tỏa yêu thương</h3>
+						</div>
+						<p class="footer-content footer-content-first">Chúng tôi tạo ra một không gian sẻ chia - nơi mỗi hành động nhỏ đều có thể mang lại thay đổi lớn</p>
+					</div>
+					<div class="col-2 footer-padding">
+						<h3 class="footer-heading">VỀ CHÚNG TÔI</h3>
+						<ul class="footer-link list-unstyled">
+							<li><a href="./introduce.html" class="footer-content link-1">Giới thiệu</a></li>
+							<li><a href="./volunteer.html" class="footer-content link-2">Tình nguyện</a></li>
+							<li><a href="./donate.html" class="footer-content link-3">Quyên góp</a></li>
+							<li><a href="./stories.html" class="footer-content link-4">Câu chuyện</a></li>
+						</ul>
+					</div>
+					<div class="col-4">
+						<h3 class="footer-heading">ĐỒNG HÀNH CÙNG CHÚNG TÔI</h3>
+						<p class="footer-content">Mỗi bước chân của bạn là động lực để chúng tôi lan tỏa điều tốt đẹp mỗi ngày</p>
+						<a href="" class="footer-btn">Tham gia ngay</a>
+					</div>
+					<div class="col-3 footer-padding">
+						<h3 class="footer-heading">LIÊN HỆ</h3>
+						<ul class="footer-content list-unstyled">
+							<li><i class="fas fa-envelope me-2"></i> lienhe@mvp.org</li>
+							<li><i class="fas fa-phone me-2"></i> 0123 456 789</li>
+							<li><i class="fas fa-map-marker-alt me-2"></i> 470 Trần Đại Nghĩa, Phường Hòa <span class="address">Quý, Quận Ngũ Hành Sơn, Đà Nẵng</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer-bottom text-center mt-4 pt-4 border-top">
+					<p class="footer-content mb-1">&copy; 2025 MVP. Mỗi hành động nhỏ, một thay đổi lớn</p>
+					<div class="footer-social">
+						<a href="https://www.facebook.com/login" target="_blank" class="me-2"><i class="fab fa-facebook-f"></i></a>
+						<a href="https://www.instagram.com/accounts/login/" target="_blank" class="me-2"><i class="fab fa-instagram"></i></a>
+						<a href="https://www.twitter.com/login" target="_blank" class="me-2"><i class="fab fa-twitter"></i></a>
+						<a href="https://www.tiktok.com/login" target="_blank" class="me-2"><i class="fa-brands fa-tiktok"></i></a>
+					</div>
+				</div>
+			</div>
+		</footer>
 
 		<!-- Scripts -->
 		<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
