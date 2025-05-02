@@ -44,8 +44,8 @@
 	content: "";
 	position: absolute;
 	width: 0;
-	height: 1px;
-	bottom: -2px;
+	height: 1.5px;
+	bottom: 1px;
 	left: 0;
 	background: linear-gradient(to right, var(--color-secondary), var(--color-primary));
 	transition: width 0.3s ease-in-out;
@@ -196,53 +196,66 @@ h1 {
 /* Volunteer Section */
 .volunteer-section .card {
 	background-color: #ffffff;
-    border: 2px solid var(--color-primary);
-    border-radius: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    width: 280px;
-    min-height: 380px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	border: 2px solid var(--color-primary);
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+	width: 280px;
+	min-height: 380px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* position: relative;
+	overflow: hidden; */
 }
 
+/* .volunteer-section .card::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 0;
+	background-color: orange;
+	transition: 0.5s;
+	z-index: -1;
+}
+
+.volunteer-section .card:hover::after {
+	top: 0;
+	height: 100%;
+} */
 
 .volunteer-section .card:hover {
 	transform: translate(0, -2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Hình ảnh trong card */
 .volunteer-section .card-img-top {
-	width: 150px;
-	height: 150px;
+	width: 180px;
+	height: 180px;
 	object-fit: cover;
 	border-radius: 50%;
-	border: 3px solid var(--color-primary);
+	/* border: 3px solid var(--color-primary); */
 	transition: transform 0.3s ease;
 	display: block;
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 }
 
 /* Nội dung trong card */
 .volunteer-section .card-body {
-	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	padding: 1rem;
-	height: 100%;
-	border-radius: 13px;
 }
 
 .volunteer-section .card-title,
 .volunteer-section .card-subtitle,
 .volunteer-section .card-text {
 	text-align: center;
-	width: 100%;
 }
 
 .volunteer-section .card-title {
@@ -272,11 +285,6 @@ h1 {
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis; /* Thêm dấu ... nếu nội dung quá dài */
-}
-
-/* Carousel */
-.carousel-inner {
-	overflow: hidden; /* Đảm bảo các slide không tràn ra ngoài */
 }
 
 .volunteer-carousel-item {
@@ -436,6 +444,11 @@ span.address {
 	color: var(--color-secondary);
 }
 
+.footer-first {
+	padding-left: 2px;
+}
+
 .footer-padding {
 	padding-left: 20px;
 }
+

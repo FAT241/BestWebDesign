@@ -1,0 +1,40 @@
+:root {
+	--color-line: #1a3c6e;
+}
+
+/* Origin Story */
+.margin-section-origin-story {
+	margin-top: 50px;
+}
+
+.origin-story-heading {
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.origin-story-heading::after {
+	content: "";
+	position: absolute;
+	left: 2px;
+	bottom: -6px;
+	height: 3px;
+	width: 50px;
+	background-color: var(--color-line);
+}
+
+.story-content-first {
+	font-style: italic; /* Chữ nghiêng cho phần đầu */
+}
+
+.story-quote {
+	font-size: 20px;
+	font-style: italic;
+	color: #666666;
+	font-family: "Be Vietnam Pro", sans-serif;
+	background-color: #f5f5f5;
+	padding: 20px;
+	margin: 20px 0;
+	border: 1px solid #e0e0e0;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	text-align: center;
+}

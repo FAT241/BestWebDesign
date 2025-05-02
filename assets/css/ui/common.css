@@ -11,8 +11,9 @@
 
 body {
 	font-family: "Be Vietnam Pro", sans-serif;
-	line-height: 1.6;
+	line-height: 1.7;
 	letter-spacing: 0.5px;
+	color: #333;
 }
 
 body::selection {
