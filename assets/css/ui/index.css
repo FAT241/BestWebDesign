@@ -1,8 +1,4 @@
-:root {
-	--color-primary: #4a90e2;
-	--color-secondary: #f7e7a9;
-	--color-tertiary: #e8c434;
-}
+@import url(./common.css);
 
 /* Header */
 .navbar-expand .navbar-nav .nav-link {
@@ -27,7 +23,7 @@
 }
 
 .nav-link.active {
-	color: var(--color-primary) !important;
+	color: var(--color-extra-3) !important;
 	font-weight: 600;
 }
 
@@ -47,7 +43,7 @@
 	height: 1.5px;
 	bottom: 1px;
 	left: 0;
-	background: linear-gradient(to right, var(--color-secondary), var(--color-primary));
+	background: linear-gradient(to right, var(--color-secondary), var(--color-extra-3));
 	transition: width 0.3s ease-in-out;
 }
 
@@ -57,7 +53,7 @@
 
 .nav-link:hover,
 .nav-link.active:hover {
-	color: var(--color-primary);
+	color: var(--color-extra-3);
 }
 
 /* Tắt hiệu ứng gạch chân khi menu ở chế độ toggle (collapse mở) */
@@ -111,8 +107,8 @@ h1 {
 	padding: 4rem 0;
 	/* Nhiều layer background để tạo tam giác trên và dưới */
 	background:
-        /* Layer 1: Tam giác phía trên (giữ nguyên) */ linear-gradient(45deg, transparent 90%, var(--color-tertiary) 10%),
-		/* Layer 2: Tam giác phía dưới */ linear-gradient(-135deg, transparent 90%, var(--color-tertiary) 10%), /* Layer 3: Màu nền chính */ var(--color-primary);
+        /* Layer 1: Tam giác phía trên (giữ nguyên) */ linear-gradient(45deg, transparent 90%, var(--color-secondary) 10%),
+		/* Layer 2: Tam giác phía dưới */ linear-gradient(-135deg, transparent 90%, var(--color-secondary) 10%), /* Layer 3: Màu nền chính */ var(--color-primary);
 }
 
 /* Impact section */
@@ -128,14 +124,14 @@ h1 {
 	background-color: #ffffff;
 	border-radius: 15px;
 	text-align: center;
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bóng lớn để tạo cảm giác nổi */
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 	transition: color 0.4s;
 }
 
 .impact-card::before {
 	position: absolute;
 	content: "";
-	background-color: var(--color-tertiary);
+	background-color: var(--color-secondary);
 	width: 0;
 	top: 0;
 	bottom: 0;
@@ -182,7 +178,7 @@ h1 {
 }
 
 .impact-icon {
-	background-color: var(--color-secondary);
+	background-color: var(--bg-btn);
 	padding: 3px;
 	width: 60px;
 	height: 60px;
@@ -190,7 +186,7 @@ h1 {
 	border-radius: 50%;
 	display: block;
 	margin: 0 auto 10px;
-	border: 2px solid var(--color-primary); /* Viền xanh dương */
+	border: 2px solid var(--color-primary);
 }
 
 /* Volunteer Section */
@@ -205,26 +201,7 @@ h1 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	/* position: relative;
-	overflow: hidden; */
 }
-
-/* .volunteer-section .card::after {
-	content: "";
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 0;
-	background-color: orange;
-	transition: 0.5s;
-	z-index: -1;
-}
-
-.volunteer-section .card:hover::after {
-	top: 0;
-	height: 100%;
-} */
 
 .volunteer-section .card:hover {
 	transform: translate(0, -2px);
@@ -261,6 +238,7 @@ h1 {
 .volunteer-section .card-title {
 	margin: 10px 0 8px 0;
 	font-size: 18px;
+	font-weight: 600;
 	color: var(--color-primary);
 	text-transform: uppercase;
 	font-family: "Quicksand", sans-serif;
@@ -268,7 +246,7 @@ h1 {
 
 .volunteer-section .card-subtitle {
 	margin-bottom: 8px;
-	color: var(--color-tertiary);
+	color: var(--color-secondary);
 	font-size: 13px;
 	font-family: "Be Vietnam Pro", sans-serif;
 	font-weight: 600;
@@ -281,7 +259,6 @@ h1 {
 	margin: 0;
 	line-height: 1.4; /* Điều chỉnh khoảng cách dòng */
 	display: -webkit-box;
-	-webkit-line-clamp: 2; /* Giới hạn tối đa 2 dòng */
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis; /* Thêm dấu ... nếu nội dung quá dài */
@@ -311,7 +288,7 @@ h1 {
 /* Stories Section */
 /* Story Card */
 .stories-section .story-card {
-	background-color: #ffffff;
+	background-color: #fff;
 	border-radius: 10px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	overflow: hidden;
@@ -334,7 +311,7 @@ h1 {
 .stories-section .story-card h3 {
 	font-family: "Quicksand", sans-serif;
 	font-size: 1.5rem;
-	color: #4a90e2;
+	color: var(--color-primary);
 	margin: 15px 0 10px;
 }
 
@@ -342,7 +319,6 @@ h1 {
 .stories-section .story-card p {
 	font-family: "Be Vietnam Pro", sans-serif;
 	font-size: 1rem;
-	color: #666;
 	padding: 0 15px 15px;
 }
 
@@ -356,16 +332,16 @@ h1 {
 	font-weight: 600;
 	font-size: 1.1rem;
 	text-decoration: none;
-	color: #4a90e2;
-	background: #fff3cd;
-	border: 2px solid #4a90e2;
+	color: var(--color-primary);
+	background: var(--bg-btn);
+	border: 2px solid var(--color-primary);
 	border-radius: 5px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	transition: all 0.3s ease-in-out;
 }
 
 .stories-section .common-btn:hover {
-	color: #fff3cd;
+	color: var(--bg-btn);
 	background: #4a90e2;
 	transform: scale(1.05);
 }
@@ -385,7 +361,7 @@ h1 {
 	font-family: "Quicksand", sans-serif;
 	font-weight: bold;
 	font-size: 16px;
-	color: #fff3cd;
+	color: var(--bg-btn);
 }
 
 .footer-content,
@@ -418,7 +394,7 @@ h1 {
 	font-weight: 600;
 	text-decoration: none;
 	color: var(--color-primary);
-	background: var(--color-secondary);
+	background: var(--bg-btn);
 	border-radius: 5px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	position: relative;
@@ -441,7 +417,7 @@ span.address {
 }
 
 .footer-social a:hover i {
-	color: var(--color-secondary);
+	color: var(--bg-btn);
 }
 
 .footer-first {
@@ -451,4 +427,3 @@ span.address {
 .footer-padding {
 	padding-left: 20px;
 }
-
