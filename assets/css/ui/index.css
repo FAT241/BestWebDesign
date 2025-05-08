@@ -1,87 +1,5 @@
 @import url(./common.css);
 
-/* Header */
-.navbar-expand .navbar-nav .nav-link {
-	padding: 0;
-}
-
-.logo-brand {
-	margin-right: 2px;
-	color: #fff;
-}
-
-/* Navbar */
-.navbar-logo {
-	height: 50px;
-}
-
-.nav-link {
-	margin-right: 12px;
-	font-weight: 500;
-	position: relative;
-	transition: color 0.3s;
-}
-
-.nav-link.active {
-	color: var(--color-extra-3) !important;
-	font-weight: 600;
-}
-
-.background-btn-register {
-	background-color: var(--color-primary);
-}
-
-.border-btn-login {
-	border-color: var(--color-primary);
-}
-
-/* Hiệu ứng gạch chân gradient khi hover */
-.nav-link::after {
-	content: "";
-	position: absolute;
-	width: 0;
-	height: 1.5px;
-	bottom: 1px;
-	left: 0;
-	background: linear-gradient(to right, var(--color-secondary), var(--color-extra-3));
-	transition: width 0.3s ease-in-out;
-}
-
-.nav-link:hover::after {
-	width: 100%;
-}
-
-.nav-link:hover,
-.nav-link.active:hover {
-	color: var(--color-extra-3);
-}
-
-/* Tắt hiệu ứng gạch chân khi menu ở chế độ toggle (collapse mở) */
-.navbar-collapse.show .nav-link::after,
-.navbar-collapse.show .nav-link:hover::after {
-	content: none;
-}
-
-/* Search button  */
-.input-group {
-	overflow: hidden;
-	max-width: 250px;
-}
-
-.form-control:focus {
-	box-shadow: rgba(0, 0, 0, 0.2) 0px -50px 36px -28px inset !important;
-}
-
-/* Nút đăng ký, đăng nhập */
-.btn-login:hover {
-	color: #fff !important ;
-	background-color: var(--color-primary);
-}
-
-.btn-register:hover {
-	background-color: #296bb6;
-}
-
 /* Phần Carousel */
 h1 {
 	font-family: "Quicksand", sans-serif;
@@ -97,7 +15,13 @@ h1 {
 }
 
 /* Welcome section */
-.content-welcome {
+.welcome-section .row {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+}
+
+.welcome-content {
 	padding-right: 18px;
 	margin-bottom: 28px;
 }
@@ -111,20 +35,26 @@ h1 {
 		/* Layer 2: Tam giác phía dưới */ linear-gradient(-135deg, transparent 90%, var(--color-secondary) 10%), /* Layer 3: Màu nền chính */ var(--color-primary);
 }
 
+.mission-section .common-heading,
+.mission-section .common-content {
+	color: var(--color-tertiary);
+}
+
 /* Impact section */
-.impact-heading {
-	margin-bottom: 8px;
+.impact-section .row {
+	display: flex;
+	justify-content: space-between;
 }
 
 .impact-card {
 	padding: 20px;
+	border-radius: 15px;
 	position: relative;
 	overflow: hidden;
 	width: calc(33% - 12px);
-	background-color: #ffffff;
-	border-radius: 15px;
+	background-color: var(--color-tertiary);
 	text-align: center;
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 	transition: color 0.4s;
 }
 
@@ -177,6 +107,10 @@ h1 {
 	transform: translate(0, -10px) rotate(-2deg);
 }
 
+.impact-title {
+	margin-bottom: 8px;
+}
+
 .impact-icon {
 	background-color: var(--bg-btn);
 	padding: 3px;
@@ -190,52 +124,50 @@ h1 {
 }
 
 /* Volunteer Section */
-.volunteer-section .card {
-	background-color: #ffffff;
+.volunteer-section .carousel-item {
+	display: flex;
+	justify-content: center;
+	gap: 16px;
+}
+
+.volunteer-section .volunteer-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 0 15px;
+	background-color: var(--color-tertiary);
 	border: 2px solid var(--color-primary);
 	border-radius: 8px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 	width: 280px;
 	min-height: 380px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
-.volunteer-section .card:hover {
-	transform: translate(0, -2px);
+.volunteer-section .volunteer-card:hover {
+	transform: translate(0, -15px);
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Hình ảnh trong card */
-.volunteer-section .card-img-top {
+.volunteer-section .volunteer-img {
+	margin-bottom: 15px;
 	width: 180px;
 	height: 180px;
 	object-fit: cover;
 	border-radius: 50%;
-	/* border: 3px solid var(--color-primary); */
 	transition: transform 0.3s ease;
 	display: block;
-	margin-bottom: 15px;
 }
 
-/* Nội dung trong card */
-.volunteer-section .card-body {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 1rem;
-}
-
-.volunteer-section .card-title,
-.volunteer-section .card-subtitle,
-.volunteer-section .card-text {
+.volunteer-section .volunteer-title,
+.volunteer-section .volunteer-subtitle,
+.volunteer-section .volunteer-content {
 	text-align: center;
 }
 
-.volunteer-section .card-title {
+.volunteer-section .volunteer-title {
 	margin: 10px 0 8px 0;
 	font-size: 18px;
 	font-weight: 600;
@@ -244,7 +176,7 @@ h1 {
 	font-family: "Quicksand", sans-serif;
 }
 
-.volunteer-section .card-subtitle {
+.volunteer-section .volunteer-subtitle {
 	margin-bottom: 8px;
 	color: var(--color-secondary);
 	font-size: 13px;
@@ -252,7 +184,7 @@ h1 {
 	font-weight: 600;
 }
 
-.volunteer-section .card-text {
+.volunteer-section .volunteer-content {
 	font-size: 14px;
 	color: #666;
 	font-family: "Be Vietnam Pro", sans-serif;
@@ -285,68 +217,78 @@ h1 {
 	filter: brightness(0.1);
 }
 
-/* Stories Section */
-/* Story Card */
-.stories-section .story-card {
-	background-color: #fff;
-	border-radius: 10px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	overflow: hidden;
-	transition: transform 0.3s ease;
+/* Shop Section */
+.shop-section {
+	margin-bottom: 40px;
+}
+
+.shop-card {
+	padding: 15px;
 	text-align: center;
+	transition: all 0.3s ease;
+	border-radius: 10px;
+	background-color: #ffffff;
 }
 
-.stories-section .story-card:hover {
+.shop-card:hover {
 	transform: translateY(-5px);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+	background-color: var(--color-extra-1);
 }
 
-/* Hình ảnh trong story card */
-.stories-section .story-card img {
+.shop-image {
 	width: 100%;
-	height: 200px;
+	height: 250px;
 	object-fit: cover;
-}
-
-/* Tiêu đề trong story card */
-.stories-section .story-card h3 {
-	font-family: "Quicksand", sans-serif;
-	font-size: 1.5rem;
-	color: var(--color-primary);
-	margin: 15px 0 10px;
-}
-
-/* Mô tả trong story card */
-.stories-section .story-card p {
-	font-family: "Be Vietnam Pro", sans-serif;
-	font-size: 1rem;
-	padding: 0 15px 15px;
-}
-
-/* Nút Xem thêm câu chuyện */
-.stories-section .common-btn {
-	display: inline-flex;
-	align-items: center;
-	gap: 5px;
-	padding: 10px 20px;
-	font-family: "Be Vietnam Pro", sans-serif;
-	font-weight: 600;
-	font-size: 1.1rem;
-	text-decoration: none;
-	color: var(--color-primary);
-	background: var(--bg-btn);
-	border: 2px solid var(--color-primary);
 	border-radius: 5px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease-in-out;
+	margin-bottom: 10px;
 }
 
-.stories-section .common-btn:hover {
-	color: var(--bg-btn);
-	background: #4a90e2;
-	transform: scale(1.05);
+.shop-title {
+	margin: 15px 0 15px 0;
+	font-size: 18px;
+	font-family: "Quicksand", sans-serif;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #333333;
 }
 
-/* Partner Section */
+.shop-price {
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--color-secondary);
+	margin-bottom: 10px;
+}
+
+.shop-number {
+	font-size: 14px;
+	font-family: "Be Vietnam Pro", sans-serif;
+	color: #555;
+	line-height: 1.6;
+	margin-bottom: 15px;
+}
+
+.shop-btn {
+	display: inline-block;
+	padding: 8px 20px;
+	border: none;
+	border-radius: 5px;
+	font-family: "Quicksand", sans-serif;
+	background-color: var(--color-primary);
+	color: var(--color-tertiary);
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.shop-btn:hover {
+	background-color: var(--color-secondary);
+	color: var(--color-tertiary);
+}
+
+.shop-btn i {
+	margin-right: 5px;
+}
 
 /* Footer Section */
 .footer-section {

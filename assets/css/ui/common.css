@@ -26,10 +26,146 @@ body::selection {
 	color: #fff;
 }
 
+/* Header */
+.navbar-expand .navbar-nav .nav-link {
+	padding: 0;
+}
+
+.logo-brand {
+	margin-right: 2px;
+	color: #fff;
+}
+
+/* Navbar */
+/* .custom-navbar {
+	background-color: transparent !important;
+	box-shadow: none;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 999;
+  }
+  
+  .navbar-nav .nav-link {
+	color: white !important;       
+	font-weight: 500;
+  }
+  
+  .navbar-nav .nav-link:hover {
+	color: #ffc107 !important;      
+  } */
+  
+
+.navbar-logo {
+	height: 50px;
+}
+
+.nav-link {
+	margin-right: 12px;
+	font-weight: 500;
+	position: relative;
+	transition: color 0.3s;
+}
+
+.nav-link.active {
+	color: var(--color-extra-3) !important;
+	font-weight: 600;
+}
+
+.background-btn-register {
+	background-color: var(--color-primary);
+}
+
+.border-btn-login {
+	border-color: var(--color-primary);
+}
+
+/* Hiệu ứng gạch chân gradient khi hover */
+.nav-link::after {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 1.5px;
+	bottom: 1px;
+	left: 0;
+	background: linear-gradient(to right, var(--color-secondary), var(--color-extra-3));
+	transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+	width: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active:hover {
+	color: var(--color-extra-3);
+}
+
+/* Tắt hiệu ứng gạch chân khi menu ở chế độ toggle (collapse mở) */
+.navbar-collapse.show .nav-link::after,
+.navbar-collapse.show .nav-link:hover::after {
+	content: none;
+}
+
+/* Search button  */
+.input-group {
+	overflow: hidden;
+	max-width: 250px;
+}
+
+.form-control:focus {
+	box-shadow: rgba(0, 0, 0, 0.2) 0px -50px 36px -28px inset !important;
+}
+
+/* Nút đăng ký, đăng nhập */
+.btn-login:hover {
+	color: #fff !important ;
+	background-color: var(--color-primary);
+}
+
+.btn-register:hover {
+	background-color: #296bb6;
+}
+
 /* Common */
 /* Button */
+.margin-section {
+	margin-top: 120px;
+}
+
+.common-container {
+	/* border: 2px solid red; */
+	width: 100%;
+	max-width: 1250px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.common-heading {
+	margin-bottom: 20px;
+	font-family: "Quicksand", sans-serif;
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 1.4;
+	color: var(--color-primary);
+	transition: transform 0.3s ease;
+}
+
+.common-heading:hover {
+	transform: scale(1.03);
+}
+
+.common-content {
+	margin: 0;
+	padding-bottom: 6px;
+	font-size: 17.5px;
+}
+
 .common-img {
-	padding: 0;
+	border-radius: 4px;
 	max-width: 100%;
 	height: auto;
 }
@@ -87,40 +223,6 @@ body::selection {
 
 .common-btn:active {
 	transform: scale(0.95);
-}
-
-.common-container {
-	/* border: 2px solid red; */
-	width: 100%;
-	max-width: 1250px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 15px;
-	padding-right: 15px;
-}
-
-.common-heading {
-	margin-bottom: 18px;
-	font-family: "Quicksand", sans-serif;
-	font-size: 32px;
-	font-weight: 600;
-	line-height: 1.4;
-	color: var(--color-primary);
-	transition: transform 0.3s ease;
-}
-
-.common-heading:hover {
-	transform: scale(1.03);
-}
-
-.common-content {
-	margin: 0;
-	padding-bottom: 6px;
-	font-size: 17.5px;
-}
-
-.margin-section {
-	margin-top: 120px;
 }
 
 .btn {
