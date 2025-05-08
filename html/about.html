@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" timeline-card="width=device-width, initial-scale=1.0" />
+		<title>MVP-Best Web Design</title>
+		<!-- Nhúng font chữ -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Nhúng font awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+			integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<!-- CSS của AOS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+		<!-- Link Bootstrap-->
+		<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+		<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- Link CSS -->
+		<link rel="stylesheet" href="../assets/css/ui/common.css" />
+		<link rel="stylesheet" href="../assets/css/ui/index.css" />
+		<link rel="stylesheet" href="../assets/css/ui/about.css" />
+		<link rel="stylesheet" href="../assets/css/components/messenger.css" />
+		<link rel="stylesheet" href="../assets/css/components/search-style.css" />
+		<link rel="stylesheet" href="../assets/css/components/stories-style.css" />
+	</head>
+	<body>
+		<!-- Phần Header -->
+		<nav class="navbar navbar-expand bg-dark" style="height: 20px; line-height: 20px">
+			<div class="container-fluid">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="logo-brand" href="#"><i class="fa-brands fa-square-facebook"></i></a>
+					</li>
+					<li class="nav-item">
+						<a class="logo-brand" href="#"><i class="fa-brands fa-square-instagram"></i></a>
+					</li>
+					<li class="nav-item">
+						<a class="logo-brand" href="#"><i class="fa-brands fa-discord"></i></a>
+					</li>
+					<li class="nav-item">
+						<a class="logo-brand" href="#"><i class="fa-brands fa-google"></i></a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!-- Phần Navbar -->
+		<nav class="navbar navbar-expand-xxl navbar-light bg-light">
+			<div class="container-fluid">
+				<!-- Logo -->
+				<a class="navbar-brand d-flex align-items-center" href="#">
+					<img class="navbar-logo" src="../assets/img/logo.png" alt="" />
+				</a>
+				<!-- Toggle -->
+				<button
+					class="navbar-toggler ms-auto me-2"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNav"
+					aria-controls="navbarNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<!-- Link tới -->
+					<ul class="navbar-nav me-auto">
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="./index.html">Trang chủ</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="./about.html">Về chúng tôi</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./volunteer.html">Tình nguyện</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./donate.html">Quyên góp</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./stories.html">Câu chuyện</a>
+						</li>
+					</ul>
+				</div>
+				<!-- Nút tìm kiếm -->
+				<div class="input-group ms-2 rounded shadow d-none d-lg-flex">
+					<input type="text" id="searchInput" class="form-control border border-2 border-dark shadow" placeholder="Tìm kiếm..." />
+					<button id="searchButton" class="btn btn-dark" type="button">
+						<i class="fa-solid fa-magnifying-glass fa-xl"></i>
+					</button>
+				</div>
+				<!-- Nút Đăng ký, đăng nhập -->
+				<div class="d-none d-md-flex">
+					<div class="btn btn-login ms-3 border-btn-login text-primary">Đăng nhập</div>
+					<div class="btn btn-register text-white background-btn-register">Đăng ký</div>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Search Results -->
+		<div id="searchResults" class="search-results p-3 bg-light rounded shadow" style="display: none"></div>
+
+		<!-- Origin Story Section -->
+		<div class="origin-story-section margin-section-origin-story">
+			<div class="container common-container">
+				<!-- Nội dung -->
+				<h2 class="common-heading origin-story-heading">Câu chuyện khởi nguồn của MVP</h2>
+				<div class="mt-4">
+					<p class="common-content story-content-first">
+						MVP được sinh ra từ một chuyến đi định mệnh vào năm 2018. Người sáng lập, Nguyễn Hữu Minh, cùng nhóm bạn trẻ đã đến bản Tà Phìn, Điện Biên, nơi những đứa trẻ phải học trong lớp
+						tranh tre dột nát, không có sách vở, và thậm chí không có ánh sáng để đọc vào ban đêm. Hình ảnh ấy đã khắc sâu vào tâm trí Minh, khiến anh quyết định thành lập MVP cùng những
+						người bạn đồng chí hướng.
+					</p>
+					<blockquote class="story-quote">Hành trình ấy bắt đầu từ trái tim, và mỗi bước đi đều hướng đến tương lai tươi sáng cho các em.</blockquote>
+					<p class="common-content">
+						Từ một nhóm nhỏ với vài ba tình nguyện viên và một giấc mơ giản dị – mang tri thức đến vùng cao – MVP đã lớn mạnh, trở thành cầu nối giữa cộng đồng và những đứa trẻ cần cơ hội
+						học tập. Chúng tôi không chỉ dừng lại ở việc xây dựng lớp học, mà còn mang đến hy vọng và niềm tin cho hàng nghìn trẻ em vùng cao.
+					</p>
+					<p class="common-content"></p>
+				</div>
+				<!-- Timeline -->
+				<div class="timeline">
+					<div class="timeline-entry left">
+						<div class="timeline-card">
+							<h3>2018</h3>
+							<p class="timeline-content">Chuyến đi Tà Phìn, Điện Biên – khởi nguồn MVP</p>
+						</div>
+					</div>
+					<div class="timeline-entry right">
+						<div class="timeline-card">
+							<h3>2019</h3>
+							<p class="timeline-content">Thành lập nhóm MVP với các tình nguyện viên đầu tiên</p>
+						</div>
+					</div>
+					<div class="timeline-entry left">
+						<div class="timeline-card">
+							<h3>2020</h3>
+							<p class="timeline-content">Xây lớp học đầu tiên cho trẻ em vùng cao</p>
+						</div>
+					</div>
+					<div class="timeline-entry right">
+						<div class="timeline-card">
+							<h3>2022</h3>
+							<p class="timeline-content">Mở rộng hoạt động ra nhiều tỉnh phía Bắc</p>
+						</div>
+					</div>
+					<div class="timeline-entry left">
+						<div class="timeline-card">
+							<h3>2023</h3>
+							<p class="timeline-content">Triển khai chương trình học bổng dài hạn cho 500 trẻ em vùng cao</p>
+						</div>
+					</div>
+					<div class="timeline-entry right">
+						<div class="timeline-card">
+							<h3>2024</h3>
+							<p class="timeline-content">Hỗ trợ học tập cho hàng nghìn trẻ em</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- How we work -->
+		<div class="how-we-work-section margin-section">
+			<div class="container common-container">
+				<h2 class="text-center common-heading">Chúng tôi làm việc như thế nào?</h2>
+				<div class="row">
+					<!-- 1 -->
+					<div class="col-3">
+						<div class="card">
+							<div class="card-body">
+								<div class="card-title">1</div>
+								<div class="card-subtitle">Khám phá nhu cầu</div>
+								<div class="card-text">Trực tiếp đến các bản làng để lắng nghe và đánh giá nhu cầu giáo dục của trẻ em và cộng đồng.</div>
+							</div>
+						</div>
+					</div>
+					<!-- 2 -->
+					<div class="col-3">
+						<div class="card">
+							<div class="card-body">
+								<div class="card-title">2</div>
+								<div class="card-subtitle">Kết nối cộng đồng</div>
+								<div class="card-text">Hợp tác với tình nguyện viên, nhà tài trợ, và tổ chức để quyên góp sách vở, xây lớp học, tổ chức buổi học miễn phí.</div>
+							</div>
+						</div>
+					</div>
+					<!-- 3 -->
+					<div class="col-3">
+						<div class="card">
+							<div class="card-body">
+								<div class="card-title">3</div>
+								<div class="card-subtitle">Triển khai hiệu quả</div>
+								<div class="card-text">Lên kế hoạch chi tiết cho từng dự án, từ thiết kế lớp học đến phân phối tài liệu học tập, đảm bảo tiến độ và chất lượng.</div>
+							</div>
+						</div>
+					</div>
+					<!-- 4 -->
+					<div class="col-3">
+						<div class="card">
+							<div class="card-body">
+								<div class="card-title">4</div>
+								<div class="card-subtitle">Báo cáo minh bạch</div>
+								<div class="card-text">Công khai tất cả khoản đóng góp và kết quả dự án trên website, giúp cộng đồng theo dõi tiến triển.</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Leadership -->
+		<div class="leadership-section margin-section mb-5 pb-5">
+			<div class="container common-container">
+				<h2 class="common-heading text-center">Đội ngũ lãnh đạo</h2>
+				<div class="row mt-4">
+					<!-- Thành viên 1 -->
+					<div class="col-3">
+						<div class="leader-card">
+							<img src="../assets/img/BeautyPlus-hinh-anh-trai-dep-hoc-sinh_085757801.jpg" alt="Nguyễn Hữu Minh" class="leader-image" />
+							<div class="leader-overlay">
+								<div class="leader-info">
+									<h3 class="leader-name">Nguyễn Hữu Minh</h3>
+									<p class="leader-role">Người sáng lập</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Thành viên 2 -->
+					<div class="col-3">
+						<div class="leader-card">
+							<img src="../assets/img/ChatGPT Image 23_55_28 2 thg 5, 2025.png" alt="Lê Nhuận Phát" class="leader-image" />
+							<div class="leader-overlay">
+								<div class="leader-info">
+									<h3 class="leader-name">Lê Nhuận Phát</h3>
+									<p class="leader-role">Giám đốc điều hành</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Thành viên 3 -->
+					<div class="col-3">
+						<div class="leader-card">
+							<img src="../assets/img/ChatGPT Image 00_03_12 3 thg 5, 2025.png" alt="Nguyễn Hữu Việt" class="leader-image" />
+							<div class="leader-overlay">
+								<div class="leader-info">
+									<h3 class="leader-name">Nguyễn Hữu Việt</h3>
+									<p class="leader-role">Trưởng ban truyền thông</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Thành viên 4 -->
+					<div class="col-3">
+						<div class="leader-card">
+							<img src="../assets/img/ChatGPT Image 00_04_23 3 thg 5, 2025.png" alt="Lâm Nhật Trường Phước" class="leader-image" />
+							<div class="leader-overlay">
+								<div class="leader-info">
+									<h3 class="leader-name">Lâm Nhật Trường Phước</h3>
+									<p class="leader-role">Trưởng ban dự án</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer Section -->
+		<footer class="footer-section">
+			<div class="container common-container">
+				<div class="row">
+					<div class="col-3 footer-first">
+						<div class="d-flex align-items-center footer-logo-margin">
+							<img src="../assets/img/logo.png" alt="" height="40px" />
+							<h3 class="ms-2 mb-0 footer-heading">Lan tỏa yêu thương</h3>
+						</div>
+						<p class="footer-content footer-content-first">Chúng tôi tạo ra một không gian sẻ chia - nơi mỗi hành động nhỏ đều có thể mang lại thay đổi lớn</p>
+					</div>
+					<div class="col-2 footer-padding">
+						<h3 class="footer-heading">KHÁM PHÁ MVP</h3>
+						<ul class="footer-link list-unstyled">
+							<li><a href="./about.html" class="footer-content link-1">Về chúng tôi</a></li>
+							<li><a href="./volunteer.html" class="footer-content link-2">Tình nguyện</a></li>
+							<li><a href="./donate.html" class="footer-content link-3">Quyên góp</a></li>
+							<li><a href="./stories.html" class="footer-content link-4">Câu chuyện</a></li>
+						</ul>
+					</div>
+					<div class="col-4">
+						<h3 class="footer-heading">ĐỒNG HÀNH CÙNG CHÚNG TÔI</h3>
+						<p class="footer-content">Mỗi bước chân của bạn là động lực để chúng tôi lan tỏa điều tốt đẹp mỗi ngày</p>
+						<a href="" class="footer-btn">Tham gia ngay</a>
+					</div>
+					<div class="col-3 footer-padding">
+						<h3 class="footer-heading">LIÊN HỆ</h3>
+						<ul class="footer-content list-unstyled">
+							<li><i class="fas fa-envelope me-2"></i> lienhe@mvp.org</li>
+							<li><i class="fas fa-phone me-2"></i> 0123 456 789</li>
+							<li><i class="fas fa-map-marker-alt me-2"></i> 470 Trần Đại Nghĩa, Phường Hòa <span class="address">Quý, Quận Ngũ Hành Sơn, Đà Nẵng</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer-bottom text-center mt-4 pt-4 border-top">
+					<p class="footer-content mb-1">&copy; 2025 MVP. Mỗi hành động nhỏ, một thay đổi lớn</p>
+					<div class="footer-social">
+						<a href="https://www.facebook.com/login" target="_blank" class="me-2"><i class="fab fa-facebook-f"></i></a>
+						<a href="https://www.instagram.com/accounts/login/" target="_blank" class="me-2"><i class="fab fa-instagram"></i></a>
+						<a href="https://www.twitter.com/login" target="_blank" class="me-2"><i class="fab fa-twitter"></i></a>
+						<a href="https://www.tiktok.com/login" target="_blank" class="me-2"><i class="fa-brands fa-tiktok"></i></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!--  -->
+		<script src="../assets/js/data.js"></script>
+		<script src="../assets/js/search.js"></script>
+		<script src="../assets/js/messenger.js"></script>
+
+		<!--  -->
+		<a href="https://m.me/ErasmusFade" target="_blank" class="messenger-icon">
+			<i class="fa-brands fa-facebook-messenger"></i>
+		</a>
+	</body>
+</html>

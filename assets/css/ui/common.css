@@ -1,8 +1,13 @@
 /* Variable */
 :root {
-	--color-primary: #4a90e2;
-	--color-secondary: #f7e7a9;
-	--color-tertiary: #e8c434;
+	--color-primary: #529bf5;
+	--color-secondary: #e8c434;
+	--color-tertiary: #fff;
+	--bg-btn: #fff3cd;
+	--color-extra-1: #ebf4fd;
+	--color-extra-2: #bbd9fa;
+	--color-extra-3: #1cb78d;
+	--color-extra-4: #ffda79;
 }
 
 * {
@@ -11,7 +16,9 @@
 
 body {
 	font-family: "Be Vietnam Pro", sans-serif;
-	letter-spacing: 0.5px;
+	line-height: 1.6;
+	letter-spacing: 0.2px;
+	word-spacing: 0.5px;
 }
 
 body::selection {
@@ -34,10 +41,9 @@ body::selection {
 	font-family: "Be Vietnam Pro", sans-serif;
 	font-weight: 600;
 	font-size: 1.1rem;
-	letter-spacing: 0.75px;
 	text-decoration: none;
 	color: var(--color-primary);
-	background: var(--color-secondary);
+	background: var(--bg-btn);
 	border: 2px solid var(--color-primary);
 	border-radius: 5px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -95,22 +101,22 @@ body::selection {
 
 .common-heading {
 	margin-bottom: 18px;
-	transition: transform 0.3s ease;
 	font-family: "Quicksand", sans-serif;
-	font-size: 38px;
+	font-size: 32px;
 	font-weight: 600;
-	line-height: 1.5;
+	line-height: 1.4;
 	color: var(--color-primary);
+	transition: transform 0.3s ease;
 }
 
 .common-heading:hover {
-	transform: scale(1.05); /* Phóng to nhẹ */
+	transform: scale(1.03);
 }
 
 .common-content {
 	margin: 0;
-	font-size: 18px;
-	line-height: 1.6;
+	padding-bottom: 6px;
+	font-size: 17.5px;
 }
 
 .margin-section {
