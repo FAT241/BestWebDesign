@@ -1,19 +1,5 @@
 @import url(./common.css);
 
-/* Phần Carousel */
-h1 {
-	font-family: "Quicksand", sans-serif;
-}
-
-.img-carousel {
-	height: 88vh;
-}
-
-.carousel-caption {
-	bottom: -0.75rem;
-	text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
-}
-
 /* Welcome section */
 .welcome-section .row {
 	display: flex;
@@ -23,7 +9,7 @@ h1 {
 
 .welcome-content {
 	padding-right: 18px;
-	margin-bottom: 28px;
+	margin-bottom: 24px !important;
 }
 
 /* Mission section */
@@ -197,7 +183,7 @@ h1 {
 }
 
 .volunteer-carousel-item {
-	padding-top: 10px;
+	padding-top: 20px;
 }
 
 /* Hiệu ứng fade cho carousel */
