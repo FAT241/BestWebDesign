@@ -28,15 +28,15 @@
 		<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
 		<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 		<!-- Link CSS -->
-		<link rel="stylesheet" href="../assets/css/ui/index.css" />
 		<link rel="stylesheet" href="../assets/css/ui/common.css" />
+		<link rel="stylesheet" href="../assets/css/ui/index.css" />
 		<link rel="stylesheet" href="../assets/css/components/messenger.css" />
 		<link rel="stylesheet" href="../assets/css/components/search-style.css" />
 		<link rel="stylesheet" href="../assets/css/components/stories-style.css" />
 	</head>
 	<body>
 		<!-- Hero -->
-		<div class="hero-section">
+		<div class="hero-section common-container">
 			<img class="hero-background" src="../assets/img/hero.png" alt="" />
 			<div class="overlay"></div>
 			<!-- Thanh Header -->
@@ -89,10 +89,11 @@
 		</div>
 
 		<!-- Welcome Section -->
-		<section class="welcome-section margin-section" data-aos="fade-right">
+		<section class="welcome-section margin-section" data-aos="fade-down">
 			<div class="container common-container">
 				<div class="row">
 					<div class="col">
+						<h3 class="welcome-caption">Đồng hành cùng Quỹ từ thiện MVP</h3>
 						<h2 class="common-heading">MVP – Lan tỏa tri thức, vươn xa mọi nẻo đường</h2>
 						<p class="common-content welcome-content">
 							MVP là tổ chức từ thiện phi lợi nhuận, cam kết mang giáo dục và hy vọng đến trẻ em vùng cao. Với sự hỗ trợ của cộng đồng, chúng tôi đã giúp hơn <b>1,000 trẻ em</b> được đến
@@ -112,7 +113,7 @@
 		<section class="mission-section margin-section" data-aos="fade-down">
 			<div class="container common-container">
 				<div class="row">
-					<h2 class="common-heading text-center">Sứ mệnh của chúng tôi</h2>
+					<h2 class="common-heading mission-heading text-center">Sứ mệnh của chúng tôi</h2>
 					<div class="col">
 						<p class="common-content mx-auto m-0 w-75 text-center">
 							Chúng tôi tin rằng mọi đứa trẻ đều xứng đáng có cơ hội học tập và phát triển toàn diện. <b>MVP</b> là cầu nối yêu thương, kết nối cộng đồng để mang sách vở, trường lớp và
@@ -127,7 +128,14 @@
 		<section class="impact-section margin-section" data-aos="zoom-in">
 			<div class="container common-container">
 				<div class="row">
-					<h2 class="common-heading text-center">Tác động của chúng tôi</h2>
+					<h2 class="common-heading text-center">Những con số biết nói</h2>
+					<h3 class="impact-intro">
+						Mỗi con số là một câu chuyện – về những nụ cười, hành trình và niềm tin. Đây là những gì chúng tôi đã cùng cộng đồng tạo nên trong suốt hành trình mang tri thức và hy vọng đến
+						với trẻ em vùng khó khăn.
+					</h3>
+					<div class="divider text-center">
+						<img src="../assets/img/divider.png" alt="" />
+					</div>
 					<!-- Card 1 -->
 					<div class="col-4 impact-card impact-card-1">
 						<img src="../assets/img/impact-1.png" alt="Trẻ em học tập" class="impact-icon" />
@@ -151,9 +159,12 @@
 		</section>
 
 		<!-- Volunteer Section -->
-		<section class="volunteer-section margin-section">
+		<section class="volunteer-section margin-section" data-aos="zoom-in">
 			<div class="container common-container">
 				<h2 class="common-heading text-center">Tình nguyện viên tiêu biểu</h2>
+				<div class="divider text-center">
+					<img src="../assets/img/divider.png" alt="" />
+				</div>
 				<!-- Carousel -->
 				<div id="volunteerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
 					<div class="carousel-inner">
@@ -224,18 +235,32 @@
 		</section>
 
 		<!-- Shop Section -->
-		<div class="shop-section margin-section">
+		<div class="shop-section margin-section" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
 			<div class="container common-container">
 				<h2 class="common-heading text-center">Hỗ trợ MVP - Mua hàng ngay</h2>
+				<div class="divider text-center">
+					<img src="../assets/img/divider.png" alt="" />
+				</div>
 				<div class="row">
 					<!-- Sản phẩm 1 -->
 					<div class="col">
 						<div class="shop-card">
-							<img src="../assets/img/binh-nuoc.jpg" alt="Gói học bổng 1 năm" class="shop-image" loading="lazy" />
+							<img src="../assets/img/binh-nuoc.jpg" alt="" class="shop-image" loading="lazy" />
 							<h3 class="shop-title">Bình nước hy vọng</h3>
 							<p class="shop-price">140.000 VNĐ</p>
-							<p class="shop-number">Còn 78 cái</p>
-							<button class="shop-btn"><i class="fas fa-shopping-cart"></i>Mua ngay</button>
+
+							<button
+								class="shop-btn"
+								data-toggle="modal"
+								data-target="#myModal"
+								data-title="Bình nước hy vọng"
+								data-number="8"
+								data-danger=""
+								data-img="../assets/img/binh-nuoc.jpg"
+								data-desc="Bình nước bằng thép không gỉ với hình minh họa trẻ em vùng cao bên dòng sông sạch, mỗi sản phẩm bán ra hỗ trợ dự án lọc nước tại các khu vực xa xôi."
+							>
+								<i class="fas fa-shopping-cart"></i>Mua ngay
+							</button>
 						</div>
 					</div>
 					<!-- Sản phẩm 2 -->
@@ -244,8 +269,16 @@
 							<img src="../assets/img/so-mo-uoc.jpg" alt="Gói tài trợ sách vở" class="shop-image" loading="lazy" />
 							<h3 class="shop-title">Sổ mơ ước</h3>
 							<p class="shop-price">89.000 VNĐ</p>
-							<p class="shop-number">Còn 32 cuốn</p>
-							<button class="shop-btn"><i class="fas fa-shopping-cart"></i>Mua ngay</button>
+							<button
+								class="shop-btn"
+								data-toggle="modal"
+								data-target="#myModal"
+								data-title="Sổ mơ ước"
+								data-number="42"
+								data-desc="Sổ bìa cứng với hình ảnh trẻ em trên ruộng bậc thang, mỗi cuốn bán ra giúp mang sách đến tay trẻ em khó khăn."
+							>
+								<i class="fas fa-shopping-cart"></i>Mua ngay
+							</button>
 						</div>
 					</div>
 					<!-- Sản phẩm 3 -->
@@ -254,7 +287,7 @@
 							<img src="../assets/img/ao-thun.jpg" alt="Workshop vẽ tranh" class="shop-image" loading="lazy" />
 							<h3 class="shop-title">Áo thun tự hào</h3>
 							<p class="shop-price">169.000 VNĐ</p>
-							<p class="shop-number">Còn 19 cái</p>
+
 							<button class="shop-btn"><i class="fas fa-shopping-cart"></i>Mua ngay</button>
 						</div>
 					</div>
@@ -264,53 +297,73 @@
 							<img src="../assets/img/tui-vai.jpg" alt="Bộ dụng cụ DIY" class="shop-image" loading="lazy" />
 							<h3 class="shop-title">Túi vải đồng hành</h3>
 							<p class="shop-price">150.000 VNĐ</p>
-							<p class="shop-number">Còn 6 túi</p>
+
 							<button class="shop-btn"><i class="fas fa-shopping-cart"></i>Mua ngay</button>
 						</div>
 					</div>
 				</div>
 				<div class="row mt-4">
-					<!-- Sản phẩm 1 -->
+					<!-- Sản phẩm 5 -->
 					<div class="col">
 						<div class="shop-card">
 							<img src="../assets/img/hop-com.jpg" alt="Gói học bổng 1 năm" class="shop-image" loading="lazy" />
 							<h3 class="shop-title">Hộp cơm yêu thương</h3>
 							<p class="shop-price">180.000 VNĐ</p>
-							<p class="shop-number">Còn 34 hộp</p>
+
 							<button class="shop-btn"><i class="fas fa-shopping-cart"></i>Mua ngay</button>
 						</div>
 					</div>
-					<!-- Sản phẩm 2 -->
+					<!-- Sản phẩm 6 -->
 					<div class="col">
 						<div class="shop-card">
 							<img src="../assets/img/op-lung.jpg" alt="Gói tài trợ sách vở" class="shop-image" loading="lazy" />
 							<h3 class="shop-title">Ốp lưng mùa xuân</h3>
 							<p class="shop-price">80.000 VNĐ</p>
-							<p class="shop-number">Còn 11 cái</p>
+
 							<button class="shop-btn"><i class="fas fa-shopping-cart"></i>Mua ngay</button>
 						</div>
 					</div>
-					<!-- Sản phẩm 3 -->
+					<!-- Sản phẩm 7 -->
 					<div class="col">
 						<div class="shop-card">
 							<img src="../assets/img/ba-lo.jpg" alt="Workshop vẽ tranh" class="shop-image" loading="lazy" />
 							<h3 class="shop-title">Balo ước nguyện</h3>
 							<p class="shop-price">290.000 VNĐ</p>
-							<p class="shop-number">Còn 3 ba lô</p>
+
 							<button class="shop-btn"><i class="fas fa-shopping-cart"></i>Mua ngay</button>
 						</div>
 					</div>
-					<!-- Sản phẩm 4 -->
+					<!-- Sản phẩm 8 -->
 					<div class="col">
 						<div class="shop-card">
 							<img src="../assets/img/hop-but.jpg" alt="Bộ dụng cụ DIY" class="shop-image" loading="lazy" />
 							<h3 class="shop-title">Hộp bút mặt trời</h3>
 							<p class="shop-price">95.000 VNĐ</p>
-							<p class="shop-number">Còn 47 cái</p>
+
 							<button class="shop-btn"><i class="fas fa-shopping-cart"></i>Mua ngay</button>
 						</div>
 					</div>
-					<!-- Các sản phẩm khác (giả lập, có thể mở rộng) -->
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal -->
+		<div id="myModal" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-dialog-centered">
+				<!-- Modal Content -->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="text-primary modal-title">Tiêu đề</h4>
+					</div>
+					<div class="modal-body">
+						<p class="number text-success">Số lượng</p>
+						<p class="danger text-danger fw-bold">Cảnh báo</p>
+						<p class="desc">Mô tả sản phẩm</p>
+						<img class="modal-img img-fluid" src="" alt="Ảnh sản phẩm" onclick="openLargeImage(this)" />
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-success" data-dismiss="modal">Đặt mua ngay</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -361,21 +414,23 @@
 			</div>
 		</footer>
 
-		<!-- AOS -->
-		<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-		<script>
-			AOS.init();
-		</script>
-
 		<!--  -->
 		<a href="https://m.me/ErasmusFade" target="_blank" class="messenger-icon">
 			<i class="fa-brands fa-facebook-messenger"></i>
 		</a>
-
+		<!-- AOS -->
+		<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+		<script src="../assets/js/aos.js"></script>
 		<!-- js -->
+		<script src="../assets/js/aos.js"></script>
 		<script src="../assets/js/hero.js"></script>
 		<script src="../assets/js/data.js"></script>
 		<script src="../assets/js/search.js"></script>
 		<script src="../assets/js/messenger.js"></script>
+
+		<!-- link Modal -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<script src="../assets/js/modal.js"></script>
 	</body>
 </html>

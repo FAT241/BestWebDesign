@@ -7,7 +7,7 @@
 	--color-extra-1: #ebf4fd;
 	--color-extra-2: #bbd9fa;
 	--color-extra-3: #27ae60;
-	--color-extra-4: #ffda79;
+	--color-extra-4: #f1c40f;
 }
 
 * {
@@ -47,8 +47,12 @@ body::selection {
 	padding-right: 15px;
 }
 
+.container {
+	padding: 0;
+}
+
 .common-heading {
-	margin-bottom: 18px;
+	margin-bottom: 13px;
 	font-family: "Quicksand", sans-serif;
 	font-size: 32px;
 	font-weight: 600;
@@ -72,6 +76,11 @@ body::selection {
 	max-width: 100%;
 	height: auto;
 }
+
+.divider {
+	margin-bottom: 25px;
+}
+
 .common-btn {
 	display: inline-flex;
 	align-items: center;
@@ -562,4 +571,12 @@ span.address {
 
 .footer-padding {
 	padding-left: 20px;
+}
+
+/* Modal */
+.modal-img {
+	cursor: zoom-in;
+	display: block;
+	margin: auto;
+	max-width: 230px;
 }

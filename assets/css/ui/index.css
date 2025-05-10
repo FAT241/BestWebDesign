@@ -1,10 +1,22 @@
 @import url(./common.css);
 
 /* Welcome section */
+.welcome-section {
+	padding: 100px 0;
+	background-color: #f0f0f052;
+}
+
 .welcome-section .row {
 	display: flex;
 	align-items: center;
 	gap: 24px;
+}
+
+.welcome-caption {
+	margin-bottom: 10px;
+	color: var(--color-extra-4);
+	font-size: 16px;
+	font-weight: 700;
 }
 
 .welcome-content {
@@ -30,6 +42,15 @@
 .impact-section .row {
 	display: flex;
 	justify-content: space-between;
+}
+
+.impact-intro {
+	max-width: 900px;
+	margin: 0 auto 10px auto;
+	font-size: 16px;
+	color: #555;
+	text-align: center;
+	line-height: 1.6;
 }
 
 .impact-card {
@@ -110,7 +131,13 @@
 }
 
 /* Volunteer Section */
+.volunteer-section {
+	padding: 100px 0;
+	background-image: url(../../img/bg-2.jpg);
+}
+
 .volunteer-section .carousel-item {
+	padding-top: 0;
 	display: flex;
 	justify-content: center;
 	gap: 16px;
@@ -205,6 +232,7 @@
 
 /* Shop Section */
 .shop-section {
+	margin-top: 80px;
 	margin-bottom: 40px;
 }
 
@@ -231,7 +259,7 @@
 }
 
 .shop-title {
-	margin: 15px 0 15px 0;
+	margin: 15px 0 8px 0;
 	font-size: 18px;
 	font-family: "Quicksand", sans-serif;
 	font-weight: 600;
