@@ -28,6 +28,7 @@
 		<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
 		<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 		<!-- Link CSS -->
+
 		<link rel="stylesheet" href="../assets/css/ui/common.css" />
 		<link rel="stylesheet" href="../assets/css/ui/index.css" />
 		<link rel="stylesheet" href="../assets/css/components/messenger.css" />
@@ -36,7 +37,7 @@
 	</head>
 	<body>
 		<!-- Hero -->
-		<div class="hero-section common-container">
+		<div class="hero-section">
 			<img class="hero-background" src="../assets/img/hero.png" alt="" />
 			<div class="overlay"></div>
 			<!-- Thanh Header -->
@@ -259,7 +260,7 @@
 								data-img="../assets/img/binh-nuoc.jpg"
 								data-desc="Bình nước bằng thép không gỉ với hình minh họa trẻ em vùng cao bên dòng sông sạch, mỗi sản phẩm bán ra hỗ trợ dự án lọc nước tại các khu vực xa xôi."
 							>
-								<i class="fas fa-shopping-cart"></i>Mua ngay
+								<i class="fas fa-shopping-cart"></i>Xem chi tiết
 							</button>
 						</div>
 					</div>
@@ -275,9 +276,10 @@
 								data-target="#myModal"
 								data-title="Sổ mơ ước"
 								data-number="42"
+								data-img="../assets/img/so-mo-uoc.jpg"
 								data-desc="Sổ bìa cứng với hình ảnh trẻ em trên ruộng bậc thang, mỗi cuốn bán ra giúp mang sách đến tay trẻ em khó khăn."
 							>
-								<i class="fas fa-shopping-cart"></i>Mua ngay
+								<i class="fas fa-shopping-cart"></i>Xem chi tiết
 							</button>
 						</div>
 					</div>
@@ -288,7 +290,18 @@
 							<h3 class="shop-title">Áo thun tự hào</h3>
 							<p class="shop-price">169.000 VNĐ</p>
 
-							<button class="shop-btn"><i class="fas fa-shopping-cart"></i>Mua ngay</button>
+							<button
+								class="shop-btn"
+								data-toggle="modal"
+								data-target="#myModal"
+								data-title="Áo thun tự hào"
+								data-number="7"
+								data-danger=""
+								data-img="../assets/img/ao-thun.jpg"
+								data-desc="Áo thun cotton in hình trẻ em trong làng núi, 30% lợi nhuận từ mỗi áo hỗ trợ xây dựng lớp học vùng cao"
+							>
+								<i class="fas fa-shopping-cart"></i>Xem chi tiết
+							</button>
 						</div>
 					</div>
 					<!-- Sản phẩm 4 -->
@@ -298,7 +311,17 @@
 							<h3 class="shop-title">Túi vải đồng hành</h3>
 							<p class="shop-price">150.000 VNĐ</p>
 
-							<button class="shop-btn"><i class="fas fa-shopping-cart"></i>Mua ngay</button>
+							<button
+								class="shop-btn"
+								data-toggle="modal"
+								data-target="#myModal"
+								data-title="Túi vải đồng hành"
+								data-number="15"
+								data-img="../assets/img/tui-vai.jpg"
+								data-desc="Túi vải canvas với hình hai em nhỏ đeo ba lô, mỗi túi bán ra đóng góp cho các chương trình giáo dục."
+							>
+								<i class="fas fa-shopping-cart"></i>Xem chi tiết
+							</button>
 						</div>
 					</div>
 				</div>
@@ -310,7 +333,18 @@
 							<h3 class="shop-title">Hộp cơm yêu thương</h3>
 							<p class="shop-price">180.000 VNĐ</p>
 
-							<button class="shop-btn"><i class="fas fa-shopping-cart"></i>Mua ngay</button>
+							<button
+								class="shop-btn"
+								data-toggle="modal"
+								data-target="#myModal"
+								data-title="Hộp cơm yêu thương"
+								data-number="5"
+								data-danger=""
+								data-img="../assets/img/hop-com.jpg"
+								data-desc="Hộp cơm bằng thép không gỉ với hình trẻ em bên cây cổ thụ, mỗi hộp bán ra hỗ trợ bữa ăn cho học sinh vùng cao."
+							>
+								<i class="fas fa-shopping-cart"></i>Xem chi tiết
+							</button>
 						</div>
 					</div>
 					<!-- Sản phẩm 6 -->
@@ -320,7 +354,17 @@
 							<h3 class="shop-title">Ốp lưng mùa xuân</h3>
 							<p class="shop-price">80.000 VNĐ</p>
 
-							<button class="shop-btn"><i class="fas fa-shopping-cart"></i>Mua ngay</button>
+							<button
+								class="shop-btn"
+								data-toggle="modal"
+								data-target="#myModal"
+								data-title="Ốp lưng mùa xuân"
+								data-number="31"
+								data-img="../assets/img/op-lung.jpg"
+								data-desc="Ốp lưng điện thoại với họa tiết hoa đào và trẻ em, mỗi sản phẩm bán ra giúp mua sách giáo khoa cho trẻ em nghèo."
+							>
+								<i class="fas fa-shopping-cart"></i>Xem chi tiết
+							</button>
 						</div>
 					</div>
 					<!-- Sản phẩm 7 -->
@@ -330,7 +374,17 @@
 							<h3 class="shop-title">Balo ước nguyện</h3>
 							<p class="shop-price">290.000 VNĐ</p>
 
-							<button class="shop-btn"><i class="fas fa-shopping-cart"></i>Mua ngay</button>
+							<button
+								class="shop-btn"
+								data-toggle="modal"
+								data-target="#myModal"
+								data-title="Balo ước nguyện"
+								data-number="50"
+								data-img="../assets/img/ba-lo.jpg"
+								data-desc="Ba lô vải với hình em nhỏ và bảng 'I want to be', mỗi ba lô bán ra tặng một ba lô cho học sinh vùng cao.."
+							>
+								<i class="fas fa-shopping-cart"></i>Xem chi tiết
+							</button>
 						</div>
 					</div>
 					<!-- Sản phẩm 8 -->
@@ -340,7 +394,18 @@
 							<h3 class="shop-title">Hộp bút mặt trời</h3>
 							<p class="shop-price">95.000 VNĐ</p>
 
-							<button class="shop-btn"><i class="fas fa-shopping-cart"></i>Mua ngay</button>
+							<button
+								class="shop-btn"
+								data-toggle="modal"
+								data-target="#myModal"
+								data-title="Hộp bút mặt trời"
+								data-number="2"
+								data-danger=""
+								data-img="../assets/img/hop-but.jpg"
+								data-desc="Hộp bút màu vải với hình trẻ em học tập, mỗi hộp bán ra quyên góp dụng cụ học tập cho trẻ em khó khăn.."
+							>
+								<i class="fas fa-shopping-cart"></i>Xem chi tiết
+							</button>
 						</div>
 					</div>
 				</div>

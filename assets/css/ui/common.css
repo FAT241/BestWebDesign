@@ -52,7 +52,7 @@ body::selection {
 }
 
 .common-heading {
-	margin-bottom: 13px;
+	margin-bottom: 16px;
 	font-family: "Quicksand", sans-serif;
 	font-size: 32px;
 	font-weight: 600;
@@ -62,7 +62,7 @@ body::selection {
 }
 
 .common-heading:hover {
-	transform: scale(1.03);
+	transform: scale(1.05);
 }
 
 .common-content {
@@ -196,7 +196,7 @@ body::selection {
 	top: 0;
 	left: 0;
 	width: 100%;
-	padding: 30px 8%;
+	padding: 30px 12.3%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -207,7 +207,7 @@ body::selection {
 .header.scrolled {
 	background-color: white;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-	padding: 10px 8%;
+	padding: 10px 12.3%;
 	transform: translateY(0);
 	opacity: 1;
 }
