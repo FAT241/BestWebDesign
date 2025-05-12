@@ -1,0 +1,100 @@
+@import url(./common.css);
+.typing {
+	font-size: 2.5rem;
+	font-weight: 600;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: 3px solid #fff;
+	width: 100%;
+	max-width: 100%;
+	animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+}
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+@keyframes blink {
+	50% {
+		border-color: transparent;
+	}
+}
+
+.volunteer-card {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border: none;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.volunteer-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Volunteer Tips */
+.volunteer-tips .card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+
+	min-height: 180px;
+	background-color: var(--color-extra-4);
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.volunteer-tips .card-body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+.volunteer-tips .card-title {
+	font-size: 18px;
+	font-family: "Quicksand", sans-serif;
+	font-weight: 600;
+	color: #333333;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.volunteer-tips .card-text {
+	font-size: 14px;
+	color: #555;
+	line-height: 1.6;
+	text-align: center;
+}
+
+.volunteer-tips .volunteer-tip-img {
+	margin-bottom: 15px;
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Partners */
+.partners-img {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+}
+
+.img-fluid:hover {
+	transform: scale(1.05);
+	transition: transform 0.3s ease;
+}
