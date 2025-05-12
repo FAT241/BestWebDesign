@@ -91,10 +91,200 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 20px;
+}
+
+.partners-img img {
+	max-height: 64px;
+	margin: 0 10px;
+	object-fit: contain;
 }
 
 .img-fluid:hover {
 	transform: scale(1.05);
 	transition: transform 0.3s ease;
+}
+
+/* Video */
+.video-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Events Section */
+.events-section .card-text {
+	font-size: 14px;
+	color: #555;
+	text-align: center;
+}
+
+/* Form */
+.volunteer-form-section {
+	background: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80") no-repeat center center fixed;
+	background-size: cover;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	padding: 150px 0;
+	position: relative;
+	margin-bottom: 50px;
+}
+
+.container {
+	max-width: 900px;
+}
+
+.volunteer-card-form {
+	background-color: transparent;
+	padding: 40px 100px;
+	border-radius: 15px;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+	color: #333;
+	position: relative;
+	z-index: 1;
+
+}
+
+/* Tạo nền xanh dương bằng lớp giả với đổ bóng */
+.volunteer-card-form::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(180deg, #1e88e5 0%, #0d47a1 100%);
+	border-radius: 15px;
+	z-index: -1;
+	box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.2);
+	opacity: 0.9;
+}
+
+
+
+.form-control,
+.form-select {
+	margin-bottom: 16px;
+	border: 2px solid #ddd;
+	border-radius: 55px !important;
+	padding-left: 60px;
+	font-size: 1em;
+	font-family: "Poppins", sans-serif;
+	color: #333;
+	height: 45px;
+	transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control::placeholder,
+.form-select {
+	color: #888;
+	font-style: italic;
+	font-weight: 400;
+}
+
+.form-control:focus,
+.form-select:focus {
+	border-color: #2196f3;
+	box-shadow: 0 0 10px rgba(33, 150, 243, 0.3);
+	outline: none;
+}
+
+textarea.form-control {
+	border-radius: 10px !important;
+	min-height: 100px;
+	resize: vertical;
+}
+
+.form-check-label {
+	color: #fff;
+	font-size: 0.9em;
+	margin-bottom: 32px;
+}
+
+.btn-form {
+	margin-top: 30px;
+	border-radius: 55px;
+	color: #41dbb2;
+	background-color: transparent;
+	padding: 8px 0;
+	width: 100%;
+	border: 2px solid #41dbb2;
+	transition: all 0.5s;
+	font-weight: 600;
+}
+
+.btn-form:hover {
+	color: #fff;
+	background-color: #41dbb2;
+}
+
+.form-check-input:checked {
+	background-color: #28a745;
+	border-color: #28a745;
+}
+
+.btn-success {
+	background-color: #28a745;
+	border: none;
+	padding: 12px 30px;
+	font-weight: 600;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-success:hover {
+	background-color: #218838;
+	transform: translateY(-2px);
+}
+
+.btn-success i {
+	vertical-align: middle;
+}
+
+.volunteer-form-title {
+	font-size: 15px;
+	margin-bottom: 24px;
+	padding: 0;
+	color: #fff;
+}
+
+a.privacy {
+	color: greenyellow;
+}
+
+.input-with-icon {
+	background-repeat: no-repeat;
+	background-position: 25px center;
+	background-size: 20px 20px;
+}
+
+.input-with-icon-1 {
+	background-image: url("../../img/icon-user.png");
+}
+
+.input-with-icon-2 {
+	background-image: url(../../img/icon-date.png);
+}
+
+.input-with-icon-3 {
+	background-image: url(../../img/icon-email.png);
+}
+
+.input-with-icon-4 {
+	background-image: url(../../img/icon-phone.png);
+}
+
+.input-with-icon-5 {
+	background-image: url(../../img/icon-location.png);
+}
+
+.input-with-icon-6 {
+	background-image: url(../../img/icon-chuyen-mon.png);
+}
+
+.input-with-icon-7 {
+	background-image: url(../../img/icon-time.png);
+}
+
+.input-with-icon-8 {
+	background-image: url(../../img/icon-experience.png);
 }

@@ -1,0 +1,50 @@
+.step {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+.circle {
+	width: 30px;
+	height: 30px;
+	background: #d1d5db;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 30px;
+	font-weight: bold;
+	color: white;
+}
+.circle.active {
+	background: #10b981;
+}
+.line {
+	flex: 1;
+	height: 5px;
+	background: #d1d5db;
+	margin-top: 14px;
+}
+.line.active {
+	background: #10b981;
+}
+.hidden {
+	display: none;
+}
+.contact-box {
+	background-color: #1cc5a1;
+	color: white;
+	border-radius: 15px;
+	padding: 40px;
+	height: 600px10;
+}
+.payment-option {
+	border: 1px solid #10b981;
+	border-radius: 30px;
+	padding: 10px 15px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.payment-option:hover {
+	background-color: #e6f9f3;
+}
