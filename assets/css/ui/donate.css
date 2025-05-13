@@ -1,3 +1,4 @@
+@import url('common.css');
 .step {
 	display: flex;
 	justify-content: space-between;
@@ -47,4 +48,17 @@
 }
 .payment-option:hover {
 	background-color: #e6f9f3;
+}
+.table-container {
+	min-height: 400px;
+}
+#donation-buttons .btn.active {
+	background-color: #10b981;
+	color: white;
+	border-color: #10b981;
+}
+.payment-option.active {
+	background-color: #10b981;
+	color: white;
+	font-weight: bold;
 }

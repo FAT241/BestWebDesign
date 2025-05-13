@@ -88,6 +88,7 @@
 				</div>
 			</section>
 		</div>
+
 		<div class="container mt-5" data-aos="fade-right">
 			<div class="row">
 				<!-- Form Section -->
@@ -252,6 +253,33 @@
 			</div>
 		</section>
 
+		<!-- List -->
+		<div class="container my-4" style="padding-top: 40px" data-aos="zoom-in">
+			<!-- Tabs -->
+			<h3 style="text-align: center; padding-bottom: 20px">DANH SÁCH ỦNG HỘ</h3>
+			<!-- Search -->
+			<input type="text" class="form-control mb-3" placeholder="Nhập tên người ủng hộ" id="searchInput" />
+
+			<!-- Table -->
+			<div class="table-responsive table-container">
+				<table class="table table-bordered table-hover">
+					<thead class="table-light">
+						<tr>
+							<th>Người ủng hộ</th>
+							<th>Số tiền</th>
+							<th>Thời gian</th>
+						</tr>
+					</thead>
+					<tbody id="donationTableBody"></tbody>
+				</table>
+			</div>
+
+			<!-- Pagination -->
+			<nav>
+				<ul class="pagination justify-content-center mt-3" id="pagination"></ul>
+			</nav>
+		</div>
+
 		<!-- Impact Section -->
 		<section class="impact-section margin-section" data-aos="zoom-in">
 			<div class="container common-container">
@@ -307,6 +335,91 @@
 				document.getElementById(`circle${step}`).classList.add("active");
 				if (step > 1) document.getElementById(`line${step - 1}`).classList.add("active");
 			}
+		</script>
+
+		<script>
+			const donations = [
+				{ name: "Nhà hảo tâm ẩn danh", amount: "20.000đ", time: "13:15:07 - 10/05/2025" },
+				{ name: "Nguyễn Hoàng Dũng", amount: "10.000đ", time: "08:58:24 - 10/05/2025" },
+				{ name: "Nhà hảo tâm ẩn danh", amount: "100.000đ", time: "09:07:34 - 08/05/2025" },
+				{ name: "Nhà hảo tâm ẩn danh", amount: "3.125đ", time: "00:42:04 - 08/05/2025" },
+				{ name: "Hiển", amount: "200.000đ", time: "19:41:10 - 06/05/2025" },
+				{ name: "Nhà hảo tâm ẩn danh", amount: "10.000đ", time: "10:59:22 - 06/05/2025" },
+				{ name: "Nguyễn Tuấn Hưng", amount: "10.000đ", time: "10:49:29 - 06/05/2025" },
+				{ name: "Nhà hảo tâm ẩn danh", amount: "15.000đ", time: "23:42:58 - 05/05/2025" },
+				{ name: "Nhà hảo tâm ẩn danh", amount: "4.250đ", time: "12:31:23 - 04/05/2025" },
+				{ name: "Nhà hảo tâm ẩn danh", amount: "10.000đ", time: "15:37:02 - 03/05/2025" },
+				{ name: "Trần Văn A", amount: "50.000đ", time: "10:00:00 - 03/05/2025" },
+				{ name: "Lê B", amount: "30.000đ", time: "09:00:00 - 03/05/2025" },
+				{ name: "Ngô C", amount: "25.000đ", time: "08:00:00 - 03/05/2025" },
+				{ name: "Phạm D", amount: "12.000đ", time: "07:30:00 - 02/05/2025" },
+				{ name: "Đặng E", amount: "22.500đ", time: "06:15:00 - 02/05/2025" },
+				{ name: "Bùi F", amount: "40.000đ", time: "05:00:00 - 02/05/2025" },
+				{ name: "Nguyễn G", amount: "18.000đ", time: "04:45:00 - 02/05/2025" },
+				{ name: "Võ H", amount: "13.000đ", time: "03:20:00 - 02/05/2025" },
+				{ name: "Trịnh I", amount: "60.000đ", time: "02:10:00 - 01/05/2025" },
+				{ name: "Cao J", amount: "70.000đ", time: "01:00:00 - 01/05/2025" },
+				{ name: "Nhà hảo tâm ẩn danh", amount: "90.000đ", time: "00:30:00 - 01/05/2025" },
+				{ name: "Lương K", amount: "32.000đ", time: "21:00:00 - 30/04/2025" },
+				{ name: "Ngô L", amount: "45.000đ", time: "20:00:00 - 30/04/2025" },
+				{ name: "Đinh M", amount: "12.000đ", time: "19:00:00 - 30/04/2025" },
+				{ name: "Phạm N", amount: "88.000đ", time: "18:00:00 - 29/04/2025" },
+				{ name: "Nhà hảo tâm ẩn danh", amount: "6.000đ", time: "17:00:00 - 29/04/2025" },
+				{ name: "Nguyễn O", amount: "5.000đ", time: "16:00:00 - 29/04/2025" },
+				{ name: "Lê P", amount: "22.000đ", time: "15:00:00 - 29/04/2025" },
+				{ name: "Trần Q", amount: "33.000đ", time: "14:00:00 - 29/04/2025" },
+				{ name: "Nhà hảo tâm ẩn danh", amount: "10.000đ", time: "13:00:00 - 29/04/2025" },
+			];
+
+			const rowsPerPage = 8;
+			let currentPage = 1;
+
+			function renderTable(page) {
+				const start = (page - 1) * rowsPerPage;
+				const end = start + rowsPerPage;
+				const sliced = donations.slice(start, end);
+
+				const tbody = document.getElementById("donationTableBody");
+				tbody.innerHTML = "";
+				sliced.forEach((d) => {
+					const row = `<tr><td>${d.name}</td><td>${d.amount}</td><td>${d.time}</td></tr>`;
+					tbody.innerHTML += row;
+				});
+			}
+
+			function renderPagination() {
+				const pageCount = Math.ceil(donations.length / rowsPerPage);
+				const pagination = document.getElementById("pagination");
+				pagination.innerHTML = "";
+
+				for (let i = 1; i <= pageCount; i++) {
+					pagination.innerHTML += `
+        <li class="page-item ${i === currentPage ? "active" : ""}">
+          <a class="page-link" href="#" onclick=" event.preventDefault();goToPage(${i})">${i}</a>
+</li>`;
+				}
+			}
+
+			function goToPage(page) {
+				currentPage = page;
+				renderTable(page);
+				renderPagination();
+			}
+
+			window.onload = () => {
+				renderTable(currentPage);
+				renderPagination();
+			};
+		</script>
+
+		<script>
+			const options = document.querySelectorAll("#payment-methods .payment-option");
+			options.forEach((option) => {
+				option.addEventListener("click", () => {
+					options.forEach((o) => o.classList.remove("active"));
+					option.classList.add("active");
+				});
+			});
 		</script>
 	</body>
 </html>

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>MVP - Câu chuyện</title>
+		<title>MVP-Best Web Design</title>
 		<!-- Nhúng font chữ -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,11 +19,15 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+		<!-- Nhúng boxicons -->
+		<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 		<!-- CSS của AOS -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-		<!-- Link Bootstrap -->
+		<!-- Link Bootstrap-->
 		<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
 		<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- Link tới Modal -->
+		<link rel="stylesheet" href="../html/modal/modals.html" />
 		<!-- Link CSS -->
 		<link rel="stylesheet" href="../assets/css/ui/common.css" />
 		<link rel="stylesheet" href="../assets/css/ui/index.css" />
@@ -43,22 +47,25 @@
 				</div>
 				<!-- Navbar điều hướng -->
 				<nav class="navbar">
-					<a style="--i: 1" class="nav-link active" href="index.html">Trang chủ</a>
+					<a style="--i: 1" class="nav-link" href="index.html">Trang chủ</a>
 					<a style="--i: 2" class="nav-link" href="about.html">Về chúng tôi</a>
 					<a style="--i: 3" class="nav-link" href="volunteer.html">Tình nguyện</a>
 					<a style="--i: 4" class="nav-link" href="donate.html">Quyên góp</a>
-					<a style="--i: 5" class="nav-link" href="stories.html">Câu chuyện</a>
+					<a style="--i: 5" class="nav-link active" href="stories.html">Câu chuyện</a>
 				</nav>
 
 				<div class="right-header">
 					<div class="search">
-						<a href="#"><box-icon name="search-alt-2"></box-icon></a>
+						<a href="#" id="searchToggle"><box-icon name="search-alt-2"></box-icon></a>
+						<div class="search-dropdown" id="searchDropdown">
+							<input type="text" placeholder="Tìm kiếm..." />
+						</div>
 					</div>
 
 					<div class="register-login">
-						<a class="register" href="#">Đăng ký</a>
+						<a class="register" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Đăng ký</a>
 						<span class="slash">/</span>
-						<a class="login" href="#">Đăng nhập</a>
+						<a class="login" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Đăng nhập</a>
 					</div>
 				</div>
 			</header>
@@ -84,6 +91,16 @@
 				</div>
 			</section>
 		</div>
+
+		<div id="modal-container"></div>
+
+		<section class="hero-footer">
+			<div class="social-media">
+				<a style="--i: 1" href="#"><box-icon type="logo" name="facebook"></box-icon></a>
+				<a style="--i: 2" href="#"><box-icon name="twitter" type="logo"></box-icon></a>
+				<a style="--i: 3" href="#"><box-icon name="instagram" type="logo"></box-icon></a>
+			</div>
+		</section>
 
 		<!-- Search Results -->
 		<div id="searchResults" class="search-results p-3 bg-light rounded shadow" style="display: none"></div>
@@ -156,6 +173,7 @@
 				}
 			});
 		</script>
+		<script src="../assets/js/link-modal.js"></script>
 		<script src="../assets/js/data.js"></script>
 		<script src="../assets/js/stories.js"></script>
 		<script src="../assets/js/search.js"></script>

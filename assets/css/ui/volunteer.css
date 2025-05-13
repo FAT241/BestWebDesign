@@ -1,39 +1,4 @@
 @import url(./common.css);
-.typing {
-	font-size: 2.5rem;
-	font-weight: 600;
-	color: #fff;
-	text-align: center;
-	white-space: nowrap;
-	overflow: hidden;
-	border-right: 3px solid #fff;
-	width: 100%;
-	max-width: 100%;
-	animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
-}
-@keyframes typing {
-	from {
-		width: 0;
-	}
-	to {
-		width: 100%;
-	}
-}
-@keyframes blink {
-	50% {
-		border-color: transparent;
-	}
-}
-
-.volunteer-card {
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	border: none;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.volunteer-card:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
 
 /* Volunteer Tips */
 .volunteer-tips .card {
@@ -42,13 +7,16 @@
 	justify-content: center;
 	align-items: center;
 	padding: 20px;
-
 	min-height: 180px;
 	background-color: var(--color-extra-4);
 	border: none;
 	border-radius: 10px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.volunteer-tips .card:hover {
+	transform: translate(0, -16px);
 }
 
 .volunteer-tips .card-body {
@@ -118,6 +86,12 @@
 	text-align: center;
 }
 
+/* Testimonials Section */
+.testimonials-section .blockquote {
+	padding: 24px;
+	border-radius: 8px;
+}
+
 /* Form */
 .volunteer-form-section {
 	background: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80") no-repeat center center fixed;
@@ -127,7 +101,7 @@
 	align-items: center;
 	padding: 150px 0;
 	position: relative;
-	margin-bottom: 50px;
+	margin-bottom: 80px;
 }
 
 .container {
@@ -142,7 +116,6 @@
 	color: #333;
 	position: relative;
 	z-index: 1;
-
 }
 
 /* Tạo nền xanh dương bằng lớp giả với đổ bóng */
@@ -157,36 +130,7 @@
 	border-radius: 15px;
 	z-index: -1;
 	box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.2);
-	opacity: 0.9;
-}
-
-
-
-.form-control,
-.form-select {
-	margin-bottom: 16px;
-	border: 2px solid #ddd;
-	border-radius: 55px !important;
-	padding-left: 60px;
-	font-size: 1em;
-	font-family: "Poppins", sans-serif;
-	color: #333;
-	height: 45px;
-	transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-control::placeholder,
-.form-select {
-	color: #888;
-	font-style: italic;
-	font-weight: 400;
-}
-
-.form-control:focus,
-.form-select:focus {
-	border-color: #2196f3;
-	box-shadow: 0 0 10px rgba(33, 150, 243, 0.3);
-	outline: none;
+	opacity: 0.95;
 }
 
 textarea.form-control {
@@ -199,23 +143,6 @@ textarea.form-control {
 	color: #fff;
 	font-size: 0.9em;
 	margin-bottom: 32px;
-}
-
-.btn-form {
-	margin-top: 30px;
-	border-radius: 55px;
-	color: #41dbb2;
-	background-color: transparent;
-	padding: 8px 0;
-	width: 100%;
-	border: 2px solid #41dbb2;
-	transition: all 0.5s;
-	font-weight: 600;
-}
-
-.btn-form:hover {
-	color: #fff;
-	background-color: #41dbb2;
 }
 
 .form-check-input:checked {
@@ -249,12 +176,6 @@ textarea.form-control {
 
 a.privacy {
 	color: greenyellow;
-}
-
-.input-with-icon {
-	background-repeat: no-repeat;
-	background-position: 25px center;
-	background-size: 20px 20px;
 }
 
 .input-with-icon-1 {
