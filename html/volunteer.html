@@ -26,6 +26,8 @@
 		<!-- Link Bootstrap-->
 		<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
 		<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- Link tới Modal -->
+		<link rel="stylesheet" href="../html/modal/modals.html" />
 		<!-- Link CSS -->
 		<link rel="stylesheet" href="../assets/css/ui/volunteer.css" />
 		<link rel="stylesheet" href="../assets/css/ui/common.css" />
@@ -54,13 +56,16 @@
 
 				<div class="right-header">
 					<div class="search">
-						<a href="#"><box-icon name="search-alt-2"></box-icon></a>
+						<a href="#" id="searchToggle"><box-icon name="search-alt-2"></box-icon></a>
+						<div class="search-dropdown" id="searchDropdown">
+							<input type="text" placeholder="Tìm kiếm..." />
+						</div>
 					</div>
 
 					<div class="register-login">
-						<a class="register" href="#">Đăng ký</a>
+						<a class="register" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Đăng ký</a>
 						<span class="slash">/</span>
-						<a class="login" href="#">Đăng nhập</a>
+						<a class="login" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Đăng nhập</a>
 					</div>
 				</div>
 			</header>
@@ -87,10 +92,15 @@
 			</section>
 		</div>
 
+		<div id="modal-container"></div>
+
 		<!-- Mẹo cho tình nguyện viên -->
 		<section class="volunteer-tips margin-section">
 			<div class="container common-container">
 				<h2 class="common-heading text-center">Mẹo Cho Tình Nguyện Viên</h2>
+				<div class="divider text-center">
+					<img src="../assets/img/divider.png" alt="" />
+				</div>
 				<div class="row">
 					<div class="col-md-4">
 						<div class="card">
@@ -117,53 +127,6 @@
 			</div>
 		</section>
 
-		<!-- Ý nghĩa và tầm quan trọng của tình nguyện trong xã hội
-		<section class="importance py-5 bg-light">
-			<div class="container">
-				<h2 class="text-center mb-4" data-aos="fade-up">Ý Nghĩa và Tầm Quan Trọng Của Tình Nguyện Trong Xã Hội Hiện Đại</h2>
-				<p class="text-center">
-					Tình nguyện không chỉ là việc giúp đỡ người khác, mà còn là sự phát triển cá nhân và cộng đồng. Các hoạt động tình nguyện đóng vai trò quan trọng trong việc xây dựng các giá trị xã
-					hội như lòng nhân ái, đoàn kết và sự sẻ chia.
-				</p>
-				<div class="row mt-5">
-					<div class="col-md-6">
-						<h5>Góp Phần Xây Dựng Cộng Đồng</h5>
-						<p>
-							Tình nguyện không chỉ giúp đỡ những người cần trợ giúp mà còn góp phần vào sự phát triển bền vững của cộng đồng. Các hoạt động như làm sạch môi trường, dạy học cho trẻ em
-							nghèo, hỗ trợ người cao tuổi hay giúp đỡ người khuyết tật đều đóng góp tích cực vào sự phát triển của xã hội.
-						</p>
-						<img src="../assets/img/community.jpg" class="img-fluid " alt="Xây dựng cộng đồng" />
-					</div>
-					<div class="col-md-6">
-						<h5>Tạo Cơ Hội Phát Triển Cá Nhân</h5>
-						<p>
-							Tham gia vào các hoạt động tình nguyện giúp các cá nhân phát triển các kỹ năng mềm như giao tiếp, làm việc nhóm, lãnh đạo và giải quyết vấn đề. Ngoài ra, tình nguyện còn
-							giúp xây dựng sự tự tin và khả năng đối phó với thử thách.
-						</p>
-						<img src="../assets/img/development.jpg" class="img-fluid " alt="Phát triển cá nhân" />
-					</div>
-				</div>
-				<div class="row mt-5">
-					<div class="col-md-6">
-						<h5>Góp Phần Thúc Đẩy Tinh Thần Đoàn Kết</h5>
-						<p>
-							Thông qua các hoạt động tình nguyện, mọi người có thể gắn kết với nhau, từ đó tạo ra một xã hội đoàn kết, mạnh mẽ và yêu thương. Tình nguyện giúp các cá nhân và tổ chức xây
-							dựng các mối quan hệ bền vững và góp phần vào sự phát triển chung của cộng đồng.
-						</p>
-						<img src="../assets/img/teamwork.jpg" class="img-fluid " alt="Tinh thần đoàn kết" />
-					</div>
-					<div class="col-md-6">
-						<h5>Kêu Gọi Hành Động Toàn Cầu</h5>
-						<p>
-							Tình nguyện không chỉ giới hạn trong phạm vi quốc gia mà còn lan rộng ra toàn cầu. Các chiến dịch tình nguyện quốc tế, như hỗ trợ người tị nạn, cứu trợ thiên tai, và bảo vệ
-							môi trường, đã giúp kết nối con người từ mọi nền văn hóa và quốc gia, tạo nên một cộng đồng toàn cầu đầy lòng nhân ái.
-						</p>
-						<img src="../assets/img/global-action.jpg" class="img-fluid " alt="Hành động toàn cầu" />
-					</div>
-				</div>
-			</div>
-		</section> -->
-
 		<!-- Đối tác và nhà tài trợ -->
 		<section class="partners margin-section">
 			<div class="container common-container">
@@ -188,99 +151,15 @@
 			</div>
 		</section>
 
-		<!-- Chia sẻ kinh nghiệm từ tình nguyện viên
-		<section class="experience py-5 bg-white">
-			<div class="container">
-				<h2 class="text-center mb-4" data-aos="fade-up">Kinh Nghiệm Từ Các Tình Nguyện Viên</h2>
-				<div class="row">
-					<div class="col-md-6">
-						<blockquote class="blockquote">
-							<p>"Tham gia các hoạt động tình nguyện giúp tôi học hỏi được rất nhiều về cuộc sống và sự sẻ chia!"</p>
-							<footer class="blockquote-footer">Nguyễn Minh Tâm, tình nguyện viên</footer>
-							<img src="../assets/img/volunteer-experience1.jpg" class="img-fluid  mt-3" alt="Kinh nghiệm tình nguyện viên" />
-						</blockquote>
-					</div>
-					<div class="col-md-6">
-						<blockquote class="blockquote">
-							<p>"Mỗi hoạt động tình nguyện là một cơ hội để tôi trưởng thành và đóng góp cho cộng đồng."</p>
-							<footer class="blockquote-footer">Lê Thị Thanh, tình nguyện viên</footer>
-							<img src="../assets/img/volunteer-experience2.jpg" class="img-fluid  mt-3" alt="Kinh nghiệm tình nguyện viên" />
-						</blockquote>
-					</div>
-				</div>
-			</div>
-		</section> -->
-
-		<!-- Volunteer Section -->
-		<!-- <section class="volunteer-opportunities-section margin-section">
-			<div class="container common-container">
-				<h2 class="common-heading text-center" data-aos="fade-down">Cơ hội Tình nguyện nổi bật</h2>
-
-				<div class="row justify-content-center mb-5" data-aos="zoom-in">
-					<div class="col-3">
-						<select class="form-select">
-							<option selected>Chọn khu vực</option>
-							<option>Hà Nội</option>
-							<option>TP.HCM</option>
-							<option>Đà Nẵng</option>
-							<option>Huế</option>
-						</select>
-					</div>
-					<div class="col-3">
-						<select class="form-select">
-							<option selected>Lĩnh vực</option>
-							<option>Giáo dục</option>
-							<option>Môi trường</option>
-							<option>Xã hội</option>
-						</select>
-					</div>
-					<div class="col-md-2">
-						<button class="btn btn-primary w-100">Lọc</button>
-					</div>
-				</div>
-
-				Cards
-				<div class="row g-4" data-aos="fade-up">
-					<div class="col-md-4">
-						<div class="card volunteer-card" data-aos="zoom-in">
-							<img src="../assets/img/volunteer1.jpg" class="card-img-top" alt="Vol 1" />
-							<div class="card-body">
-								<h5 class="card-title">Lớp học Hy vọng</h5>
-								<p class="card-text">Dạy học miễn phí cho trẻ em nghèo tại Hà Nội.</p>
-								<a href="#" class="btn btn-primary">Tham gia</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="card volunteer-card" data-aos="zoom-in" data-aos-delay="100">
-							<img src="../assets/img/volunteer2.jpg" class="card-img-top" alt="Vol 2" />
-							<div class="card-body">
-								<h5 class="card-title">Xanh hóa thành phố</h5>
-								<p class="card-text">Trồng cây và dọn rác tại các khu công cộng.</p>
-								<a href="#" class="btn btn-success">Tham gia</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="card volunteer-card" data-aos="zoom-in" data-aos-delay="200">
-							<img src="../assets/img/volunteer3.jpg" class="card-img-top" alt="Vol 3" />
-							<div class="card-body">
-								<h5 class="card-title">Bữa cơm ấm áp</h5>
-								<p class="card-text">Nấu và phát cơm cho người vô gia cư mỗi cuối tuần.</p>
-								<a href="#" class="btn btn-danger">Tham gia</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section> -->
-
 		<!-- Local Video Section -->
 		<!-- YouTube Video Section -->
 		<section id="youtube-video" class="margin-section">
 			<div class="container common-container">
 				<div class="text-center">
 					<h2 class="common-heading">Cùng Xem Video Tình Nguyện</h2>
+					<div class="divider text-center">
+						<img src="../assets/img/divider.png" alt="" />
+					</div>
 					<p class="section-subtitle">Hãy xem những khoảnh khắc tuyệt vời từ các hoạt động tình nguyện của chúng tôi!</p>
 				</div>
 				<div class="embed-responsive embed-responsive-16by9">
@@ -305,6 +184,9 @@
 		<section class="margin-section text-center" data-aos="fade-up">
 			<div class="container common-container">
 				<h2 class="common-heading">Tại sao nên tình nguyện cùng chúng tôi?</h2>
+				<div class="divider text-center">
+					<img src="../assets/img/divider.png" alt="" />
+				</div>
 				<div class="row">
 					<div class="col" data-aos="flip-left">
 						<i class="fas fa-hands-helping fa-3x text-primary mb-3"></i>
@@ -329,9 +211,12 @@
 		<section class="events-section margin-section text-center" data-aos="fade-up">
 			<div class="container common-container">
 				<h2 class="common-heading">Sự kiện tình nguyện sắp tới</h2>
+				<div class="divider text-center">
+					<img src="../assets/img/divider.png" alt="" />
+				</div>
 				<div class="row">
 					<div class="col">
-						<div class="card shadow border-0">
+						<div class="card border-0">
 							<img src="../assets/img/event-1.jpg" class="card-img-top" alt="Event 1" />
 							<div class="card-body">
 								<h5 class="card-title">Gieo chữ vùng cao</h5>
@@ -343,7 +228,7 @@
 						</div>
 					</div>
 					<div class="col">
-						<div class="card shadow border-0">
+						<div class="card border-0">
 							<img src="../assets/img/event-2.jpg" class="card-img-top" alt="Event 2" />
 							<div class="card-body">
 								<h5 class="card-title">Một giọt máu – Triệu tấm lòng</h5>
@@ -355,7 +240,7 @@
 						</div>
 					</div>
 					<div class="col">
-						<div class="card shadow border-0">
+						<div class="card border-0">
 							<img src="../assets/img/event-3.jpg" class="card-img-top" alt="Event 3" />
 							<div class="card-body">
 								<h5 class="card-title">Trồng cây – Gieo hy vọng</h5>
@@ -371,18 +256,18 @@
 		</section>
 
 		<!-- Testimonials -->
-		<section class="bg-light py-5" data-aos="fade-up">
-			<div class="container text-center">
-				<h2 class="mb-5">Cảm nhận từ tình nguyện viên</h2>
-				<div class="row justify-content-center">
-					<div class="col-md-6 mb-4">
-						<div class="blockquote p-4 bg-white shadow rounded">
+		<section class="testimonials-section margin-section" data-aos="fade-up">
+			<div class="container">
+				<h2 class="common-heading text-center">Cảm nhận từ tình nguyện viên</h2>
+				<div class="row">
+					<div class="col">
+						<div class="blockquote bg-white shadow">
 							<p>"Chuyến đi tình nguyện tại vùng cao đã thay đổi cách tôi nhìn nhận về cuộc sống!"</p>
 							<footer class="blockquote-footer">Nguyễn Văn A, Sinh viên</footer>
 						</div>
 					</div>
-					<div class="col-md-6 mb-4">
-						<div class="blockquote p-4 bg-white shadow rounded">
+					<div class="col">
+						<div class="blockquote bg-white shadow">
 							<p>"Tôi đã học được cách sống vì cộng đồng qua từng hoạt động."</p>
 							<footer class="blockquote-footer">Lê Thị B, Giáo viên</footer>
 						</div>
@@ -390,164 +275,6 @@
 				</div>
 			</div>
 		</section>
-
-		<!-- Volunteer Registration Form
-		<section class="volunteer-form py-5 bg-light">
-			<div class="container">
-				<h2 class="text-center mb-4" data-aos="fade-down">Đăng ký Tình Nguyện Viên</h2>
-
-				<form action="#" method="POST" class="row g-4">
-					<div class="col-md-6">
-						<label for="fullName" class="form-label">Họ và tên</label>
-						<input type="text" class="form-control input-with-icon" id="fullName" name="fullName" placeholder="Nhập họ và tên" required />
-					</div>
-
-					<div class="col-md-6">
-						<label for="email" class="form-label">Email</label>
-						<input type="email" class="form-control input-with-icon" id="email" name="email" placeholder="Nhập email của bạn" required />
-					</div>
-
-					<div class="col-md-6">
-						<label for="phone" class="form-label">Số điện thoại</label>
-						<input type="tel" class="form-control input-with-icon" id="phone" name="phone" placeholder="Nhập số điện thoại" required />
-					</div>
-
-					<div class="col-md-6">
-						<label for="dob" class="form-label">Ngày sinh</label>
-						<input type="date" class="form-control input-with-icon" id="dob" name="dob" required />
-					</div>
-
-					<div class="col-md-6">
-						<label for="location" class="form-label">Khu vực tình nguyện</label>
-						<select class="form-select" id="location" name="location" required>
-							<option value="" selected disabled>Chọn khu vực</option>
-							<option value="HaNoi">Hà Nội</option>
-							<option value="HoChiMinh">TP.HCM</option>
-							<option value="DaNang">Đà Nẵng</option>
-							<option value="Hue">Huế</option>
-						</select>
-					</div>
-
-					<div class="col-md-6">
-						<label for="interest" class="form-label">Lĩnh vực quan tâm</label>
-						<select class="form-select" id="interest" name="interest" required>
-							<option value="" selected disabled>Chọn lĩnh vực</option>
-							<option value="education">Giáo dục</option>
-							<option value="environment">Môi trường</option>
-							<option value="social">Xã hội</option>
-						</select>
-					</div>
-
-					<div class="col-12">
-						<label for="experience" class="form-label">Kinh nghiệm tình nguyện (nếu có)</label>
-						<textarea class="form-control input-with-icon" id="experience" name="experience" rows="4" placeholder="Mô tả kinh nghiệm của bạn (nếu có)"></textarea>
-					</div>
-
-					<div class="col-md-6">
-						<label for="availability" class="form-label">Thời gian có thể tham gia</label>
-						<input type="text" class="form-control input-with-icon" id="availability" name="availability" placeholder="Nhập thời gian bạn có thể tham gia" required />
-					</div>
-
-					<div class="col-md-6">
-						<label for="motivation" class="form-label">Lý do bạn muốn tham gia tình nguyện</label>
-						<textarea class="form-control input-with-icon" id="motivation" name="motivation" rows="4" placeholder="Lý do bạn muốn tham gia các chương trình tình nguyện"></textarea>
-					</div>
-
-					<div class="col-12">
-						<div class="form-check">
-							<input type="checkbox" class="form-check-input" id="privacyPolicy" required />
-							<label class="form-check-label" for="privacyPolicy">Tôi đồng ý với <a href="#">chính sách bảo mật</a></label>
-						</div>
-					</div>
-
-					<div class="col-12 text-center">
-						<button type="submit" class="btn btn-primary">Đăng ký tham gia</button>
-					</div>
-				</form>
-			</div>
-		</section> -->
-
-		<!-- Volunteer Registration Pro
-		<section class="volunteer-form py-5 bg-light">
-			<div class="container">
-				<h2 class="text-center mb-4" data-aos="fade-down">Đăng ký Tình Nguyện Viên</h2>
-				<form action="#" method="POST" class="row g-4 shadow p-4 bg-white rounded-4" data-aos="fade-up">
-					
-					<div class="col-12">
-						<h5 class="mb-3"><i class="bi bi-person-lines-fill me-2"></i>Thông tin cá nhân</h5>
-					</div>
-					<div class="col-md-6">
-						<label for="fullName" class="form-label">Họ và tên</label>
-						<input type="text" class="form-control input-with-icon" id="fullName" name="fullName" placeholder="Nguyễn Văn A" required />
-					</div>
-					<div class="col-md-6">
-						<label for="dob" class="form-label">Ngày sinh</label>
-						<input type="date" class="form-control input-with-icon" id="dob" name="dob" required />
-					</div>
-					<div class="col-md-6">
-						<label for="email" class="form-label">Email</label>
-						<input type="email" class="form-control input-with-icon" id="email" name="email" placeholder="example@email.com" required />
-					</div>
-					<div class="col-md-6">
-						<label for="phone" class="form-label">Số điện thoại</label>
-						<input type="tel" class="form-control input-with-icon" id="phone" name="phone" placeholder="090xxxxxxx" required />
-					</div>
-
-				
-					<div class="col-12 pt-3">
-						<h5 class="mb-3"><i class="bi bi-clipboard-check me-2"></i>Thông tin tham gia</h5>
-					</div>
-					<div class="col-md-6">
-						<label for="location" class="form-label">Khu vực tình nguyện</label>
-						<select class="form-select" id="location" name="location" required>
-							<option value="" selected disabled>Chọn khu vực</option>
-							<option>Hà Nội</option>
-							<option>TP.HCM</option>
-							<option>Đà Nẵng</option>
-							<option>Huế</option>
-						</select>
-					</div>
-					<div class="col-md-6">
-						<label for="interest" class="form-label">Lĩnh vực quan tâm</label>
-						<select class="form-select" id="interest" name="interest" required>
-							<option value="" selected disabled>Chọn lĩnh vực</option>
-							<option>Trẻ em vùng cao</option>
-							<option>Giáo dục</option>
-							<option>Môi trường</option>
-							<option>Hiến máu</option>
-						</select>
-					</div>
-
-					<div class="col-md-6">
-						<label for="availability" class="form-label">Thời gian có thể tham gia</label>
-						<input type="text" class="form-control input-with-icon" id="availability" name="availability" placeholder="Ví dụ: Cuối tuần, buổi tối..." required />
-					</div>
-					<div class="col-md-6">
-						<label for="experience" class="form-label">Kinh nghiệm (nếu có)</label>
-						<textarea class="form-control input-with-icon" id="experience" name="experience" rows="3" placeholder="Mô tả kinh nghiệm của bạn"></textarea>
-					</div>
-
-					
-					<div class="col-12">
-						<label for="motivation" class="form-label">Lý do tham gia</label>
-						<textarea class="form-control input-with-icon" id="motivation" name="motivation" rows="4" placeholder="Bạn muốn đóng góp gì cho cộng đồng?"></textarea>
-					</div>
-
-				
-					<div class="col-12">
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" id="privacyPolicy" required />
-							<label class="form-check-label" for="privacyPolicy"> Tôi đồng ý với <a href="#">chính sách bảo mật</a> của tổ chức </label>
-						</div>
-					</div>
-
-				
-					<div class="col-12 text-center pt-3">
-						<button type="submit" class="btn btn-lg btn-success px-5"><i class="bi bi-send-fill me-2"></i>Đăng ký tham gia</button>
-					</div>
-				</form>
-			</div>
-		</section> -->
 
 		<section class="volunteer-form-section margin-section">
 			<div class="container container-custom">
@@ -668,6 +395,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 		<script src="../assets/js/aos.js"></script>
 		<!-- js -->
+		<script src="../assets/js/link-modal.js"></script>
 		<script src="../assets/js/aos.js"></script>
 		<script src="../assets/js/hero.js"></script>
 		<script src="../assets/js/data.js"></script>

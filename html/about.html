@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" timeline-card="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>MVP-Best Web Design</title>
 		<!-- Nhúng font chữ -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,9 +26,11 @@
 		<!-- Link Bootstrap-->
 		<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
 		<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- Link tới Modal -->
+		<link rel="stylesheet" href="../html/modal/modals.html" />
 		<!-- Link CSS -->
-		<link rel="stylesheet" href="../assets/css/ui/common.css" />
 		<link rel="stylesheet" href="../assets/css/ui/about.css" />
+		<link rel="stylesheet" href="../assets/css/ui/common.css" />
 		<link rel="stylesheet" href="../assets/css/components/messenger.css" />
 		<link rel="stylesheet" href="../assets/css/components/search-style.css" />
 		<link rel="stylesheet" href="../assets/css/components/stories-style.css" />
@@ -54,13 +56,16 @@
 
 				<div class="right-header">
 					<div class="search">
-						<a href="#"><box-icon name="search-alt-2"></box-icon></a>
+						<a href="#" id="searchToggle"><box-icon name="search-alt-2"></box-icon></a>
+						<div class="search-dropdown" id="searchDropdown">
+							<input type="text" placeholder="Tìm kiếm..." />
+						</div>
 					</div>
 
 					<div class="register-login">
-						<a class="register" href="#">Đăng ký</a>
+						<a class="register" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Đăng ký</a>
 						<span class="slash">/</span>
-						<a class="login" href="#">Đăng nhập</a>
+						<a class="login" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Đăng nhập</a>
 					</div>
 				</div>
 			</header>
@@ -86,6 +91,8 @@
 				</div>
 			</section>
 		</div>
+
+		<div id="modal-container"></div>
 
 		<!-- Origin Story Section -->
 		<div class="origin-story-section margin-section-origin-story" data-aos="fade-right">
@@ -306,6 +313,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 		<script src="../assets/js/aos.js"></script>
 		<!-- js -->
+		<script src="../assets/js/link-modal.js"></script>
 		<script src="../assets/js/aos.js"></script>
 		<script src="../assets/js/hero.js"></script>
 		<script src="../assets/js/data.js"></script>

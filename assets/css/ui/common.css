@@ -18,7 +18,14 @@
 
 html {
 	overflow-x: hidden;
-	scroll-behavior: smooth;
+	overflow-y: scroll; 
+	/* bạn có thể vẫn giữ scrollbar-gutter cho trình duyệt hỗ trợ */
+	scrollbar-gutter: stable both-edges;
+}
+/* Xử lí giật khi mở modal */
+body.modal-open {
+	padding-right: 0 !important;
+	overflow: hidden !important;
 }
 
 body {
@@ -574,9 +581,124 @@ span.address {
 }
 
 /* Modal */
+
 .modal-img {
 	cursor: zoom-in;
 	display: block;
 	margin: auto;
-	max-width: 230px;
+	max-width: 200px;
+}
+
+.modal .desc {
+	font-size: 15px;
+}
+
+/* Ô Search */
+.search {
+	position: relative;
+	display: inline-block;
+}
+
+.search-dropdown {
+	position: absolute;
+	top: 115%;
+	left: -50px;
+	background: white;
+	padding: 8px;
+	border-radius: 6px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+	transform: translateY(-10px);
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s ease;
+	z-index: 999;
+	width: 200px;
+}
+
+.search-dropdown input {
+	width: 100%;
+	/* padding: 2px 4px; */
+	font-size: 13px;
+	border: none;
+	outline: none;
+}
+
+.search.active .search-dropdown {
+	transform: translateY(0);
+	opacity: 1;
+	visibility: visible;
+}
+
+/* Form Control Đăng ký / Đăng nhập */
+.form-control,
+.form-select {
+	margin-bottom: 16px;
+	border: 2px solid #ddd;
+	border-radius: 55px !important;
+	padding-left: 60px;
+	font-size: 1em;
+	font-family: "Poppins", sans-serif;
+	color: #333;
+	height: 45px;
+	transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control::placeholder,
+.form-select {
+	color: #888;
+	font-style: italic;
+	font-weight: 400;
+}
+
+.form-control:focus,
+.form-select:focus {
+	border-color: #2196f3;
+	box-shadow: 0 0 10px rgba(33, 150, 243, 0.3);
+	outline: none;
+}
+
+.input-with-icon {
+	background-repeat: no-repeat;
+	background-position: 25px center;
+	background-size: 20px 20px;
+}
+
+.input-with-icon-user {
+	background-image: url("../../img/user-login.png");
+}
+
+.input-with-icon-password {
+	background-image: url("../../img/padlock-login.png");
+}
+
+.input-with-icon-mail {
+	background-image: url("../../img/envelope.png");
+}
+
+/* Nút bấm đăng ký / đăng nhập */
+.btn-form {
+	margin-top: 30px;
+	border-radius: 55px;
+	color: #41dbb2;
+	background-color: transparent;
+	padding: 8px 0;
+	width: 100%;
+	border: 2px solid #41dbb2;
+	transition: all 0.5s;
+	font-weight: 600;
+}
+
+.btn-register {
+	border: 2px solid var(--color-primary);
+	color: var(--color-primary)
+}
+
+.btn-form:hover {
+	color: #fff;
+	background-color: #41dbb2;
+}
+
+.btn-register:hover {
+	color: #fff;
+	background-color: var(--color-primary);
 }
