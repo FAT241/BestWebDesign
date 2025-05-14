@@ -17,6 +17,7 @@
 }
 
 html {
+	scroll-behavior: smooth; /*cuộn*/
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
@@ -161,6 +162,8 @@ body::selection {
 	margin: 0 3px 0 3px;
 }
 
+
+
 /* Hero Section */
 .hero-section {
 	max-width: 1250px;
@@ -207,7 +210,7 @@ body::selection {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background: rgba(0, 0, 0, 0.45);
+	background: rgba(0, 0, 0, 0.3);
 	z-index: 0;
 }
 
@@ -247,7 +250,7 @@ body::selection {
 	position: relative;
 	right: 10px;
 	height: 58px;
-	filter: brightness(1.8);
+	filter: brightness(2.2);
 	opacity: 0;
 	animation: slideRight 1.2s ease forwards;
 }
@@ -340,15 +343,16 @@ body::selection {
 .home-content h1 {
 	color: var(--color-tertiary);
 	font-size: 40px;
-	padding-bottom: 6px;
 	opacity: 0;
 	animation: slideBottom 1s ease forwards;
 	animation-delay: 1.4s;
 }
 
 .home-content h3 {
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.02); /* đổ bóng siêu mờ k thấy */
 	font-size: 35px;
-	padding-bottom: 10px;
+	font-weight: 600;
+	padding-bottom: 6px;
 	background: linear-gradient(320deg, #00c6ff, #ff6ec4, #ffdd00, #00c6ff);
 	background-size: 600% 600%;
 	-webkit-background-clip: text;
@@ -361,10 +365,14 @@ body::selection {
 .home-content p {
 	color: var(--color-tertiary);
 	font-size: 16px;
-	margin: 12px 0 26px;
+	margin: 12px 0 20px;
 	opacity: 0;
 	animation: slideLeft 1s ease forwards;
 	animation-delay: 2.2s;
+}
+
+.home-content p, .home-content h1 {
+	background: rgba(0, 0, 0, 0.02); /* nền siêu mờ */
 }
 
 .social-media a {
@@ -435,8 +443,10 @@ body::selection {
 }
 
 .hero-btn:hover {
+	font-weight: 600;
+	border-color: var(--color-tertiary);
 	color: var(--color-primary);
-	background: transparent;
+	background: var(--color-tertiary);
 	transform: scale(1.05);
 }
 

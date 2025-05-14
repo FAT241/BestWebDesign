@@ -42,7 +42,7 @@
 	<body>
 		<!-- Hero -->
 		<div class="hero-section">
-			<img class="hero-background" src="../assets/img/hero.png" alt="" />
+			<img class="hero-background" src="../assets/img/anh-quyen-gop.png" alt="" />
 			<div class="overlay"></div>
 			<!-- Thanh Header -->
 			<header class="header">
@@ -77,13 +77,10 @@
 			<!-- Content -->
 			<section class="home">
 				<div class="home-content">
-					<h1>Chung tay vì trẻ em vùng cao.</h1>
-					<h3>Hành động ngay!</h3>
-					<p>
-						Chung tay xây dựng tương lai tươi sáng cho trẻ em vùng cao – nơi điều kiện học tập còn thiếu thốn nhưng ước mơ luôn cháy bỏng. Mỗi đóng góp là bước đệm đưa các em đến gần tri
-						thức, cơ hội và hy vọng
-					</p>
-					<a href="#" class="hero-btn btn-animation">Tham gia ngay<i class="fa-solid fa-heart-pulse right-header-icon"></i></a>
+					<h1>Chung tay vì trẻ em.</h1>
+					<h3>Lan tỏa hi vọng!</h3>
+					<p>Mọi đóng góp của bạn sẽ giúp trẻ em vùng cao vượt qua khó khăn, tiếp cận giáo dục và xây dựng cuộc sống tốt đẹp hơn với sự hỗ trợ từ cộng đồng</p>
+					<a href="#donate" class="hero-btn btn-animation">Quyên góp ngay<i class="fa-solid fa-heart-pulse right-header-icon"></i></a>
 				</div>
 			</section>
 
@@ -98,7 +95,7 @@
 
 		<div id="modal-container"></div>
 
-		<section class="donate-section margin-section">
+		<section id="donate" class="donate-section margin-section">
 			<div class="container common-container donate-container" data-aos="fade-right">
 				<div class="row d-flex justify-content-center align-items-center">
 					<!-- Form Section -->
@@ -275,27 +272,6 @@
 			</div>
 		</section>
 
-		<!-- Welcome Section -->
-		<!-- <section class="welcome-section margin-section" data-aos="fade-right">
-			<div class="container common-container">
-				<div class="row align-items-center gap-4">
-					<div class="col">
-						<h2 class="common-heading">MVP – Cùng nhau chung tay khuyên góp ủng hộ vì một Việt Nam vươn xa</h2>
-						<p class="common-content content-welcome">
-							<b>1. Quyên góp trực tiếp:</b> Chuyển khoản qua tài khoản ngân hàng của - MVP<br /><br />
-							<b>2. Quên góp sách vở và các dụng cụ học tập:</b> Đến trực tiếp địa chỉ : 123 Dường Tri Thức, Quận 1, Thành phố Hồ Chí Minh<br /><br />
-							<b>3. Ủng hộ định kỳ: </b> Cam kết hỗ trợ hàng tháng để duy trì các lớp học cùng MVP lâu dài<br /><br />
-
-							<a href="./introduce.html" class="common-btn"><i class="fa-solid fa-heart-pulse"></i>Quyên góp ngay</a>
-						</p>
-					</div>
-					<div class="col">
-						<img src="../assets/img/qr.jpg" class="common-img rounded" alt="" style="max-height: 400px; width: 400px" />
-					</div>
-				</div>
-			</div>
-		</section> -->
-
 		<!-- List -->
 		<section class="list-section margin-section">
 			<div class="container common-container list-container" data-aos="zoom-in">
@@ -309,7 +285,7 @@
 
 				<!-- Table -->
 				<div class="table-responsive table-container">
-					<table class="table table-bordered table-hover">
+					<table class="table table-bordered table-hover table-striped">
 						<thead class="table-light">
 							<tr>
 								<th>STT</th>
@@ -390,200 +366,12 @@
 			<i class="fa-brands fa-facebook-messenger"></i>
 		</a>
 
-		<script>
-			function goToStep(step) {
-				for (let i = 1; i <= 3; i++) {
-					document.getElementById(`step${i}`).classList.add("hidden");
-					document.getElementById(`circle${i}`).classList.remove("active");
-					if (document.getElementById(`line${i - 1}`)) {
-						document.getElementById(`line${i - 1}`).classList.remove("active");
-					}
-				}
-				document.getElementById(`step${step}`).classList.remove("hidden");
-				document.getElementById(`circle${step}`).classList.add("active");
-				if (step > 1) document.getElementById(`line${step - 1}`).classList.add("active");
-			}
-		</script>
-
-		<script>
-			const donations = [
-				{ name: "Sơn Tùng MTP", amount: "10.000.000đ", time: "13:15:07 - 10/05/2025" },
-				{ name: "Trịnh Trần Phương Tuấn", amount: "3.500.000đ", time: "08:58:24 - 10/05/2025" },
-				{ name: "Mono", amount: "7.500.000đ", time: "09:07:34 - 08/05/2025" },
-				{ name: "Phạm Thị Duyên", amount: "90.000đ", time: "00:42:04 - 08/05/2025" },
-				{ name: "Đỗ Minh Hòa", amount: "1.000.000đ", time: "19:41:10 - 06/05/2025" },
-				{ name: "Ngô Quang Huy", amount: "150.000đ", time: "10:59:22 - 06/05/2025" },
-				{ name: "Vũ Thị Hạnh", amount: "5.000.000đ", time: "10:49:29 - 06/05/2025" },
-				{ name: "Bùi Văn Khang", amount: "800.000đ", time: "23:42:58 - 05/05/2025" },
-				{ name: "Tạ Thị Linh", amount: "50.000đ", time: "12:31:23 - 04/05/2025" },
-				{ name: "Mai Văn Mạnh", amount: "20.000.000đ", time: "15:37:02 - 03/05/2025" },
-				{ name: "Lý Hải Nam", amount: "3.000.000đ", time: "10:00:00 - 03/05/2025" },
-				{ name: "Trịnh Xuân Nhật", amount: "600.000đ", time: "09:00:00 - 03/05/2025" },
-				{ name: "Dương Thị Oanh", amount: "12.000đ", time: "08:00:00 - 03/05/2025" },
-				{ name: "Hoàng Văn Phúc", amount: "1.200.000đ", time: "07:30:00 - 02/05/2025" },
-				{ name: "Nguyễn Thị Quỳnh", amount: "25.000.000đ", time: "06:15:00 - 02/05/2025" },
-				{ name: "Phan Hữu Sang", amount: "70.000đ", time: "05:00:00 - 02/05/2025" },
-				{ name: "Trần Minh Thắng", amount: "180.000đ", time: "04:45:00 - 02/05/2025" },
-				{ name: "Vũ Thị Uyên", amount: "350.000đ", time: "03:20:00 - 02/05/2025" },
-				{ name: "Nguyễn Văn Vinh", amount: "11.000.000đ", time: "02:10:00 - 01/05/2025" },
-				{ name: "Phạm Thị Xuân", amount: "950.000đ", time: "01:00:00 - 01/05/2025" },
-				{ name: "Lê Hồng Yến", amount: "45.000đ", time: "00:30:00 - 01/05/2025" },
-				{ name: "Đoàn Trọng Nam", amount: "5.000.000đ", time: "21:00:00 - 30/04/2025" },
-			];
-
-			const rowsPerPage = 8;
-			let currentPage = 1;
-
-			function renderTable(page) {
-				const start = (page - 1) * rowsPerPage;
-				const end = start + rowsPerPage;
-				const sliced = donations.slice(start, end);
-
-				const tbody = document.getElementById("donationTableBody");
-				tbody.innerHTML = "";
-				sliced.forEach((d, index) => {
-					const stt = start + index + 1;
-					const row = `<tr>
-      <td>${stt}</td>
-      <td>${d.name}</td>
-      <td>${d.amount}</td>
-      <td>${d.time}</td>
-    </tr>`;
-					tbody.innerHTML += row;
-				});
-			}
-
-			function renderPagination() {
-				const pageCount = Math.ceil(donations.length / rowsPerPage);
-				const pagination = document.getElementById("pagination");
-				pagination.innerHTML = "";
-
-				for (let i = 1; i <= pageCount; i++) {
-					pagination.innerHTML += `
-			        <li class="page-item ${i === currentPage ? "active" : ""}">
-			          <a class="page-link" href="#" onclick=" event.preventDefault();goToPage(${i})">${i}</a>
-			</li>`;
-				}
-			}
-
-			function goToPage(page) {
-				currentPage = page;
-				renderTable(page);
-				renderPagination();
-			}
-
-			window.onload = () => {
-				renderTable(currentPage);
-				renderPagination();
-			};
-		</script>
-
-		<script>
-			const options = document.querySelectorAll("#payment-methods .payment-option");
-			options.forEach((option) => {
-				option.addEventListener("click", () => {
-					options.forEach((o) => o.classList.remove("active"));
-					option.classList.add("active");
-				});
-			});
-		</script>
-
-		<script>
-			let clickCount = 0; // Biến đếm số lần nhấn
-
-			function goToStep(step) {
-				const totalSteps = 4; // Số bước
-
-				// Kiểm tra xem người dùng đã nhấn 3 lần chưa
-				if (clickCount >= 3) {
-					alert("Cứ bấm đi, máy tính đang cười thầm đó 🤣🤣🤣");
-					location.reload(); // Tải lại trang
-					return;
-				}
-
-				// Nếu chưa quá 3 lần, tiếp tục thực hiện
-				// Reset tất cả bước
-				for (let i = 1; i <= totalSteps; i++) {
-					document.getElementById(`step${i}`)?.classList.add("hidden");
-					document.getElementById(`circle${i}`)?.classList.remove("active");
-					document.getElementById(`label${i}`)?.classList.remove("active");
-					document.getElementById(`line${i - 1}`)?.classList.remove("active");
-				}
-
-				// Hiện bước hiện tại
-				document.getElementById(`step${step}`)?.classList.remove("hidden");
-
-				// Tô màu các bước đã đi qua
-				for (let i = 1; i <= step; i++) {
-					document.getElementById(`circle${i}`)?.classList.add("active");
-					document.getElementById(`label${i}`)?.classList.add("active");
-					if (i > 1) {
-						document.getElementById(`line${i - 1}`)?.classList.add("active");
-					}
-				}
-
-				// Nếu là bước "Hoàn Tất", tăng số lần nhấn
-				if (step === 4) {
-					clickCount++;
-					launchFireworks();
-				}
-			}
-
-			function launchFireworks() {
-				const duration = 3000; // thời gian bắn pháo (ms)
-				const end = Date.now() + duration;
-
-				(function frame() {
-					confetti({
-						particleCount: 7,
-						angle: 60,
-						spread: 55,
-						origin: { x: 0 },
-					});
-					confetti({
-						particleCount: 7,
-						angle: 120,
-						spread: 55,
-						origin: { x: 1 },
-					});
-					if (Date.now() < end) {
-						requestAnimationFrame(frame);
-					}
-				})();
-			}
-		</script>
-
-		<script>
-			function showQRInfo() {
-				// Ẩn nội dung thông tin liên hệ
-				document.querySelector("#contact-info .contact-box").style.display = "none";
-				// Hiện ảnh QR
-				document.getElementById("qr-info").style.display = "block";
-			}
-		</script>
-
-		<script>
-			function showQRInfo() {
-				document.querySelector("#contact-info .contact-box").style.display = "none";
-				document.getElementById("qr-info").style.display = "block";
-			}
-
-			function hideQRInfo() {
-				document.querySelector("#contact-info .contact-box").style.display = "block";
-				document.getElementById("qr-info").style.display = "none";
-			}
-		</script>
-
-		<!--  -->
-		<a href="https://m.me/ErasmusFade" target="_blank" class="messenger-icon">
-			<i class="fa-brands fa-facebook-messenger"></i>
-		</a>
 		<!-- AOS -->
 		<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 		<script src="../assets/js/aos.js"></script>
 		<!-- js -->
+		<script src="../assets/js/donate.js"></script>
 		<script src="../assets/js/link-modal.js"></script>
-		<script src="../assets/js/aos.js"></script>
 		<script src="../assets/js/hero.js"></script>
 		<script src="../assets/js/data.js"></script>
 		<script src="../assets/js/search.js"></script>
