@@ -1,31 +1,87 @@
-@import url('common.css');
+@import url("common.css");
+.donate-container {
+	padding: 60px;
+	box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+	border-radius: 20px;
+}
+
+.list-container {
+	padding: 40px 60px;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+	border-radius: 20px;
+}
+
+.list-section {
+	margin-bottom: 80px;
+}
+
+.donate-content {
+	font-size: 15px;
+	color: #555;
+	margin-bottom: 32px;
+}
 .step {
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
-	margin-bottom: 20px;
+	margin: 40px auto;
+	max-width: 800px;
 }
+
+.sub-step {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100px;
+}
+
 .circle {
 	width: 30px;
 	height: 30px;
-	background: #d1d5db;
+	background: #1f2937; /* xám đậm */
 	border-radius: 50%;
 	text-align: center;
 	line-height: 30px;
 	font-weight: bold;
 	color: white;
 }
+
 .circle.active {
-	background: #10b981;
+	background: var(--color-primary); /* xanh lá */
 }
+
 .line {
 	flex: 1;
-	height: 5px;
-	background: #d1d5db;
-	margin-top: 14px;
+	height: 4px;
+	background: #1f2937; /* xám đậm */
+	margin: 0 -35px;
+	margin-top: -30px;
 }
+
 .line.active {
-	background: #10b981;
+	background: var(--color-primary);
 }
+
+.label {
+	margin-top: 8px;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+}
+
+.form-label {
+	font-size: 14px;
+}
+
+.label.active {
+	color: var(--color-primary); /* Màu xanh như circle.active */
+}
+
+.form-label {
+	font-weight: 600;
+}
+
+/*  */
 .hidden {
 	display: none;
 }
@@ -37,7 +93,7 @@
 	height: 600px10;
 }
 .payment-option {
-	border: 1px solid #10b981;
+	border: 2px solid var(--color-primary);
 	border-radius: 30px;
 	padding: 10px 15px;
 	margin-bottom: 10px;
@@ -45,20 +101,148 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	transition: 0.3s;
 }
 .payment-option:hover {
-	background-color: #e6f9f3;
+	background-color: var(--color-primary);
+	color: #fff;
 }
+
+.step4-heading {
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
 .table-container {
 	min-height: 400px;
 }
 #donation-buttons .btn.active {
-	background-color: #10b981;
+	background-color: var(--color-primary);
 	color: white;
-	border-color: #10b981;
+	border-color: var(--color-primary);
 }
 .payment-option.active {
-	background-color: #10b981;
+	background-color: var(--color-primary);
 	color: white;
 	font-weight: bold;
+}
+
+input:not(:placeholder-shown),
+select:valid {
+	border: 2px solid green;
+	background-color: #f0fff091;
+}
+
+.donate-btn-money {
+	font-size: 13px;
+	padding: 10px 17px;
+	border-radius: 55px;
+	color: #555;
+	border: 2px solid var(--color-primary);
+	background-color: transparent;
+	margin-right: 4px;
+	margin-bottom: 24px;
+	font-weight: 700;
+	transition: 0.3s;
+}
+
+.donate-btn-money:hover {
+	border: 2px solid var(--color-primary);
+	background-color: var(--color-primary);
+	color: #fff;
+}
+
+.btn-next {
+	display: inline-block;
+	margin: auto;
+}
+
+.contact-info-intro {
+	font-size: 16px;
+	text-align: justify;
+	color: #fff;
+}
+
+.donate-input-with-icon-1 {
+	background-image: url(../../img/countries.png);
+}
+
+.donate-input-with-icon-2 {
+	background-image: url(../../img/project.png);
+}
+.donate-input-with-icon-3 {
+	background-image: url(../../img/schedule.png);
+}
+.donate-input-with-icon-4 {
+	background-image: url(../../img/chat.png);
+}
+
+/*  */
+/* Tổng thể vùng chứa bảng */
+.table-container {
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Header bảng */
+.table thead th {
+	background-color: #f1f5f9; /* Xám nhạt */
+	color: #1f2937; /* Xám đậm */
+	font-weight: 600;
+	text-align: center;
+}
+
+/* Dòng dữ liệu */
+.table tbody td {
+	vertical-align: middle;
+	text-align: center;
+}
+
+#donationTableBody td:nth-child(3) {
+	color: #16a34a; /* Xanh lá (Bootstrap: green-600) */
+	font-weight: 600;
+}
+
+/* Hiệu ứng hover */
+.table-hover tbody tr:hover {
+	background-color: #e2f5e9; /* Xanh nhạt */
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+/* Viền bảng */
+.table-bordered td,
+.table-bordered th {
+	border-color: #d1d5db; /* Viền xám nhẹ */
+}
+
+/* Phân trang */
+.pagination .page-item .page-link {
+	color: #16a34a; /* Màu xanh lá */
+	border: 1px solid #d1d5db;
+	margin: 0 3px;
+}
+
+.pagination .page-item.active .page-link {
+	background-color: #16a34a;
+	color: white;
+	border-color: #16a34a;
+}
+
+.pagination .page-link:hover {
+	background-color: #d1fae5;
+}
+
+.table-container table th:nth-child(1) {
+	width: 60px;
+}
+.table-container table th:nth-child(2) {
+	width: 250px;
+}
+.table-container table th:nth-child(3) {
+	width: 150px;
+}
+.table-container table th:nth-child(4) {
+	width: 200px;
 }

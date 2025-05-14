@@ -1,11 +1,6 @@
 @import url(./common.css);
 
 /* Welcome section */
-.welcome-section {
-	padding: 100px 0;
-	background-color: #f0f0f052;
-}
-
 .welcome-section .row {
 	display: flex;
 	align-items: center;
@@ -132,8 +127,8 @@
 
 /* Volunteer Section */
 .volunteer-section {
-	padding: 100px 0;
-	background-image: url(../../img/bg-2.jpg);
+	padding: 40px 0 60px 0;
+	background-image: url(../../img/bg.jpg);
 }
 
 .volunteer-section .carousel-item {
@@ -231,7 +226,8 @@
 
 /* Shop Section */
 .shop-section {
-	margin: 80px 0;
+	margin-top: 80px;
+	margin-bottom: 80px;
 }
 
 .shop-card {

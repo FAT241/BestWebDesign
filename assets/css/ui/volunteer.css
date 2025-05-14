@@ -150,23 +150,6 @@ textarea.form-control {
 	border-color: #28a745;
 }
 
-.btn-success {
-	background-color: #28a745;
-	border: none;
-	padding: 12px 30px;
-	font-weight: 600;
-	transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-success:hover {
-	background-color: #218838;
-	transform: translateY(-2px);
-}
-
-.btn-success i {
-	vertical-align: middle;
-}
-
 .volunteer-form-title {
 	font-size: 15px;
 	margin-bottom: 24px;
@@ -178,34 +161,34 @@ a.privacy {
 	color: greenyellow;
 }
 
-.input-with-icon-1 {
+.volunteer-input-with-icon-1 {
 	background-image: url("../../img/icon-user.png");
 }
 
-.input-with-icon-2 {
+.volunteer-input-with-icon-2 {
 	background-image: url(../../img/icon-date.png);
 }
 
-.input-with-icon-3 {
+.volunteer-input-with-icon-3 {
 	background-image: url(../../img/icon-email.png);
 }
 
-.input-with-icon-4 {
+.volunteer-input-with-icon-4 {
 	background-image: url(../../img/icon-phone.png);
 }
 
-.input-with-icon-5 {
+.volunteer-input-with-icon-5 {
 	background-image: url(../../img/icon-location.png);
 }
 
-.input-with-icon-6 {
+.volunteer-input-with-icon-6 {
 	background-image: url(../../img/icon-chuyen-mon.png);
 }
 
-.input-with-icon-7 {
+.volunteer-input-with-icon-7 {
 	background-image: url(../../img/icon-time.png);
 }
 
-.input-with-icon-8 {
+.volunteer-input-with-icon-8 {
 	background-image: url(../../img/icon-experience.png);
 }
