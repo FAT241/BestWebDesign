@@ -18,9 +18,7 @@
 
 html {
 	overflow-x: hidden;
-	overflow-y: scroll; 
-	/* bạn có thể vẫn giữ scrollbar-gutter cho trình duyệt hỗ trợ */
-	scrollbar-gutter: stable both-edges;
+	overflow-y: scroll;
 }
 /* Xử lí giật khi mở modal */
 body.modal-open {
@@ -41,7 +39,7 @@ body::selection {
 }
 
 .margin-section {
-	margin-top: 120px;
+	margin-top: 110px;
 }
 
 .common-container {
@@ -70,6 +68,21 @@ body::selection {
 
 .common-heading:hover {
 	transform: scale(1.05);
+}
+
+.line-heading {
+	position: relative;
+	margin-bottom: 32px;
+}
+
+.line-heading::before {
+	content: "";
+	position: absolute;
+	left: 2px;
+	bottom: -6px;
+	height: 3px;
+	width: 50px;
+	background-color: var(--color-secondary);
 }
 
 .common-content {
@@ -690,7 +703,7 @@ span.address {
 
 .btn-register {
 	border: 2px solid var(--color-primary);
-	color: var(--color-primary)
+	color: var(--color-primary);
 }
 
 .btn-form:hover {
