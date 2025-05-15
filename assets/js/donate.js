@@ -117,6 +117,18 @@ function setupPaymentOptions() {
 			option.classList.add("active");
 		});
 	});
+
+	// Nút bấm phương thức
+	const paymentOptions = document.querySelectorAll(".payment-option");
+	paymentOptions.forEach((option) => {
+		option.addEventListener("click", () => {
+			// Bỏ active khỏi tất cả
+			paymentOptions.forEach((opt) => opt.classList.remove("active"));
+
+			// Thêm active cho cái được chọn
+			option.classList.add("active");
+		});
+	});
 }
 
 // ----------- QR Toggle ----------
@@ -135,4 +147,27 @@ window.onload = () => {
 	renderTable(currentPage);
 	renderPagination();
 	setupPaymentOptions();
+	// Chọn số tiền
+	const buttons = document.querySelectorAll(".donate-btn-money");
+	const customInputDiv = document.getElementById("customAmountInput");
+	const donationInput = document.getElementById("donationAmount");
+
+	buttons.forEach((button) => {
+		button.addEventListener("click", () => {
+			const value = button.textContent.trim();
+
+			// Bỏ lớp active khỏi tất cả nút
+			buttons.forEach((btn) => btn.classList.remove("active"));
+
+			if (value === "CON SỐ KHÁC") {
+				customInputDiv.style.display = "block";
+				donationInput.value = "";
+				donationInput.focus();
+			} else {
+				button.classList.add("active"); // Tô màu nút đã chọn
+				customInputDiv.style.display = "none";
+				donationInput.value = value; // Gán giá trị nếu cần
+			}
+		});
+	});
 };

@@ -33,8 +33,6 @@
 		<link rel="stylesheet" href="../assets/css/ui/index.css" />
 		<link rel="stylesheet" href="../assets/css/ui/stories.css" />
 		<link rel="stylesheet" href="../assets/css/components/messenger.css" />
-		<link rel="stylesheet" href="../assets/css/components/search-style.css" />
-		<link rel="stylesheet" href="../assets/css/components/stories-style.css" />
 	</head>
 	<body>
 		<!-- Hero -->
@@ -44,7 +42,7 @@
 			<!-- Thanh Header -->
 			<header class="header">
 				<div>
-					<img class="logo" src="../assets/img/logo.png" alt="" />
+					<a href="#"><img class="logo" src="../assets/img/logo.png" alt="" /></a>
 				</div>
 				<!-- Navbar điều hướng -->
 				<nav class="navbar">
@@ -74,10 +72,10 @@
 			<!-- Content -->
 			<section class="home">
 				<div class="home-content">
-					<h1>Nghe câu chuyện hi vọng.</h1>
+					<h1>Lắng nghe từng câu chuyện.</h1>
 					<h3>Cảm hứng mỗi ngày!</h3>
 					<p>Khám phá những câu chuyện thực tế về hành trình của trẻ em vùng cao, nơi tình yêu và sự hỗ trợ đã thay đổi cuộc sống của các em.</p>
-					<a href="#" class="hero-btn btn-animation">Khám phá thêm<i class="fa-solid fa-heart-pulse right-header-icon"></i></a>
+					<a href="#storiesSection" class="hero-btn btn-animation">Khám phá thêm<i class="fa-solid fa-heart-pulse right-header-icon"></i></a>
 				</div>
 			</section>
 
@@ -100,13 +98,17 @@
 			</div>
 		</section>
 
-		<!-- Search Results -->
-		<div id="searchResults" class="search-results p-3 bg-light rounded shadow" style="display: none"></div>
-
 		<!-- Stories Section -->
 		<section id="storiesSection" class="stories-section margin-section" data-aos="fade-up">
-			<div class="container container-custom">
-				<h2 class="text-center heading-custom">Dự án thiện nguyện</h2>
+			<div class="container common-container stories-container">
+				<h2 class="common-heading text-center">Dự án đang gây quỹ</h2>
+				<h3 class="common-intro">
+					Khám phá những hành trình ý nghĩa, nơi tấm lòng yêu thương và sự sẻ chia đang thắp sáng tương lai cho trẻ em vùng cao. Mỗi câu chuyện là một bước chân vững chắc trên con đường xây
+					dựng tri thức và ước mơ.
+				</h3>
+				<div class="divider text-center">
+					<img src="../assets/img/divider.png" alt="" />
+				</div>
 				<div id="storiesList" class="row">
 					<!-- Danh sách dự án sẽ được thêm bằng JavaScript -->
 				</div>
@@ -135,8 +137,8 @@
 					</div>
 					<div class="col-4">
 						<h3 class="footer-heading">ĐỒNG HÀNH CÙNG CHÚNG TÔI</h3>
-						<p class="footer-content">Mỗi bước chân của bạn là động lực để chúng tôi lan tỏa điều tốt đẹp mỗi ngày</p>
-						<a href="./volunteer.html" class="footer-btn">Tham gia ngay</a>
+						<p class="footer-content">Mỗi bước chân của bạn là nguồn cảm hứng để chúng tôi lan tỏa điều tốt đẹp mỗi ngày – Xem những tấm lòng đã đồng hành cùng chúng tôi.</p>
+						<a href="donate.html#table-donate" class="footer-btn">Xem ngay</a>
 					</div>
 					<div class="col-3 footer-padding">
 						<h3 class="footer-heading">LIÊN HỆ</h3>

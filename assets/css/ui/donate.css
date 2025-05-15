@@ -147,12 +147,18 @@ select:valid {
 .payment-option.active {
 	background-color: var(--color-primary);
 	color: white;
-	font-weight: bold;
+	font-weight: 600;
 }
 
 #donation-buttons .btn.active {
 	background-color: var(--color-primary);
 	color: white;
+	border-color: var(--color-primary);
+}
+
+.donate-btn-money.active {
+	background-color: var(--color-primary);
+	color: var(--color-tertiary);
 	border-color: var(--color-primary);
 }
 

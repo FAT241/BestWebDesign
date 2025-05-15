@@ -47,7 +47,7 @@
 			<!-- Thanh Header -->
 			<header class="header">
 				<div>
-					<img class="logo" src="../assets/img/logo.png" alt="" />
+					<a href="#"><img class="logo" src="../assets/img/logo.png" alt="" /></a>
 				</div>
 				<!-- Navbar điều hướng -->
 				<nav class="navbar">
@@ -100,6 +100,7 @@
 				<div class="row d-flex justify-content-center align-items-center">
 					<!-- Form Section -->
 					<div class="col-8">
+						<h3 class="common-caption">Hỗ trợ quỹ từ thiện MVP</h3>
 						<h3 class="common-heading line-heading">CHUNG TAY CÙNG CHÚNG TÔI</h3>
 						<p class="donate-content">
 							Từ thiện là hành động mang đến sự giúp đỡ và chia sẻ cho những người có hoàn cảnh khó khăn. Nó không chỉ thể hiện lòng nhân ái mà còn góp phần tạo nên một cộng đồng đoàn
@@ -149,8 +150,15 @@
 									<div class="col-12">
 										<select required class="form-select input-with-icon donate-input-with-icon-2">
 											<option value="" selected disabled hidden>Dự án đóng góp</option>
-											<option></option>
-											<option></option>
+											<option>Học bổng cho trẻ em vùng cao</option>
+											<option>Mang lớp học đến vùng cao Điện Biên</option>
+											<option value="">Mùa hè ý nghĩa cùng lớp học tình nguyện</option>
+											<option value="">Quyên góp sách vở cho trẻ em nghèo</option>
+											<option value="">Khóa học kỹ năng sống cho trẻ em</option>
+											<option value="">Hỗ trợ dinh dưỡng cho trẻ em vùng cao</option>
+											<option value="">Xây dựng thư viện cộng đồng tại Cao Bằng</option>
+											<option value="">Hỗ trợ áo ấm mùa đông cho trẻ em</option>
+											<option value="">Trại hè kỹ năng cho trẻ em miền núi</option>
 										</select>
 									</div>
 
@@ -158,14 +166,19 @@
 										<input type="text" class="form-control input-with-icon donate-input-with-icon-3" placeholder="Ngày muốn quyên góp" />
 									</div>
 
-									<div class="col-12">
+									<div id="donate-buttons" class="col-12">
 										<label class="form-label mb-3">CHỌN SỐ TIỀN BẠN MUỐN QUYÊN GÓP: </label><br />
 										<button type="button" class="donate-btn-money">100.000</button>
 										<button type="button" class="donate-btn-money">200.000</button>
 										<button type="button" class="donate-btn-money">500.000</button>
 										<button type="button" class="donate-btn-money">1.000.000</button>
 										<button type="button" class="donate-btn-money">2.000.000</button>
-										<button type="button" class="donate-btn-money">CON SỐ KHÁC</button>
+										<button type="button" class="donate-btn-money" id="customAmountBtn">CON SỐ KHÁC</button>
+									</div>
+
+									<!-- Ô nhập ẩn ban đầu -->
+									<div id="customAmountInput" style="display: none" class="mt-2">
+										<input type="text" id="donationAmount" class="form-control" placeholder="Nhập số tiền bạn mong muốn" />
 									</div>
 								</div>
 								<div style="display: flex; justify-content: flex-end; margin-top: 20px">
@@ -203,12 +216,13 @@
 						<div id="step3" class="hidden">
 							<form>
 								<div class="row">
-									<label class="form-label">PHƯƠNG THỨC QUYÊN GÓP</label>
-									<div class="payment-option">Thẻ Tín Dụng / Ghi Nợ <span>💳</span></div>
-									<div class="payment-option">Thẻ ATM / Tài Khoản Ngân Hàng <span>🏦</span></div>
-									<div class="payment-option">Quyên Góp Qua Mã QR (Hình Bên)<span>📱</span></div>
-									<div class="payment-option">Thanh Toán Bằng Tiền Mặt<span>🇻🇳</span></div>
-
+									<label class="form-label">PHƯƠNG THỨC THANH TOÁN</label>
+									<div id="payment-methods">
+										<div class="payment-option">Thẻ Tín Dụng / Ghi Nợ <span>💳</span></div>
+										<div class="payment-option">Thẻ ATM / Tài Khoản Ngân Hàng <span>🏦</span></div>
+										<div class="payment-option">Quyên Góp Qua Mã QR (Hình Bên)<span>📱</span></div>
+										<div class="payment-option">Thanh Toán Bằng Tiền Mặt<span>🇻🇳</span></div>
+									</div>
 									<div class="form-check mt-3">
 										<input class="form-check-input" type="checkbox" id="agree1" />
 										<label class="form-check-label" for="agree1"> Đã đọc và đồng ý với các điều khoản trước khi quyên góp </label>
@@ -273,9 +287,9 @@
 		</section>
 
 		<!-- List -->
-		<section class="list-section margin-section">
+		<section id="table-donate" class="list-section margin-section">
 			<div class="container common-container list-container" data-aos="zoom-in">
-				<h3 class="common-heading text-center">DANH SÁCH ỦNG HỘ</h3>
+				<h3 class="common-heading text-center">Danh sách ủng hộ</h3>
 				<!-- Search -->
 				<div class="row">
 					<div class="col">
@@ -311,7 +325,7 @@
 				<div class="row">
 					<div class="col-3 footer-first">
 						<div class="d-flex align-items-center footer-logo-margin">
-							<img src="../assets/img/logo.png" alt="" height="40px" />
+							<img src="../assets/img/logo.png" alt="Logo MVP" height="40px" />
 							<h3 class="ms-2 mb-0 footer-heading">Lan tỏa yêu thương</h3>
 						</div>
 						<p class="footer-content footer-content-first">Chúng tôi tạo ra một không gian sẻ chia - nơi mỗi hành động nhỏ đều có thể mang lại thay đổi lớn</p>
@@ -327,8 +341,8 @@
 					</div>
 					<div class="col-4">
 						<h3 class="footer-heading">ĐỒNG HÀNH CÙNG CHÚNG TÔI</h3>
-						<p class="footer-content">Mỗi bước chân của bạn là động lực để chúng tôi lan tỏa điều tốt đẹp mỗi ngày</p>
-						<a href="" class="footer-btn">Tham gia ngay</a>
+						<p class="footer-content">Mỗi bước chân của bạn là nguồn cảm hứng để chúng tôi lan tỏa điều tốt đẹp mỗi ngày – Xem những tấm lòng đã đồng hành cùng chúng tôi.</p>
+						<a href="donate.html#table-donate" class="footer-btn">Xem ngay</a>
 					</div>
 					<div class="col-3 footer-padding">
 						<h3 class="footer-heading">LIÊN HỆ</h3>
@@ -340,7 +354,7 @@
 					</div>
 				</div>
 				<div class="footer-bottom text-center mt-4 pt-4 border-top">
-					<p class="footer-content mb-1">&copy; 2025 MVP. Mỗi hành động nhỏ, một thay đổi lớn</p>
+					<p class="footer-content mb-1">© 2025 MVP. Mỗi hành động nhỏ, một thay đổi lớn</p>
 					<div class="footer-social">
 						<a href="https://www.facebook.com/login" target="_blank" class="me-2"><i class="fab fa-facebook-f"></i></a>
 						<a href="https://www.instagram.com/accounts/login/" target="_blank" class="me-2"><i class="fab fa-instagram"></i></a>

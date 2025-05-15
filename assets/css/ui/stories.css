@@ -1,72 +1,71 @@
 @import url("common.css");
+.stories-container {
+	padding: 40px 60px 15px;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	border-radius: 25px;
+}
 
 .stories-section {
-	padding: 60px 0;
-	background-color: var(--color-background);
-}
-
-.container-custom {
-	max-width: 1200px;
-}
-
-.heading-custom {
-	font-size: 2.5rem;
-	font-weight: 700;
-	color: var(--color-primary);
-	margin-bottom: 40px;
-	font-family: "Be Vietnam Pro", sans-serif;
+	margin-bottom: 60px;
 }
 
 .story-card {
+	display: flex;
+	flex-direction: column;
+	min-height: 700px;
 	background-color: var(--color-tertiary);
 	border-radius: 10px;
 	overflow: hidden;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
-	margin-bottom: 20px;
-	text-align: center; /* Căn giữa nội dung */
+	margin-bottom: 50px;
 }
 
-.story-card:hover {
+.card-body {
+	flex: 1;
+	padding: 30px 30px 15px 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/* .story-card:hover {
 	transform: translateY(-10px);
 	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
+} */
 
 .story-card img {
 	width: 100%;
-	height: 250px; /* Tăng chiều cao để ảnh đẹp hơn */
+	height: 250px;
 	object-fit: cover;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
+	border-radius: 12px;
+	transition: .9s ease;
 }
 
-.story-card .card-body {
-	padding: 20px;
+.story-card img:hover {
+	transform: scale(1.09409) rotate(0.940885deg);
 }
 
 .story-card h3 {
-	font-size: 1.5rem;
+	color: #1e6292;
+	line-height: 34.5px;
+	font-size: 22px;
 	font-weight: 600;
-	color: var(--color-primary);
-	margin-bottom: 10px;
+	margin-bottom: 16px;
 	font-family: "Be Vietnam Pro", sans-serif;
+	transition: .3s ease;
+}
+
+.story-card h3:hover {
+	color: var(--color-extra-3);
+	cursor: pointer
 }
 
 .story-card p {
-	font-size: 1rem;
-	color: var(--color-secondary);
+	font-size: 15px;
+	line-height: 26.25px;
+	color: #555;
 	margin-bottom: 15px;
-	line-height: 1.5;
-	font-family: "Quicksand", sans-serif;
-}
-
-.story-card .common-btn {
-	display: inline-block; /* Đảm bảo nút căn giữa */
-	padding: 10px 20px;
-	font-size: 0.9rem;
-	font-weight: 500;
-	text-align: center;
-	margin: 0 auto; /* Căn giữa nút */
 }
 
 .filter-container {
@@ -93,7 +92,7 @@
 
 .load-more-btn {
 	display: block;
-	margin: 20px auto;
+	margin: 25px auto 40px;
 	padding: 10px 20px;
 	background-color: var(--color-primary);
 	color: var(--color-tertiary);
@@ -107,6 +106,28 @@
 
 .load-more-btn:hover {
 	background-color: var(--color-secondary);
+}
+
+.story-card .common-btn {
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+	padding: 10px 20px;
+	font-size: 14px;
+	font-weight: 500;
+	text-align: center;
+}
+
+.card-body {
+	flex: 1;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.card-text {
+	margin-bottom: 20px; /* thêm khoảng cách nếu cần */
 }
 
 /* Responsive */
@@ -126,10 +147,6 @@
 	.story-card p {
 		font-size: 0.9rem;
 	}
-
-	.heading-custom {
-		font-size: 2rem;
-	}
 }
 
 @media (max-width: 576px) {
@@ -139,9 +156,5 @@
 
 	.story-card h3 {
 		font-size: 1.2rem;
-	}
-
-	.heading-custom {
-		font-size: 1.8rem;
 	}
 }
