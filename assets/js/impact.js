@@ -5,7 +5,7 @@ const animateCount = () => {
 	counters.forEach((counter, index) => {
 		const target = +counter.getAttribute("data-target");
 		let count = 0;
-		const duration = 1200; // thời gian đếm 2s
+		const duration = 2200;
 		const startTime = performance.now();
 
 		const updateCount = (currentTime) => {

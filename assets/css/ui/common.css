@@ -80,7 +80,7 @@ body::selection {
 
 .common-heading {
 	text-transform: capitalize;
-	margin-bottom: 16px;
+	margin-bottom: 14px;
 	font-family: "Quicksand", sans-serif;
 	font-size: 32px;
 	font-weight: 600;
@@ -121,7 +121,7 @@ body::selection {
 }
 
 .divider {
-	margin-bottom: 25px;
+	margin-bottom: 16px;
 }
 
 /* Heading Style */
@@ -301,6 +301,16 @@ body::selection {
 
 .header.scrolled .search {
 	fill: #333;
+	transition: 0.4s;
+}
+
+.header.scrolled .search:hover {
+	fill: #ceb005;
+}
+
+.header.scrolled .login:hover,
+.header.scrolled .register:hover {
+	color: #ceb005;
 }
 
 .logo {
@@ -352,11 +362,12 @@ body::selection {
 .register {
 	text-decoration: none;
 	color: #fff;
+	transition: 0.4s;
 }
 
 .login:hover,
 .register:hover {
-	text-decoration: underline;
+	color: #ffd700;
 }
 
 .nav-link {
@@ -369,14 +380,17 @@ body::selection {
 .nav-link:hover {
 	background-color: #ecf0f1;
 	color: var(--color-extra-3) !important;
+	border: none;
 }
 
-/* .nav-link.active {
-	border-bottom: 2px solid #fff;
-} */
+.nav-link.active {
+	border-bottom: 2px solid var(--color-tertiary);
+	color: var(--color-tertiary);
+}
 
 .header.scrolled .nav-link.active {
-	border-bottom: 2px solid #333;
+	border-bottom: 2px solid var(--color-extra-3);
+	color: var(--color-extra-3);
 }
 
 .header.scrolled .nav-link:hover {
@@ -676,6 +690,14 @@ span.address {
 }
 
 /* Ô Search */
+.search a box-icon {
+	transition: 0.4s;
+}
+
+.search a:hover box-icon {
+	fill: #ffd700;
+}
+
 .search {
 	position: relative;
 	display: inline-block;
@@ -727,15 +749,15 @@ span.address {
 
 .form-control::placeholder,
 .form-select {
-	color: #888;
+	color: #777;
 	font-style: italic;
-	font-weight: 400;
+	font-weight: 500;
 }
 
 .form-control:focus,
 .form-select:focus {
 	border-color: #2196f3;
-	box-shadow: 0 0 10px rgba(33, 150, 243, 0.3);
+	box-shadow: 0 0 8px #2196f3, 0 0 15px #2196f3;
 	outline: none;
 }
 
@@ -761,26 +783,16 @@ span.address {
 .btn-form {
 	margin-top: 30px;
 	border-radius: 55px;
-	color: #41dbb2;
+	color: #2196f3;
 	background-color: transparent;
 	padding: 8px 0;
 	width: 100%;
-	border: 2px solid #41dbb2;
+	border: 2px solid #2196f3;
 	transition: all 0.5s;
 	font-weight: 600;
 }
 
-.btn-register {
-	border: 2px solid var(--color-primary);
-	color: var(--color-primary);
-}
-
 .btn-form:hover {
 	color: #fff;
-	background-color: #41dbb2;
-}
-
-.btn-register:hover {
-	color: #fff;
-	background-color: var(--color-primary);
+	background-color: #2196f3;
 }

@@ -70,7 +70,7 @@
 
 .line {
 	flex: 1;
-	height: 4px;
+	height: 3px;
 	background: #1f2937;
 	margin: 0 -35px;
 	margin-top: -30px;
@@ -174,7 +174,19 @@ select:valid {
 	background-image: url(../../img/schedule.png);
 }
 .donate-input-with-icon-4 {
-	background-image: url(../../img/chat.png);
+	background-image: url(../../img/user.png);
+}
+
+.donate-input-with-icon-5 {
+	background-image: url(../../img/email.png);
+}
+
+.donate-input-with-icon-6 {
+	background-image: url(../../img/phone.png);
+}
+
+.donate-input-with-icon-7 {
+	background-image: url(../../img/house.png);
 }
 
 /* Bảng hiển thị dữ liệu               */

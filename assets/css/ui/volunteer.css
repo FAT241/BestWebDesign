@@ -161,34 +161,42 @@ a.privacy {
 	color: greenyellow;
 }
 
+.volunteer-card-form .form-control:focus,
+.volunteer-card-form .form-select:focus {
+	border-width: 3px;
+	border-color: #41dbb2;
+	box-shadow: 0 0 8px #41dbb2, 0 0 15px #41dbb2, 0 0 25px #41dbb2;
+	outline: none;
+}
+
 .volunteer-input-with-icon-1 {
-	background-image: url("../../img/icon-user.png");
+	background-image: url("../../img/user.png");
 }
 
 .volunteer-input-with-icon-2 {
-	background-image: url(../../img/icon-date.png);
+	background-image: url(../../img/schedule.png);
 }
 
 .volunteer-input-with-icon-3 {
-	background-image: url(../../img/icon-email.png);
+	background-image: url(../../img/email.png);
 }
 
 .volunteer-input-with-icon-4 {
-	background-image: url(../../img/icon-phone.png);
+	background-image: url(../../img/phone.png);
 }
 
 .volunteer-input-with-icon-5 {
-	background-image: url(../../img/icon-location.png);
+	background-image: url(../../img/house.png);
 }
 
 .volunteer-input-with-icon-6 {
-	background-image: url(../../img/icon-chuyen-mon.png);
+	background-image: url(../../img/farmer.png);
 }
 
 .volunteer-input-with-icon-7 {
-	background-image: url(../../img/icon-time.png);
+	background-image: url(../../img/clock.png);
 }
 
 .volunteer-input-with-icon-8 {
-	background-image: url(../../img/icon-experience.png);
+	background-image: url(../../img/satisfaction.png);
 }
