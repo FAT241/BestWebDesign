@@ -1,4 +1,7 @@
 @import url("common.css");
+
+/* Tổng thể Layout & Container         */
+
 .donate-container {
 	padding: 60px;
 	box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
@@ -15,11 +18,27 @@
 	margin-bottom: 80px;
 }
 
+/* Nội dung / Văn bản chung            */
+
 .donate-content {
 	font-size: 15px;
 	color: #555;
 	margin-bottom: 32px;
 }
+
+.step4-heading {
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+.contact-info-intro {
+	font-size: 16px;
+	text-align: justify;
+	color: #fff;
+}
+
+/* Bước tiến trình quyên góp           */
+
 .step {
 	display: flex;
 	align-items: center;
@@ -38,26 +57,24 @@
 .circle {
 	width: 30px;
 	height: 30px;
-	background: #1f2937; /* xám đậm */
+	background: #1f2937;
 	border-radius: 50%;
 	text-align: center;
 	line-height: 30px;
 	font-weight: bold;
 	color: white;
 }
-
 .circle.active {
-	background: var(--color-primary); /* xanh lá */
+	background: var(--color-primary);
 }
 
 .line {
 	flex: 1;
-	height: 4px;
-	background: #1f2937; /* xám đậm */
+	height: 3px;
+	background: #1f2937;
 	margin: 0 -35px;
 	margin-top: -30px;
 }
-
 .line.active {
 	background: var(--color-primary);
 }
@@ -68,63 +85,15 @@
 	font-size: 14px;
 	text-align: center;
 }
+.label.active {
+	color: var(--color-primary);
+}
+
+/* Form & Input                        */
 
 .form-label {
 	font-size: 14px;
-}
-
-.label.active {
-	color: var(--color-primary); /* Màu xanh như circle.active */
-}
-
-.form-label {
 	font-weight: 600;
-}
-
-/*  */
-.hidden {
-	display: none;
-}
-.contact-box {
-	background-color: #1cc5a1;
-	color: white;
-	border-radius: 15px;
-	padding: 40px;
-	height: 600px10;
-}
-.payment-option {
-	border: 2px solid var(--color-primary);
-	border-radius: 30px;
-	padding: 10px 15px;
-	margin-bottom: 10px;
-	cursor: pointer;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	transition: 0.3s;
-}
-.payment-option:hover {
-	background-color: var(--color-primary);
-	color: #fff;
-}
-
-.step4-heading {
-	font-size: 18px;
-	text-transform: uppercase;
-}
-
-.table-container {
-	min-height: 400px;
-}
-#donation-buttons .btn.active {
-	background-color: var(--color-primary);
-	color: white;
-	border-color: var(--color-primary);
-}
-.payment-option.active {
-	background-color: var(--color-primary);
-	color: white;
-	font-weight: bold;
 }
 
 input:not(:placeholder-shown),
@@ -132,6 +101,12 @@ select:valid {
 	border: 2px solid green;
 	background-color: #f0fff091;
 }
+
+.hidden {
+	display: none;
+}
+
+/* Nút và lựa chọn                     */
 
 .donate-btn-money {
 	font-size: 13px;
@@ -147,7 +122,6 @@ select:valid {
 }
 
 .donate-btn-money:hover {
-	border: 2px solid var(--color-primary);
 	background-color: var(--color-primary);
 	color: #fff;
 }
@@ -157,16 +131,42 @@ select:valid {
 	margin: auto;
 }
 
-.contact-info-intro {
-	font-size: 16px;
-	text-align: justify;
-	color: #fff;
+.payment-option {
+	border: 2px solid var(--color-primary);
+	border-radius: 30px;
+	padding: 10px 15px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: 0.3s;
 }
+
+.payment-option:hover,
+.payment-option.active {
+	background-color: var(--color-primary);
+	color: white;
+	font-weight: 600;
+}
+
+#donation-buttons .btn.active {
+	background-color: var(--color-primary);
+	color: white;
+	border-color: var(--color-primary);
+}
+
+.donate-btn-money.active {
+	background-color: var(--color-primary);
+	color: var(--color-tertiary);
+	border-color: var(--color-primary);
+}
+
+/* Icon cho input                      */
 
 .donate-input-with-icon-1 {
 	background-image: url(../../img/countries.png);
 }
-
 .donate-input-with-icon-2 {
 	background-image: url(../../img/project.png);
 }
@@ -174,66 +174,63 @@ select:valid {
 	background-image: url(../../img/schedule.png);
 }
 .donate-input-with-icon-4 {
-	background-image: url(../../img/chat.png);
+	background-image: url(../../img/user.png);
 }
 
-/*  */
-/* Tổng thể vùng chứa bảng */
+.donate-input-with-icon-5 {
+	background-image: url(../../img/email.png);
+}
+
+.donate-input-with-icon-6 {
+	background-image: url(../../img/phone.png);
+}
+
+.donate-input-with-icon-7 {
+	background-image: url(../../img/house.png);
+}
+
+/* Bảng hiển thị dữ liệu               */
+
 .table-container {
+	min-height: 400px;
 	border-radius: 10px;
 	overflow: hidden;
 	box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Header bảng */
 .table thead th {
-	background-color: #f1f5f9; /* Xám nhạt */
-	color: #1f2937; /* Xám đậm */
+	background-color: var(--color-extra-2);
+	color: #1f2937;
 	font-weight: 600;
 	text-align: center;
 }
 
-/* Dòng dữ liệu */
 .table tbody td {
 	vertical-align: middle;
 	text-align: center;
 }
 
 #donationTableBody td:nth-child(3) {
-	color: #16a34a; /* Xanh lá (Bootstrap: green-600) */
+	color: var(--color-extra-3);
 	font-weight: 600;
 }
 
-/* Hiệu ứng hover */
+.table-striped tbody tr:nth-of-type(even) {
+	background-color: #993939 !important;
+}
+
 .table-hover tbody tr:hover {
-	background-color: #e2f5e9; /* Xanh nhạt */
+	background-color: #e2f5e9;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
 }
 
-/* Viền bảng */
 .table-bordered td,
 .table-bordered th {
-	border-color: #d1d5db; /* Viền xám nhẹ */
+	border-color: #999fa9;
 }
 
-/* Phân trang */
-.pagination .page-item .page-link {
-	color: #16a34a; /* Màu xanh lá */
-	border: 1px solid #d1d5db;
-	margin: 0 3px;
-}
-
-.pagination .page-item.active .page-link {
-	background-color: #16a34a;
-	color: white;
-	border-color: #16a34a;
-}
-
-.pagination .page-link:hover {
-	background-color: #d1fae5;
-}
-
+/* Kích thước cột bảng */
 .table-container table th:nth-child(1) {
 	width: 60px;
 }
@@ -245,4 +242,32 @@ select:valid {
 }
 .table-container table th:nth-child(4) {
 	width: 200px;
+}
+
+/* Phân trang                          */
+
+.pagination .page-item .page-link {
+	color: #000;
+	border: 1px solid #d1d5db;
+	margin: 0 3px;
+}
+
+.pagination .page-item.active .page-link {
+	background-color: var(--color-primary);
+	color: white;
+	border-color: #16a34a;
+}
+
+.pagination .page-link:hover {
+	background-color: #d1fae5;
+}
+
+/* Liên hệ                      */
+
+.contact-box {
+	background-color: #1cc5a1;
+	color: white;
+	border-radius: 15px;
+	padding: 40px;
+	height: 600px;
 }

@@ -39,13 +39,18 @@
 	<body>
 		<!-- Hero -->
 		<div class="hero-section">
-			<img class="hero-background" src="../assets/img/hero.png" alt="" />
+			<img class="hero-background" src="../assets/img/anh-trang-chu.jpg" alt="" />
 			<div class="overlay"></div>
 			<!-- Thanh Header -->
 			<header class="header">
 				<div>
-					<img class="logo" src="../assets/img/logo.png" alt="" />
+					<a href="#"><img class="logo" src="../assets/img/logo.png" alt="" /></a>
 				</div>
+				<!-- Toggle -->
+				<button class="menu-toggle" id="menuToggle">
+					<box-icon name="menu"></box-icon>
+				</button>
+
 				<!-- Navbar điều hướng -->
 				<nav class="navbar">
 					<a style="--i: 1" class="nav-link active" href="index.html">Trang chủ</a>
@@ -80,7 +85,7 @@
 						Chung tay xây dựng tương lai tươi sáng cho trẻ em vùng cao – nơi điều kiện học tập còn thiếu thốn nhưng ước mơ luôn cháy bỏng. Mỗi đóng góp là bước đệm đưa các em đến gần tri
 						thức, cơ hội và hy vọng
 					</p>
-					<a href="#" class="hero-btn btn-animation">Tham gia ngay<i class="fa-solid fa-heart-pulse right-header-icon"></i></a>
+					<a href="#shop" class="hero-btn btn-animation">Mua sản phẩm<i class="fa-solid fa-heart-pulse right-header-icon"></i></a>
 				</div>
 			</section>
 
@@ -100,7 +105,7 @@
 			<div class="container common-container">
 				<div class="row">
 					<div class="col">
-						<h3 class="welcome-caption">Đồng hành cùng Quỹ từ thiện MVP</h3>
+						<h3 class="common-caption">Đồng hành cùng Quỹ từ thiện MVP</h3>
 						<h2 class="common-heading">MVP – Lan tỏa tri thức, vươn xa mọi nẻo đường</h2>
 						<p class="common-content welcome-content">
 							MVP là tổ chức từ thiện phi lợi nhuận, cam kết mang giáo dục và hy vọng đến trẻ em vùng cao. Với sự hỗ trợ của cộng đồng, chúng tôi đã giúp hơn <b>1,000 trẻ em</b> được đến
@@ -136,7 +141,8 @@
 			<div class="container common-container">
 				<div class="row">
 					<h2 class="common-heading text-center">Những con số biết nói</h2>
-					<h3 class="impact-intro">
+
+					<h3 class="common-intro">
 						Mỗi con số là một câu chuyện – về những nụ cười, hành trình và niềm tin. Đây là những gì chúng tôi đã cùng cộng đồng tạo nên trong suốt hành trình mang tri thức và hy vọng đến
 						với trẻ em vùng khó khăn.
 					</h3>
@@ -146,19 +152,19 @@
 					<!-- Card 1 -->
 					<div class="col-4 impact-card impact-card-1">
 						<img src="../assets/img/impact-1.png" alt="Trẻ em học tập" class="impact-icon" />
-						<h2 class="impact-title">1000+</h2>
+						<h2 class="impact-title" data-target="1000">1000+</h2>
 						<p class="common-content">Trẻ em được hỗ trợ học bổng và đi học</p>
 					</div>
 					<!-- Card 2 -->
 					<div class="col-4 impact-card impact-card-2">
 						<img src="../assets/img/impact-2.png" alt="Tham gia tình nguyện" class="impact-icon" />
-						<h2 class="impact-title">500+</h2>
+						<h2 class="impact-title" data-target="500">500+</h2>
 						<p class="common-content">Tình nguyện viên tham gia các dự án cộng đồng.</p>
 					</div>
 					<!-- Card 3 -->
 					<div class="col-4 impact-card impact-card-3">
 						<img src="../assets/img/impact-3.png" alt="Xây trường cho trẻ em vùng cao" class="impact-icon" />
-						<h2 class="impact-title">10+</h2>
+						<h2 class="impact-title" data-target="10">10+</h2>
 						<p class="common-content">Ngôi trường được xây dựng tại vùng cao.</p>
 					</div>
 				</div>
@@ -169,6 +175,7 @@
 		<section class="volunteer-section margin-section" data-aos="zoom-in">
 			<div class="container common-container">
 				<h2 class="common-heading text-center">Tình nguyện viên tiêu biểu</h2>
+				<h3 class="common-intro">Mỗi con số là dấu ấn của những tình nguyện viên tận tâm – những người đã góp sức lan tỏa tri thức và hy vọng đến trẻ em vùng khó khăn.</h3>
 				<div class="divider text-center">
 					<img src="../assets/img/divider.png" alt="" />
 				</div>
@@ -211,7 +218,7 @@
 							<!-- Card 2 -->
 							<div class="volunteer-card">
 								<img class="volunteer-img" src="../assets/img/volunteer-slide-2-2.png" alt="Đỗ Thị Minh Thư" loading="lazy" />
-								<p class="volunteer-title">Đỗ Thị Minh Thư</p>
+								<p class="volunteer-title">Nguyễn Văn Bằng</p>
 								<p class="volunteer-subtitle">Giáo viên tình nguyện</p>
 								<p class="volunteer-content">Dạy học miễn phí cho 200 trẻ Tây Bắc</p>
 							</div>
@@ -242,9 +249,14 @@
 		</section>
 
 		<!-- Shop Section -->
-		<div class="shop-section margin-section" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+		<div id="shop" class="shop-section margin-section" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
 			<div class="container common-container">
-				<h2 class="common-heading text-center">Hỗ trợ MVP - Mua hàng ngay</h2>
+				<h2 class="heading-style">MVP Shop - Mua Là Góp</h2>
+				<p class="intro-text fw-bold text-center rounded hover-shadow">Chọn mua một món quà – Gửi trao một tương lai.</p>
+				<h3 class="common-intro">
+					Khám phá những hành trình ý nghĩa, nơi tấm lòng yêu thương và sự sẻ chia đang thắp sáng tương lai cho trẻ em vùng cao. Mỗi câu chuyện là một bước chân vững chắc trên con đường xây
+					dựng tri thức và ước mơ.
+				</h3>
 				<div class="divider text-center">
 					<img src="../assets/img/divider.png" alt="" />
 				</div>
@@ -445,7 +457,7 @@
 				<div class="row">
 					<div class="col-3 footer-first">
 						<div class="d-flex align-items-center footer-logo-margin">
-							<img src="../assets/img/logo.png" alt="" height="40px" />
+							<img src="../assets/img/logo.png" alt="Logo MVP" height="40px" />
 							<h3 class="ms-2 mb-0 footer-heading">Lan tỏa yêu thương</h3>
 						</div>
 						<p class="footer-content footer-content-first">Chúng tôi tạo ra một không gian sẻ chia - nơi mỗi hành động nhỏ đều có thể mang lại thay đổi lớn</p>
@@ -461,8 +473,8 @@
 					</div>
 					<div class="col-4">
 						<h3 class="footer-heading">ĐỒNG HÀNH CÙNG CHÚNG TÔI</h3>
-						<p class="footer-content">Mỗi bước chân của bạn là động lực để chúng tôi lan tỏa điều tốt đẹp mỗi ngày</p>
-						<a href="" class="footer-btn">Tham gia ngay</a>
+						<p class="footer-content">Mỗi bước chân của bạn là nguồn cảm hứng để chúng tôi lan tỏa điều tốt đẹp mỗi ngày – Xem những tấm lòng đã đồng hành cùng chúng tôi.</p>
+						<a href="donate.html#table-donate" class="footer-btn">Xem ngay</a>
 					</div>
 					<div class="col-3 footer-padding">
 						<h3 class="footer-heading">LIÊN HỆ</h3>
@@ -474,7 +486,7 @@
 					</div>
 				</div>
 				<div class="footer-bottom text-center mt-4 pt-4 border-top">
-					<p class="footer-content mb-1">&copy; 2025 MVP. Mỗi hành động nhỏ, một thay đổi lớn</p>
+					<p class="footer-content mb-1">© 2025 MVP. Mỗi hành động nhỏ, một thay đổi lớn</p>
 					<div class="footer-social">
 						<a href="https://www.facebook.com/login" target="_blank" class="me-2"><i class="fab fa-facebook-f"></i></a>
 						<a href="https://www.instagram.com/accounts/login/" target="_blank" class="me-2"><i class="fab fa-instagram"></i></a>
@@ -491,7 +503,6 @@
 		</a>
 		<!-- AOS -->
 		<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-		<script src="../assets/js/aos.js"></script>
 		<!-- js -->
 		<script src="../assets/js/link-modal.js"></script>
 		<script src="../assets/js/aos.js"></script>
@@ -499,6 +510,7 @@
 		<script src="../assets/js/data.js"></script>
 		<script src="../assets/js/search.js"></script>
 		<script src="../assets/js/messenger.js"></script>
+		<script src="../assets/js/impact.js"></script>
 
 		<!-- link Modal -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
