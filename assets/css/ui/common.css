@@ -783,16 +783,15 @@ span.address {
 .btn-form {
 	margin-top: 30px;
 	border-radius: 55px;
-	color: #2196f3;
+	color: #41dbb2;
 	background-color: transparent;
 	padding: 8px 0;
 	width: 100%;
-	border: 2px solid #2196f3;
+	border: 2px solid #41dbb2;
 	transition: all 0.5s;
 	font-weight: 600;
 }
-
 .btn-form:hover {
 	color: #fff;
-	background-color: #2196f3;
+	background-color: #41dbb2;
 }
