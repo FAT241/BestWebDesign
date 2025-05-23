@@ -222,6 +222,48 @@ body::selection {
 }
 
 /* Hero Section */
+/* Mặc định ẩn menu */
+.nav-item.dropdown {
+	position: relative;
+}
+
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	top: 125%;
+	left: 15%;
+	background-color: #fff;
+	width: max-content;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+	border-radius: 6px;
+	padding: 10px 0;
+	z-index: 1000;
+	pointer-events: auto;
+}
+
+.dropdown-menu a {
+	display: block;
+	padding: 10px 5px;
+	color: #333 !important;
+	white-space: nowrap;
+}
+
+.nav-item.dropdown::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 15%;
+	width: calc(100% - 30%);
+	height: 20px; /* vùng giữ hover */
+	pointer-events: auto;
+}
+
+/* Hiển thị khi hover vào .nav-link hoặc chính .dropdown-menu */
+.nav-item.dropdown:hover .dropdown-menu {
+	display: flex;
+	flex-direction: column;
+}
+
 .hero-section {
 	max-width: 1250px;
 	margin: 0 auto;
@@ -299,7 +341,7 @@ body::selection {
 	color: #333;
 }
 
-.header.scrolled .search {
+.header.scrolled .search, .header.scrolled .cart {
 	fill: #333;
 	transition: 0.4s;
 }
@@ -343,13 +385,13 @@ body::selection {
 	animation-delay: 1s;
 }
 
-.search {
+.search, .cart, .register-login {
 	fill: #fff;
 	position: relative;
 	top: 1px;
 }
 
-.search a {
+.search a, .cart a {
 	height: 24px;
 	display: block;
 }
