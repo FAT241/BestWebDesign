@@ -143,24 +143,24 @@
 									<div class="col-12">
 										<select required class="form-select input-with-icon donate-input-with-icon-1">
 											<option value="" selected disabled hidden>Chọn Quốc gia</option>
-											<option>Việt Nam</option>
-											<option>Hàn Quốc</option>
-											<option>Nhật Bản</option>
+											<option value="Vietnam">Việt Nam</option>
+											<option value="Korea">Hàn Quốc</option>
+											<option value="Japan">Nhật Bản</option>
 										</select>
 									</div>
 
 									<div class="col-12">
 										<select required class="form-select input-with-icon donate-input-with-icon-2">
 											<option value="" selected disabled hidden>Dự án đóng góp</option>
-											<option>Học bổng cho trẻ em vùng cao</option>
-											<option>Mang lớp học đến vùng cao Điện Biên</option>
-											<option value="">Mùa hè ý nghĩa cùng lớp học tình nguyện</option>
-											<option value="">Quyên góp sách vở cho trẻ em nghèo</option>
-											<option value="">Khóa học kỹ năng sống cho trẻ em</option>
-											<option value="">Hỗ trợ dinh dưỡng cho trẻ em vùng cao</option>
-											<option value="">Xây dựng thư viện cộng đồng tại Cao Bằng</option>
-											<option value="">Hỗ trợ áo ấm mùa đông cho trẻ em</option>
-											<option value="">Trại hè kỹ năng cho trẻ em miền núi</option>
+											<option value="HocBongTreEmVungCao">Học bổng cho trẻ em vùng cao</option>
+											<option value="LopHocDienBien">Mang lớp học đến vùng cao Điện Biên</option>
+											<option value="MuaHeTinhNguyen">Mùa hè ý nghĩa cùng lớp học tình nguyện</option>
+											<option value="QuyenGopSachVo">Quyên góp sách vở cho trẻ em nghèo</option>
+											<option value="KhoaHocKyNangSong">Khóa học kỹ năng sống cho trẻ em</option>
+											<option value="HoTroDinhDuong">Hỗ trợ dinh dưỡng cho trẻ em vùng cao</option>
+											<option value="ThuVienCaoBang">Xây dựng thư viện cộng đồng tại Cao Bằng</option>
+											<option value="AoAmMuaDong">Hỗ trợ áo ấm mùa đông cho trẻ em</option>
+											<option value="TraiHeKyNang">Trại hè kỹ năng cho trẻ em miền núi</option>
 										</select>
 									</div>
 
@@ -183,8 +183,8 @@
 										<input type="text" id="donationAmount" class="form-control" placeholder="Nhập số tiền bạn mong muốn" />
 									</div>
 								</div>
-								<div style="display: flex; justify-content: flex-end; margin-top: 20px">
-									<button type="button" class="common-btn btn-next" onclick="goToStep(2)">Tiếp Tục</button>
+								<div style="display: flex; justify-content: center; margin-top: 20px; gap: 10px">
+									<button type="button" class="common-btn btn-next">Tiếp Tục</button>
 								</div>
 							</form>
 						</div>
@@ -208,8 +208,8 @@
 								</div>
 
 								<div style="display: flex; justify-content: center; margin-top: 20px; gap: 10px">
-									<button type="button" class="common-btn" onclick="goToStep(1); hideQRInfo()">Trở Lại</button>
-									<button type="button" class="common-btn" onclick="goToStep(3); showQRInfo()">Tiếp Tục</button>
+									<button type="button" class="common-btn btn-back">Trở Lại</button>
+									<button type="button" class="common-btn btn-next">Tiếp Tục</button>
 								</div>
 							</form>
 						</div>
@@ -237,8 +237,8 @@
 								</div>
 
 								<div style="display: flex; justify-content: center; margin-top: 20px; gap: 10px">
-									<button type="button" class="common-btn" onclick="goToStep(2) ; hideQRInfo()">Trở Lại</button>
-									<button type="button" class="common-btn" onclick="goToStep(4); showQRInfo()">Xác nhận quyên góp</button>
+									<button type="button" class="common-btn btn-back">Trở Lại</button>
+									<button type="button" class="common-btn btn-next">Xác nhận quyên góp</button>
 								</div>
 							</form>
 						</div>
@@ -256,8 +256,8 @@
 								</div>
 
 								<div style="display: flex; justify-content: center; margin-top: 20px; gap: 10px">
-									<button type="button" class="common-btn" onclick="goToStep(1) ; hideQRInfo()">Trở Lại</button>
-									<button type="button" class="common-btn" onclick="goToStep(4)">Hoàn Tất</button>
+									<button type="button" class="common-btn btn-back">Trở Lại</button>
+									<button type="button" class="common-btn btn-next">Hoàn Tất</button>
 								</div>
 							</form>
 						</div>
@@ -392,6 +392,7 @@
 		<script src="../assets/js/data.js"></script>
 		<script src="../assets/js/search.js"></script>
 		<script src="../assets/js/messenger.js"></script>
+		<script src="../assets/js/donate-validation.js"></script>
 
 		<!-- link Modal -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

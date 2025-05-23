@@ -126,10 +126,62 @@ select:valid {
 	color: #fff;
 }
 
-.btn-next {
-	display: inline-block;
-	margin: auto;
+/* CHỈNH SỬA ĐỂ GIỮ NÚT "TIẾP TỤC" VỊ TRÍ KHÔNG NHẢY */
+#step1, #step2 {
+	min-height: 460px; /* đặt chiều cao cố định đủ chứa form + nút */
+	position: relative;
 }
+
+#step1 form,
+#step2 form {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: flex-end; /* đẩy nút xuống đáy form */
+}
+
+#step1 form > div:last-child,
+#step2 form > div:last-child {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-top: 20px;
+	flex-shrink: 0;
+}
+
+.btn-next {
+	min-width: 100px;
+	padding: 10px 20px;
+	font-weight: 700;
+	cursor: pointer;
+	border-radius: 6px;
+	border: none;
+	background-color: var(--color-primary);
+	color: white;
+	transition: background-color 0.3s ease;
+}
+
+.btn-next:hover {
+	background-color: #16a34a;
+}
+
+.btn-back {
+	min-width: 100px;
+	padding: 10px 20px;
+	font-weight: 700;
+	cursor: pointer;
+	border-radius: 6px;
+	border: none;
+	background-color: var(--color-primary);
+	color: white;
+	transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+	background-color: #16a34a;
+}
+
+/* Kết thúc phần chỉnh sửa nút giữ vị trí */
 
 .payment-option {
 	border: 2px solid var(--color-primary);
@@ -270,4 +322,11 @@ select:valid {
 	border-radius: 15px;
 	padding: 40px;
 	height: 600px;
+}
+
+.error-message {
+	color: red;
+	font-size: 12px;
+	margin-top: 5px;
+	font-family: 'Be Vietnam Pro', sans-serif;
 }

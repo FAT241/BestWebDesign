@@ -247,3 +247,8 @@ a.privacy {
 .volunteer-input-with-icon-8 {
 	background-image: url(../../img/satisfaction.png);
 }
+
+.is-invalid {
+	border: 2px solid #ffc107 !important;
+	box-shadow: 0 0 5px #ffc107;
+}
