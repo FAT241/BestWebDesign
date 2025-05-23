@@ -178,7 +178,7 @@ body::selection {
 	position: relative;
 	overflow: hidden;
 	cursor: pointer;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.35s ease-in-out;
 }
 
 /* Hiệu ứng màu chạy từ hai bên khi hover */

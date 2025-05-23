@@ -127,7 +127,8 @@ select:valid {
 }
 
 /* CHỈNH SỬA ĐỂ GIỮ NÚT "TIẾP TỤC" VỊ TRÍ KHÔNG NHẢY */
-#step1, #step2 {
+#step1,
+#step2 {
 	min-height: 460px; /* đặt chiều cao cố định đủ chứa form + nút */
 	position: relative;
 }
@@ -149,37 +150,41 @@ select:valid {
 	flex-shrink: 0;
 }
 
-.btn-next {
-	min-width: 100px;
-	padding: 10px 20px;
-	font-weight: 700;
-	cursor: pointer;
-	border-radius: 6px;
-	border: none;
-	background-color: var(--color-primary);
-	color: white;
-	transition: background-color 0.3s ease;
+/* Hiệu ứng màu chạy từ hai bên khi hover */
+/* .common-btn::before,
+.common-btn::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	width: 0;
+	height: 100%;
+	background: var(--color-primary);
+	transition: width 0.3s ease-in-out;
+	z-index: -1;
 }
 
-.btn-next:hover {
-	background-color: #16a34a;
+.common-btn::before {
+	left: 0;
 }
 
-.btn-back {
-	min-width: 100px;
-	padding: 10px 20px;
-	font-weight: 700;
-	cursor: pointer;
-	border-radius: 6px;
-	border: none;
-	background-color: var(--color-primary);
-	color: white;
-	transition: background-color 0.3s ease;
+.common-btn::after {
+	right: 0;
 }
 
-.btn-back:hover {
-	background-color: #16a34a;
+.common-btn:hover {
+	color: #f7e7a9;
+	background: #4a90e2;
+	transform: scale(1.05);
 }
+
+.common-btn:hover::before,
+.common-btn:hover::after {
+	width: 50%;
+}
+
+.common-btn:active {
+	transform: scale(0.95);
+} */
 
 /* Kết thúc phần chỉnh sửa nút giữ vị trí */
 
@@ -328,5 +333,5 @@ select:valid {
 	color: red;
 	font-size: 12px;
 	margin-top: 5px;
-	font-family: 'Be Vietnam Pro', sans-serif;
+	font-family: "Be Vietnam Pro", sans-serif;
 }
