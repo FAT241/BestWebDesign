@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
             isValid = false;
         }
 
-        if (!/^[0-9]{10,11}$/.test(phone.value.trim())) {
+        if (!/^[0-9]{10}$/.test(phone.value.trim())) {
             showError(phone, "Số điện thoại phải gồm 10-11 chữ số.");
             isValid = false;
         }
