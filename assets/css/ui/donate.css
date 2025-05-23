@@ -271,3 +271,10 @@ select:valid {
 	padding: 40px;
 	height: 600px;
 }
+
+.error-message {
+	color: red;
+	font-size: 12px;
+	margin-top: 5px;
+	font-family: 'Be Vietnam Pro', sans-serif;
+}
