@@ -304,3 +304,20 @@
 	font-size: 24px;
 	color: #fff;
 }
+
+@media (max-width: 768px) {
+	.common-container {
+		padding: 40px;
+	}
+
+	.common-content,
+	.common-caption,
+	.common-btn,
+	.common-intro {
+		font-size: 13px;
+	}
+
+	.common-heading {
+		font-size: 24px;
+	}
+}

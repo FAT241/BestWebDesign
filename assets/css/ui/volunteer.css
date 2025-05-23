@@ -80,16 +80,63 @@
 }
 
 /* Events Section */
+.events-section .card {
+	transition: 0.4s;
+	padding-bottom: 25px;
+}
+
+.events-section .card:hover {
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.events-section .card-img-top {
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
+	border-radius: 10px;
+	transition: 0.7s ease;
+}
+
+.events-section .card-img-top:hover {
+	transform: scale(1.03434) rotate(0.940885deg);
+}
+
+.events-section .card-body {
+	padding: 15px 12px;
+}
 .events-section .card-text {
 	font-size: 14px;
 	color: #555;
-	text-align: center;
+	text-align: justify;
+	padding: 0 0px;
 }
 
 /* Testimonials Section */
 .testimonials-section .blockquote {
 	padding: 24px;
 	border-radius: 8px;
+}
+
+.blockquote {
+	position: relative;
+	border-radius: 15px;
+	padding: 20px;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+	border-left: 6px solid #4d69b6;
+	transition: transform 0.5s ease;
+}
+
+.blockquote:hover {
+	background-color: #ffbe76 !important;
+	transform: translate(-10px, 0);
+	color: #fff;
+}
+
+.blockquote p{
+	font-weight: 500;
+
 }
 
 /* Form */
