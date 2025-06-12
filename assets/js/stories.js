@@ -25,35 +25,34 @@ function showStories() {
 		return;
 	}
 
-	const ITEMS_PER_LOAD = 6; // Số dự án hiển thị ban đầu
-	const LOAD_MORE_COUNT = 3; // Số dự án tải thêm mỗi lần
+	const ITEMS_PER_LOAD = 6;
 	let displayedCount = 0;
 
-	// Hàm hiển thị dự án
+	// Hàm hiển thị dự án (thêm vào danh sách)
 	function displayStories(startIndex, count) {
 		const endIndex = Math.min(startIndex + count, window.sharedData.length);
 		const storiesToShow = window.sharedData.slice(startIndex, endIndex);
 
-		// Làm mới danh sách thay vì thêm vào
-		storiesList.innerHTML = storiesToShow
+		const htmlToAppend = storiesToShow
 			.map((story, index) => {
 				return `
-		<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="${(startIndex + index) * 100}">
-			<div class="story-card">
-				<img src="${story.image}" alt="${story.title}" onerror="this.src='../assets/img/welcome-section.jpeg'" loading="lazy" />
-				<div class="card-body">
-					<div class="card-text">
-						<h3>${story.title}</h3>
-						<p>${story.description}</p>
+					<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="${(startIndex + index) * 100}">
+						<div class="story-card">
+							<img src="${story.image}" alt="${story.title}" onerror="this.src='../assets/img/welcome-section.jpeg'" loading="lazy" />
+							<div class="card-body">
+								<div class="card-text">
+									<h3>${story.title}</h3>
+									<p>${story.description}</p>
+								</div>
+								<a href="donate.html#donate" class="common-btn">Quyên góp ngay</a>
+							</div>
+						</div>
 					</div>
-					<a href="donate.html#donate" class="common-btn">Quyên góp ngay</a>
-				</div>
-			</div>
-		</div>
-	`;
+				`;
 			})
 			.join("");
 
+		storiesList.insertAdjacentHTML("beforeend", htmlToAppend);
 		displayedCount = endIndex;
 		updateLoadMoreButton();
 	}
@@ -69,11 +68,11 @@ function showStories() {
 			storiesSection.appendChild(loadMoreBtn);
 
 			loadMoreBtn.addEventListener("click", () => {
-				displayStories(displayedCount, LOAD_MORE_COUNT);
+				const remaining = window.sharedData.length - displayedCount;
+				displayStories(displayedCount, remaining); // Hiển thị tất cả còn lại
 			});
 		}
 
-		// Ẩn nút nếu đã hiển thị hết dự án
 		if (displayedCount >= window.sharedData.length) {
 			loadMoreBtn.style.display = "none";
 		} else {
@@ -82,8 +81,8 @@ function showStories() {
 	}
 
 	// Hiển thị dự án ban đầu
+	storiesList.innerHTML = ""; // Xóa trước để tránh lặp
 	displayStories(0, ITEMS_PER_LOAD);
 }
 
-// Gọi hàm showStories sau khi dữ liệu sẵn sàng
 waitForData(showStories);
