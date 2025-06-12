@@ -31,6 +31,46 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById("qr-info").style.display = "none";
     }
 
+    // Bootstrap Alert Function
+    function showAlert(message, type = 'danger') {
+        // Remove existing alert if any
+        const existingAlert = document.querySelector('.validation-alert');
+        if (existingAlert) {
+            existingAlert.remove();
+        }
+
+        // Create new alert
+        const alertDiv = document.createElement('div');
+        alertDiv.className = `alert alert-${type} alert-dismissible fade show validation-alert`;
+        alertDiv.style.cssText = `
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            min-width: 300px;
+            max-width: 500px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        `;
+
+        alertDiv.innerHTML = `
+            <i class="fas fa-exclamation-triangle me-2"></i>
+            <strong>Thông báo:</strong> ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        `;
+
+        // Add to page
+        document.body.appendChild(alertDiv);
+
+        // Auto dismiss after 5 seconds
+        setTimeout(() => {
+            if (alertDiv && alertDiv.parentNode) {
+                alertDiv.classList.remove('show');
+                setTimeout(() => alertDiv.remove(), 150);
+            }
+        }, 5000);
+    }
+
     // Validation helpers
     function isValidDate(dateString) {
         const regex = /^\d{2}-\d{2}-\d{4}$/;
@@ -49,110 +89,84 @@ document.addEventListener('DOMContentLoaded', () => {
         return !isNaN(num) && num > 1000;
     }
 
-    function showError(input, message) {
-        const parent = input?.parentElement;
-        if (!parent) return;
-        let error = parent.querySelector('.error-message');
-        if (!error) {
-            error = document.createElement('div');
-            error.className = 'error-message';
-            error.style.color = 'red';
-            error.style.fontSize = '12px';
-            error.style.marginTop = '5px';
-            parent.appendChild(error);
-        }
-        error.textContent = message;
-    }
-
-    function clearError(input) {
-        const parent = input?.parentElement;
-        const error = parent?.querySelector('.error-message');
-        if (error) error.remove();
-    }
-
     // Step 1 validation
     function validateStep1() {
-        let isValid = true;
+        const errors = [];
 
         if (!countrySelect || !countrySelect.value) {
-            showError(countrySelect, 'Vui lòng chọn quốc gia.');
-            isValid = false;
-        } else {
-            clearError(countrySelect);
+            errors.push('• Vui lòng chọn quốc gia');
         }
 
         if (!projectSelect || !projectSelect.value) {
-            showError(projectSelect, 'Vui lòng chọn dự án.');
-            isValid = false;
-        } else {
-            clearError(projectSelect);
+            errors.push('• Vui lòng chọn dự án đóng góp');
         }
 
         if (!dateInput || !isValidDate(dateInput.value)) {
-            showError(dateInput, 'Vui lòng nhập ngày đúng định dạng DD-MM-YYYY.');
-            isValid = false;
-        } else {
-            clearError(dateInput);
+            errors.push('• Vui lòng nhập ngày đúng định dạng DD-MM-YYYY (ví dụ: 25-12-2024)');
         }
 
         const isCustomAmount = document.getElementById('customAmountInput')?.style.display !== 'none';
         const amountInput = isCustomAmount ? document.querySelector('#customAmountInput input') : donationAmountInput;
 
         if (!amountInput || !amountInput.value || !isValidAmount(amountInput.value)) {
-            showError(amountInput, 'Vui lòng nhập số tiền hợp lệ (> 1.000 VND).');
-            isValid = false;
-        } else {
-            clearError(amountInput);
+            errors.push('• Vui lòng nhập số tiền hợp lệ (lớn hơn 1.000 VND)');
         }
 
-        return isValid;
+        if (errors.length > 0) {
+            showAlert('Vui lòng kiểm tra lại thông tin:<br>' + errors.join('<br>'));
+            return false;
+        }
+
+        return true;
     }
 
     // Step 2 validation
     function validateStep2() {
-        let isValid = true;
+        const errors = [];
 
         if (!nameInput?.value.trim()) {
-            showError(nameInput, 'Vui lòng nhập họ và tên.');
-            isValid = false;
-        } else clearError(nameInput);
+            errors.push('• Vui lòng nhập họ và tên');
+        }
 
         if (!emailInput?.value.trim() || !/^\S+@\S+\.\S+$/.test(emailInput.value)) {
-            showError(emailInput, 'Vui lòng nhập email hợp lệ.');
-            isValid = false;
-        } else clearError(emailInput);
+            errors.push('• Vui lòng nhập địa chỉ email hợp lệ (ví dụ: example@gmail.com)');
+        }
 
         if (!phoneInput?.value.trim() || !isValidPhone(phoneInput.value)) {
-            showError(phoneInput, 'Số điện thoại phải có đúng 10 chữ số.');
-            isValid = false;
-        } else clearError(phoneInput);
+            errors.push('• Số điện thoại phải có đúng 10 chữ số (ví dụ: 0123456789)');
+        }
 
         if (!addressInput?.value.trim()) {
-            showError(addressInput, 'Vui lòng nhập địa chỉ.');
-            isValid = false;
-        } else clearError(addressInput);
+            errors.push('• Vui lòng nhập địa chỉ liên hệ');
+        }
 
-        return isValid;
+        if (errors.length > 0) {
+            showAlert('Vui lòng kiểm tra lại thông tin:<br>' + errors.join('<br>'));
+            return false;
+        }
+
+        return true;
     }
 
     // Step 3 validation
     function validateStep3() {
-        let isValid = true;
+        const errors = [];
 
         const selected = Array.from(paymentOptions).some(el => el.classList.contains('active'));
         if (!selected) {
-            showError(document.querySelector('#payment-methods'), 'Vui lòng chọn phương thức thanh toán.');
-            isValid = false;
-        } else {
-            clearError(document.querySelector('#payment-methods'));
+            errors.push('• Vui lòng chọn một phương thức thanh toán');
         }
 
         if (!termsCheckbox?.checked) {
-            showError(termsCheckbox, 'Vui lòng đồng ý với các điều khoản.');
-            isValid = false;
-        } else clearError(termsCheckbox);
+            errors.push('• Vui lòng đọc và đồng ý với các điều khoản');
+        }
 
-        return isValid;
+        if (errors.length > 0) {
+            showAlert('Vui lòng kiểm tra lại thông tin:<br>' + errors.join('<br>'));
+            return false;
+        }
+
+        return true;
     }
 
     // Step Navigation
@@ -177,6 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (idx === 3) {
                 goToStep(1);
                 hideQRInfo();
+                showAlert('Cảm ơn bạn đã hoàn thành quyên góp! Form đã được reset.', 'success');
                 return;
             }
             if (isValid) {
