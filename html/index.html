@@ -28,15 +28,12 @@
 		<!-- Link Bootstrap-->
 		<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
 		<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-		<!-- Link tới Modal -->
-		<link rel="stylesheet" href="../html/modal/modals.html" />
 		<!-- Link CSS -->
 		<link rel="stylesheet" href="../assets/css/ui/common.css" />
 		<link rel="stylesheet" href="../assets/css/ui/index.css" />
 		<link rel="stylesheet" href="../assets/css/components/messenger.css" />
 		<link rel="stylesheet" href="../assets/css/components/search-style.css" />
 		<link rel="stylesheet" href="../assets/css/components/stories-style.css" />
-		<style></style>
 	</head>
 	<body>
 		<!-- Hero -->
@@ -55,10 +52,94 @@
 
 				<!-- Navbar điều hướng -->
 				<nav class="navbar">
-					<a style="--i: 1" class="nav-link active" href="index.html">Trang chủ</a>
-					<a style="--i: 2" class="nav-link" href="about.html">Về chúng tôi</a>
-					<a style="--i: 3" class="nav-link" href="volunteer.html">Tình nguyện</a>
-					<a style="--i: 4" class="nav-link" href="donate.html">Quyên góp</a>
+					<div class="nav-item dropdown">
+						<a style="--i: 1" class="nav-link active" href="index.html"
+							>Trang chủ
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke="#1c2a52"
+								stroke-width="3"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								style="margin-left: 1px"
+							>
+								<polyline points="6 9 12 15 18 9" />
+							</svg>
+						</a>
+						<div class="dropdown-menu">
+							<a href="#sumenh">Sứ mệnh của chúng tôi</a>
+							<a href="#conso">Những con số biết nói</a>
+							<a href="#tinhnguyenvien">Tình nguyện viên tiêu biểu</a>
+							<a href="#shop">MVP - Shop</a>
+						</div>
+					</div>
+					<div class="nav-item dropdown">
+						<a style="--i: 2" class="nav-link" href="about.html"
+							>Về chúng tôi
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke="#1c2a52"
+								stroke-width="3"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								style="margin-left: 1px"
+							>
+								<polyline points="6 9 12 15 18 9" />
+							</svg>
+						</a>
+						<div class="dropdown-menu">
+							<a href="#sumenh">Sứ mệnh của chúng tôi</a>
+							<a href="#conso">Những con số biết nói</a>
+							<a href="#tinhnguyenvien">Tình nguyện viên</a>
+							<a href="#shop">MVP - Shop</a>
+						</div>
+					</div>
+					<div class="nav-item dropdown">
+						<a style="--i: 3" class="nav-link" href="volunteer.html"
+							>Tình nguyện
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke="#1c2a52"
+								stroke-width="3"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								style="margin-left: 1px"
+							>
+								<polyline points="6 9 12 15 18 9" />
+							</svg>
+						</a>
+					</div>
+					<div class="nav-item dropdown">
+						<a style="--i: 4" class="nav-link" href="donate.html"
+							>Quyên góp
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke="#1c2a52"
+								stroke-width="3"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								style="margin-left: 1px"
+							>
+								<polyline points="6 9 12 15 18 9" />
+							</svg>
+						</a>
+					</div>
 					<a style="--i: 5" class="nav-link" href="stories.html">Câu chuyện</a>
 				</nav>
 
@@ -70,12 +151,34 @@
 						</div>
 					</div>
 
+					<div class="cart">
+						<a href="#" style="position: relative" onclick="toggleCartPopup(event)">
+							<box-icon name="cart"></box-icon>
+							<span id="cart-count" class="cart-count">0</span>
+						</a>
+					</div>
+
 					<div class="register-login">
-						<a class="register" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Đăng ký</a>
+						<a class="register" href="../html/register.html">Đăng ký</a>
 						<span class="slash">/</span>
-						<a class="login" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Đăng nhập</a>
+						<a class="login" href="../html/login.html">Đăng nhập</a>
 					</div>
 				</div>
+
+				<!-- Giỏ hàng của bạn -->
+				<div id="cart-sidebar" class="cart-sidebar">
+					<div class="cart-sidebar-header">
+						<h4>Giỏ hàng của bạn</h4>
+						<button class="close-btn" onclick="document.getElementById('cart-sidebar').classList.remove('show')"></button>
+					</div>
+					<ul id="cart-items" class="cart-items"></ul>
+					<div class="cart-total">
+						<p>Tổng cộng: <span id="cart-total">0 VNĐ</span></p>
+						<button class="checkout-btn">Thanh toán</button>
+					</div>
+				</div>
+
+				<div class="cart-overlay" onclick="document.getElementById('cart-sidebar').classList.remove('show')"></div>
 			</header>
 
 			<!-- Content -->
@@ -100,8 +203,6 @@
 			</section>
 		</div>
 
-		<div id="modal-container"></div>
-
 		<!-- Welcome Section -->
 		<section class="welcome-section margin-section" data-aos="fade-down">
 			<div class="container common-container">
@@ -123,7 +224,7 @@
 			</div>
 		</section>
 
-		<section class="mission-section margin-section" data-aos="fade-down">
+		<section id="sumenh" class="mission-section margin-section" data-aos="fade-down">
 			<div class="container common-container">
 				<div class="row justify-content-center">
 					<h2 class="common-heading text-center fw-bold mb-2">Sứ mệnh của chúng tôi</h2>
@@ -138,11 +239,10 @@
 		</section>
 
 		<!-- Impact Section -->
-		<section class="impact-section margin-section" data-aos="zoom-in">
+		<section id="conso" class="impact-section margin-section" data-aos="zoom-in">
 			<div class="container common-container">
 				<div class="row">
 					<h2 class="common-heading text-center">Những con số biết nói</h2>
-
 					<h3 class="common-intro">
 						Mỗi con số là một câu chuyện – về những nụ cười, hành trình và niềm tin. Đây là những gì chúng tôi đã cùng cộng đồng tạo nên trong suốt hành trình mang tri thức và hy vọng đến
 						với trẻ em vùng khó khăn.
@@ -173,7 +273,7 @@
 		</section>
 
 		<!-- Volunteer Section -->
-		<section class="volunteer-section margin-section" data-aos="zoom-in">
+		<section id="tinhnguyenvien" class="volunteer-section margin-section" data-aos="zoom-in">
 			<div class="container common-container">
 				<h2 class="common-heading text-center">Tình nguyện viên tiêu biểu</h2>
 				<h3 class="common-intro">Mỗi con số là dấu ấn của những tình nguyện viên tận tâm – những người đã góp sức lan tỏa tri thức và hy vọng đến trẻ em vùng khó khăn.</h3>
@@ -278,6 +378,7 @@
 								data-danger=""
 								data-img="../assets/img/binh-nuoc.jpg"
 								data-desc="Bình nước bằng thép không gỉ với hình minh họa trẻ em vùng cao bên dòng sông sạch, mỗi sản phẩm bán ra hỗ trợ dự án lọc nước tại các khu vực xa xôi."
+								data-price="140000"
 							>
 								<i class="fas fa-shopping-cart"></i>Xem chi tiết
 							</button>
@@ -297,6 +398,7 @@
 								data-number="42"
 								data-img="../assets/img/so-mo-uoc.jpg"
 								data-desc="Sổ bìa cứng với hình ảnh trẻ em trên ruộng bậc thang, mỗi cuốn bán ra giúp mang sách đến tay trẻ em khó khăn."
+								data-price="89000"
 							>
 								<i class="fas fa-shopping-cart"></i>Xem chi tiết
 							</button>
@@ -318,6 +420,7 @@
 								data-danger=""
 								data-img="../assets/img/ao-thun.jpg"
 								data-desc="Áo thun cotton in hình trẻ em trong làng núi, 30% lợi nhuận từ mỗi áo hỗ trợ xây dựng lớp học vùng cao"
+								data-price="169000"
 							>
 								<i class="fas fa-shopping-cart"></i>Xem chi tiết
 							</button>
@@ -338,6 +441,7 @@
 								data-number="15"
 								data-img="../assets/img/tui-vai.jpg"
 								data-desc="Túi vải canvas với hình hai em nhỏ đeo ba lô, mỗi túi bán ra đóng góp cho các chương trình giáo dục."
+								data-price="150000"
 							>
 								<i class="fas fa-shopping-cart"></i>Xem chi tiết
 							</button>
@@ -361,6 +465,7 @@
 								data-danger=""
 								data-img="../assets/img/hop-com.jpg"
 								data-desc="Hộp cơm bằng thép không gỉ với hình trẻ em bên cây cổ thụ, mỗi hộp bán ra hỗ trợ bữa ăn cho học sinh vùng cao."
+								data-price="180000"
 							>
 								<i class="fas fa-shopping-cart"></i>Xem chi tiết
 							</button>
@@ -381,6 +486,7 @@
 								data-number="31"
 								data-img="../assets/img/op-lung.jpg"
 								data-desc="Ốp lưng điện thoại với họa tiết hoa đào và trẻ em, mỗi sản phẩm bán ra giúp mua sách giáo khoa cho trẻ em nghèo."
+								data-price="80000"
 							>
 								<i class="fas fa-shopping-cart"></i>Xem chi tiết
 							</button>
@@ -401,6 +507,7 @@
 								data-number="50"
 								data-img="../assets/img/ba-lo.jpg"
 								data-desc="Ba lô vải với hình em nhỏ và bảng 'I want to be', mỗi ba lô bán ra tặng một ba lô cho học sinh vùng cao.."
+								data-price="290000"
 							>
 								<i class="fas fa-shopping-cart"></i>Xem chi tiết
 							</button>
@@ -422,6 +529,7 @@
 								data-danger=""
 								data-img="../assets/img/hop-but.jpg"
 								data-desc="Hộp bút màu vải với hình trẻ em học tập, mỗi hộp bán ra quyên góp dụng cụ học tập cho trẻ em khó khăn.."
+								data-price="95000"
 							>
 								<i class="fas fa-shopping-cart"></i>Xem chi tiết
 							</button>
@@ -446,7 +554,7 @@
 						<img class="modal-img img-fluid" src="" alt="Ảnh sản phẩm" onclick="openLargeImage(this)" />
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-success" data-dismiss="modal">Đặt mua ngay</button>
+						<button type="button" class="btn btn-success" data-dismiss="modal" data-price="">Đặt mua ngay</button>
 					</div>
 				</div>
 			</div>
@@ -512,6 +620,7 @@
 		<script src="../assets/js/search.js"></script>
 		<script src="../assets/js/messenger.js"></script>
 		<script src="../assets/js/impact.js"></script>
+		<script src="../assets/js/cartcount.js"></script>
 
 		<!-- link Modal -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

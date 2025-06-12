@@ -178,7 +178,7 @@ body::selection {
 	position: relative;
 	overflow: hidden;
 	cursor: pointer;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.35s ease-in-out;
 }
 
 /* Hiệu ứng màu chạy từ hai bên khi hover */
@@ -222,6 +222,93 @@ body::selection {
 }
 
 /* Hero Section */
+/* Dropdown */
+/* Mặc định ẩn menu */
+.nav-item.dropdown {
+	position: relative;
+}
+
+.dropdown-menu {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 170%;
+	left: 25px;
+	background-color: #fff;
+	min-width: 320px;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px !important;
+	border-radius: 6px;
+	padding: 30px 0;
+	z-index: 1000;
+	overflow: hidden;
+
+	/* Ẩn mặc định */
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(10px);
+	transition: all 0.5s ease;
+}
+
+.dropdown-menu a {
+	display: block;
+	width: 100%;
+	padding: 5px 10px;
+	padding-left: 30px;
+	font-size: 12px;
+	box-sizing: border-box;
+	color: rgb(14, 32, 77) !important;
+	white-space: nowrap;
+	transition: 0.3s;
+	text-transform: capitalize;
+	font-weight: 400 !important;
+	font-size: 14px !important;
+	letter-spacing: 0.7px;
+}
+
+.dropdown-menu a:hover {
+	color: #2980b9 !important;
+	font-weight: 900 !important;
+	letter-spacing: 1.4px;
+	transform: translateX(10px); /* kéo chữ sang phải 10px */
+	transition: color 0.3s, transform 0.3s, letter-spacing 0.5s, font-weight 0.3s;
+}
+
+.dropdown-menu a::before {
+	content: "";
+	position: absolute;
+	left: 0px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 20px;
+	height: 3px;
+	background-color: transparent; /* ẩn mặc định */
+	border-radius: 2px;
+	transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover::before {
+	background-color: #2980b9;
+}
+
+.nav-item.dropdown::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 15%;
+	width: calc(100% - 30%);
+	height: 20px; /* vùng giữ hover */
+	pointer-events: auto;
+}
+
+/* Hiển thị khi hover vào .nav-link hoặc chính .dropdown-menu */
+.nav-item.dropdown:hover .dropdown-menu {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0); /* Trượt lên */
+	display: flex;
+	flex-direction: column;
+}
+
 .hero-section {
 	max-width: 1250px;
 	margin: 0 auto;
@@ -295,15 +382,24 @@ body::selection {
 .header.scrolled .navbar a,
 .header.scrolled .login,
 .header.scrolled .register,
-.header.scrolled .slash {
+.header.scrolled .slash,
+.header.scrolled .search,
+.header.scrolled .cart {
 	color: #333;
-}
-
-.header.scrolled .search {
-	fill: #333;
 	transition: 0.4s;
 }
 
+.right-header box-icon {
+	fill: currentColor;
+	color: white;
+	transition: color 0.4s;
+}
+
+.header.scrolled .right-header box-icon {
+	color: #333;
+}
+
+/* Bị trùng */
 .header.scrolled .search:hover {
 	fill: #ceb005;
 }
@@ -343,13 +439,152 @@ body::selection {
 	animation-delay: 1s;
 }
 
-.search {
-	fill: #fff;
-	position: relative;
-	top: 1px;
+/* Số đếm giỏ hàng */
+.cart-count {
+	position: absolute;
+	top: -10px;
+	left: 70%; /* Căn giữa theo chiều ngang */
+	background: red;
+	color: white;
+	border-radius: 50%;
+	padding: 3px 3px; /* Tăng padding để số trông rõ hơn */
+	font-size: 13px; /* Tăng kích thước chữ */
+	min-width: 20px; /* Đảm bảo vòng tròn đủ lớn */
+	text-align: center;
+	line-height: 1; /* Căn chỉnh text trong vòng tròn */
 }
 
-.search a {
+/* Popup giỏ hàng */
+/* Trong ../assets/css/ui/common.css, thêm hoặc thay thế phần .cart-sidebar */
+.cart-sidebar {
+	position: fixed;
+	top: 0; /* Bắt đầu từ đỉnh */
+	right: 0; /* Đặt ở bên phải */
+	width: 350px; /* Chiều rộng linh hoạt */
+	height: 100vh; /* Chiều cao toàn màn hình */
+	background: white;
+	border-left: 1px solid #ddd;
+	box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+	z-index: 1000; /* Đảm bảo nằm trên các phần tử khác */
+	padding: 20px;
+	font-family: "Be Vietnam Pro", sans-serif;
+	transform: translateX(100%); /* Ban đầu ẩn ngoài lề phải */
+	transition: transform 0.5s ease-in-out; /* Hiệu ứng trượt */
+	overflow-y: auto; /* Thêm cuộn nếu nội dung vượt quá */
+	box-sizing: border-box;
+}
+
+.cart-sidebar.show {
+	transform: translateX(0); /* Trượt vào khi hiển thị */
+}
+
+.cart-sidebar-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #eee;
+	padding-bottom: 10px;
+}
+
+.cart-sidebar-header h4{
+	color: var(--color-primary);
+	font-family: Quicksand;
+	font-weight: 700;
+}
+
+.close-btn {
+	background: none;
+	border: none;
+	font-size: 20px;
+	cursor: pointer;
+	color: #333;
+}
+
+.close-btn:hover {
+	color: #e74c3c;
+}
+
+.cart-items {
+	list-style: none;
+	padding: 0;
+	max-height: calc(100vh - 150px); /* Trừ header và footer của sidebar */
+	overflow-y: auto;
+}
+
+.cart-items li {
+	display: flex;
+	align-items: center;
+	padding: 10px 0;
+	border-bottom: 1px solid #eee;
+}
+
+.cart-items li img {
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+	margin-right: 10px;
+	border-radius: 3px;
+}
+
+.cart-items li .item-details {
+	flex-grow: 1;
+}
+
+.cart-items li .item-details p {
+	margin: 0;
+	font-size: 14px;
+}
+
+.cart-items li .item-price {
+	font-weight: bold;
+	color: #e74c3c;
+}
+
+.cart-total {
+	margin-top: 15px;
+	padding-top: 10px;
+	border-top: 1px solid #eee;
+	text-align: right;
+}
+
+.cart-total p {
+	margin: 0;
+	font-size: 16px;
+}
+
+.checkout-btn {
+	background: #e74c3c;
+	color: white;
+	border: none;
+	padding: 5px 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.checkout-btn:hover {
+	background: #c0392b;
+}
+
+/* Thêm overlay khi sidebar mở */
+.cart-overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.55);
+	z-index: 999;
+}
+
+.cart-sidebar.show + .cart-overlay {
+	display: block;
+}
+
+.search a,
+.cart a {
 	height: 24px;
 	display: block;
 }
@@ -378,19 +613,20 @@ body::selection {
 }
 
 .nav-link:hover {
-	background-color: #ecf0f1;
 	color: var(--color-extra-3) !important;
 	border: none;
 }
 
 .nav-link.active {
-	border-bottom: 2px solid var(--color-tertiary);
 	color: var(--color-tertiary);
 }
 
 .header.scrolled .nav-link.active {
-	border-bottom: 2px solid var(--color-extra-3);
 	color: var(--color-extra-3);
+	font-weight: 600;
+	letter-spacing: 1px;
+	border: 2px solid;
+	border-bottom-color: #2196f3;
 }
 
 .header.scrolled .nav-link:hover {
@@ -695,7 +931,7 @@ span.address {
 }
 
 .search a:hover box-icon {
-	fill: #ffd700;
+	fill: var(--color-primary);
 }
 
 .search {

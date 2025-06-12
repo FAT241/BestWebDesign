@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Qũy từ thiện MVP - Trang chủ</title>
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="../assets/img/logo.png" />
+		<!-- Nhúng font chữ -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Nhúng font awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+			integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<!-- Nhúng boxicons -->
+		<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+		<!-- CSS của AOS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+		<!-- Link Bootstrap-->
+		<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+		<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- Link CSS -->
+		<link rel="stylesheet" href="../assets/css/ui/common.css" />
+		<link rel="stylesheet" href="../assets/css/ui/index.css" />
+		<style>
+			.login-box {
+				width: 400px;
+				padding: 40px;
+				margin: 0px auto;
+				box-sizing: border-box;
+				border-radius: 12px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				transition: 0.3s;
+				box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+			}
+
+			.login-box p:first-child {
+				margin: 0 0 1px;
+				padding: 0;
+				color: #2ecc71;
+				text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+				filter: brightness(1.8);
+				text-align: center;
+				font-size: 1.7rem;
+				font-weight: 900;
+				letter-spacing: 2px;
+				font-family: Quicksand;
+				text-transform: uppercase;
+				margin-bottom: 22px;
+			}
+
+			span.title,
+			span {
+				color: #222 !important;
+			}
+
+			a#openTerms {
+				text-decoration: none;
+			}
+
+			#closeBtn {
+				background-color: rgba(255, 0, 0, 0.607);
+				color: #fff;
+				transition: 0.3s;
+			}
+
+			#closeBtn:hover {
+				background-color: rgba(255, 0, 0, 0.886)
+			}
+			a#openTerms:hover {
+				text-decoration: underline;
+				color: #0d6efd;
+				background: none;
+			}
+
+			.login-box .user-box {
+				position: relative;
+			}
+
+			.user-box .icon {
+				position: absolute;
+				top: 30%;
+				right: 10px; /* cách mép phải */
+				transform: translateY(-50%);
+				color: #1565c0;
+				font-size: 24px; /* Tăng kích thước cho dễ nhìn */
+				opacity: 0;
+				transition: opacity 0.3s ease, transform 0.3s ease;
+				pointer-events: none;
+			}
+
+			.user-box input:focus + label + .icon,
+			.user-box input:not(:placeholder-shown) + label + .icon {
+				opacity: 1;
+				transform: translateY(-50%) translateX(0); /* Nếu có thêm hiệu ứng slide */
+			}
+
+			.login-box .user-box input {
+				width: 100%;
+				padding: 10px 0;
+				font-size: 16px;
+				color: #37474f;
+				margin-bottom: 30px;
+				border: none;
+				border-bottom: 1px solid #1565c0;
+				outline: none;
+				background: transparent;
+			}
+
+			.login-box .user-box label {
+				position: absolute;
+				top: 0;
+				left: 0;
+				padding: 10px 0;
+				font-size: 16px;
+				font-weight: 600;
+				color: #1565c0;
+				pointer-events: none;
+				transition: 0.5s;
+				font-family: "Be Vietnam Pro", sans-serif;
+			}
+
+			.login-box .user-box input:focus ~ label,
+			.login-box .user-box input:valid ~ label {
+				top: -20px;
+				left: 0;
+				color: #1565c0;
+				font-weight: 600;
+				font-size: 12px;
+			}
+
+			.login-box form {
+				text-align: center;
+			}
+
+			.login-box form .button-register {
+				position: relative;
+				display: inline-block;
+				padding: 10px 20px;
+				font-weight: bold;
+				color: #1565c0;
+				font-size: 16px;
+				text-decoration: none;
+				text-transform: uppercase;
+				overflow: hidden;
+				transition: 0.5s;
+				margin-top: 15px;
+				margin-bottom: 12px;
+				letter-spacing: 3px;
+			}
+
+			.login-box a:hover {
+				background: #1565c0;
+				color: #fff;
+				border-radius: 5px;
+			}
+
+			.login-box a span {
+				position: absolute;
+				display: block;
+			}
+
+			.login-box a span:nth-child(1) {
+				top: 0;
+				left: -100%;
+				width: 100%;
+				height: 2px;
+				background: linear-gradient(90deg, transparent, #1565c0);
+				animation: btn-anim1 1.5s linear infinite;
+			}
+
+			@keyframes btn-anim1 {
+				0% {
+					left: -100%;
+				}
+
+				50%,
+				100% {
+					left: 100%;
+				}
+			}
+
+			.login-box a span:nth-child(2) {
+				top: -100%;
+				right: 0;
+				width: 2px;
+				height: 100%;
+				background: linear-gradient(180deg, transparent, #1565c0);
+				animation: btn-anim2 1.5s linear infinite;
+				animation-delay: 0.375s;
+			}
+
+			@keyframes btn-anim2 {
+				0% {
+					top: -100%;
+				}
+
+				50%,
+				100% {
+					top: 100%;
+				}
+			}
+
+			.login-box a span:nth-child(3) {
+				bottom: 0;
+				right: -100%;
+				width: 100%;
+				height: 2px;
+				background: linear-gradient(270deg, transparent, #1565c0);
+				animation: btn-anim3 1.5s linear infinite;
+				animation-delay: 0.75s;
+			}
+
+			@keyframes btn-anim3 {
+				0% {
+					right: -100%;
+				}
+
+				50%,
+				100% {
+					right: 100%;
+				}
+			}
+
+			.login-box a span:nth-child(4) {
+				bottom: -100%;
+				left: 0;
+				width: 2px;
+				height: 100%;
+				background: linear-gradient(360deg, transparent, #1565c0);
+				animation: btn-anim4 1.5s linear infinite;
+				animation-delay: 1.125s;
+			}
+
+			@keyframes btn-anim4 {
+				0% {
+					bottom: -100%;
+				}
+
+				50%,
+				100% {
+					bottom: 100%;
+				}
+			}
+
+			.login-box p:last-child {
+				color: green;
+				font-size: 14px;
+			}
+
+			.login-box a.a2 {
+				color: #1565c0;
+				text-decoration: none;
+			}
+
+			.login-box a.a2:hover {
+				background: transparent;
+				color: #0d47a1;
+				border-radius: 5px;
+			}
+
+			/* Định dạng phần chứa các icon */
+			.social-account-container {
+				text-align: center;
+				margin-top: 4px;
+			}
+
+			.social-account-container .title {
+				display: block;
+				font-size: 14px;
+				color: #777;
+				margin-bottom: 12px;
+				font-family: "Quicksand", sans-serif;
+				font-weight: 600;
+			}
+
+			/* Container cho các nút icon */
+			.social-accounts {
+				display: flex;
+				justify-content: center;
+				gap: 15px;
+			}
+
+			/* Định dạng chung cho nút */
+			.social-button {
+				width: 44px;
+				height: 44px;
+				border-radius: 50%;
+				border: none;
+				background-color: #f1f1f1;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				transition: 0.3s ease;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+			}
+
+			.social-button .svg {
+				width: 20px;
+				height: 20px;
+				fill: #555;
+				transition: 0.3s;
+			}
+
+			/* Hover effect cho nút */
+			.social-button:hover {
+				transform: scale(1.1);
+				background-color: #e0e0e0;
+			}
+
+			.social-button:hover .svg {
+				fill: #1565c0;
+			}
+
+			/* Checkbox */
+			.remember {
+				display: flex;
+				align-items: center;
+				gap: 8px; /* khoảng cách giữa checkbox và chữ */
+				margin-bottom: 20px;
+			}
+
+			.check {
+				display: none;
+			}
+
+			label {
+				display: flex;
+				align-items: center;
+				cursor: pointer;
+				gap: 8px;
+			}
+
+			.title-register {
+				color: green !important;
+				transition: 0.3s;
+			}
+
+			.title-register:hover {
+				cursor: pointer;
+				color: rgb(6, 87, 6) !important;
+			}
+
+			.checkbox-icon {
+				flex-shrink: 0;
+				border-radius: 6px;
+				width: 18px;
+				height: 18px;
+			}
+
+			.remember span {
+				font-size: 15px;
+				font-family: Quicksand;
+				color: #555;
+				font-weight: 600;
+			}
+
+			.path1 {
+				stroke-dasharray: 400;
+				stroke-dashoffset: 400;
+				transition: 0.5s stroke-dashoffset;
+				opacity: 0;
+			}
+
+			.check:checked + label .path1 {
+				stroke-dashoffset: 0;
+				opacity: 1;
+			}
+
+			.logo {
+				text-align: center;
+				margin-top: 40px;
+				filter: brightness(1);
+			}
+
+			.logo img {
+				width: 95px;
+			}
+
+			.modal {
+				position: fixed;
+				z-index: 999;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.5);
+			}
+
+			.heading-modal {
+				color: #0d6efd;
+				text-align: center;
+				font-size: 1.8rem;
+			}
+
+			.modal-content {
+				background: white;
+				margin: 5% auto;
+				padding: 20px;
+				width: 90%;
+				max-width: 600px;
+				border-radius: 10px;
+				position: relative;
+			}
+
+			.close {
+				position: absolute;
+				top: 10px;
+				right: 15px;
+				font-size: 20px;
+				cursor: pointer;
+			}
+
+			.terms-text {
+				max-height: 300px;
+				overflow-y: auto;
+				margin-top: 10px;
+				padding-right: 10px;
+				line-height: 1.6;
+			}
+
+			.terms-text h4 {
+				font-size: 18px;
+			}
+
+			.terms-text p {
+				font-size: 14px;
+			}
+
+			.modal-footer {
+				text-align: right;
+				margin-top: 20px;
+			}
+
+			.modal-footer button {
+				padding: 8px 16px;
+				margin-left: 10px;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="hero-section">
+			<img class="hero-background" src="../assets/img/cesar-couto-TIvFLeqZ4ec-unsplash.jpg" alt="" />
+		</div>
+
+		<div class="login-box">
+			<p>Đăng ký tài khoản</p>
+
+			<form>
+				<div class="user-box">
+					<input required="" name="" type="text" placeholder=" " />
+					<label>Họ và tên</label>
+					<i class="fas fa-envelope icon"></i>
+				</div>
+				<div class="user-box">
+					<input required="" name="" type="text" placeholder=" " />
+					<label>E-mail</label>
+					<i class="fas fa-envelope icon"></i>
+				</div>
+				<div class="user-box">
+					<input required="" name="" type="password" placeholder=" " />
+					<label>Mật khẩu</label>
+				</div>
+				<div class="user-box">
+					<input required="" name="" type="password" placeholder=" " />
+					<label>Nhập lại mật khẩu</label>
+				</div>
+
+				<!-- Checkbox bắt đầu -->
+				<div class="remember">
+					<input class="check" type="checkbox" id="remember-me" />
+					<label for="remember-me">
+						<svg class="checkbox-icon" width="20" height="20" viewBox="0 0 50 50">
+							<rect width="40" height="40" x="5" y="5" fill="none" stroke="black" stroke-width="3" />
+							<path d="M15 25 Q22 35 35 15" stroke="black" stroke-width="3" fill="none" class="path1" />
+						</svg>
+						<span>Đồng ý với <a href="#" id="openTerms">điều khoản</a></span>
+					</label>
+				</div>
+
+				<!-- Checkbox kết thúc -->
+				<a class="button-register" href="#">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					Đăng ký
+				</a>
+
+				<p><span class="">Đã có tài khoản?</span> <span class="title-register">Đăng nhập ngay</span></p>
+			</form>
+		</div>
+
+		<!-- Modal -->
+		<div id="termsModal" class="modal" style="display: none">
+			<div class="modal-content">
+				<h2 class="heading-modal">Điều khoản</h2>
+				<div class="terms-text">
+					<h4>1. Cam kết sử dụng</h4>
+					<p>Bằng việc truy cập hoặc sử dụng trang web này, bạn đồng ý tuân thủ các điều khoản và điều kiện dưới đây. Nếu bạn không đồng ý, vui lòng không sử dụng trang web.</p>
+
+					<h4>2. Mục đích hoạt động</h4>
+					<p>Trang web được xây dựng nhằm mục đích gây quỹ và hỗ trợ trẻ em có hoàn cảnh khó khăn tại các vùng sâu vùng xa, đặc biệt trong lĩnh vực giáo dục.</p>
+
+					<h4>3. Quyền và nghĩa vụ người dùng</h4>
+					<p>Người dùng cam kết cung cấp thông tin trung thực khi thực hiện quyên góp hoặc đăng ký tài khoản. Bất kỳ hành vi gian lận nào đều có thể dẫn đến việc bị cấm sử dụng dịch vụ.</p>
+
+					<h4>4. Thay đổi điều khoản</h4>
+					<p>
+						Chúng tôi có quyền thay đổi nội dung điều khoản bất kỳ lúc nào mà không cần thông báo trước. Việc bạn tiếp tục sử dụng dịch vụ sau khi điều khoản được cập nhật đồng nghĩa với
+						việc bạn đồng ý với thay đổi đó.
+					</p>
+
+					<h4>5. Liên hệ</h4>
+					<p>Mọi thắc mắc liên quan đến điều khoản xin vui lòng liên hệ qua email: lienhe@tuthien.org.</p>
+				</div>
+				<div class="modal-footer">
+					<button id="closeBtn">Đóng</button>
+				</div>
+			</div>
+		</div>
+		<script src="../assets/js/register.js"></script>
+	</body>
+</html>
