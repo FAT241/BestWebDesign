@@ -8,18 +8,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const alertDiv = document.createElement("div");
         alertDiv.className = `alert alert-${type} alert-dismissible fade show validation-alert`;
         alertDiv.style.cssText = `
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		z-index: 9999;
-		min-width: 300px;
-		max-width: 500px;
-		text-align: center;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-		font-size: 16px;
-		font-weight: 500;
-	`;
+	    position: fixed;
+	    top: 20px; /* Đẩy sát mép trên */
+	    left: 50%;
+	    transform: translateX(-50%); /* Chỉ dịch ngang */
+	    z-index: 9999;
+	    min-width: 300px;
+	    max-width: 500px;
+	    text-align: center;
+	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+	    font-size: 16px;
+	    font-weight: 500;
+    `;
 
         alertDiv.innerHTML = `
 		<i class="fas fa-bell me-2"></i>

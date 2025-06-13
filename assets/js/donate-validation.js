@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alertDiv.className = `alert alert-${type} alert-dismissible fade show validation-alert`;
         alertDiv.style.cssText = `
             position: fixed;
-            top: 20px;
+            top: 90px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 9999;
