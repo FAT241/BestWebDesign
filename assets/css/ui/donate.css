@@ -335,3 +335,203 @@ select:valid {
 	margin-top: 5px;
 	font-family: "Be Vietnam Pro", sans-serif;
 }
+
+/* Responsive cho điện thoại (max-width: 767px) */
+@media (max-width: 767px) {
+	.donate-section {
+		padding: 20px 0;
+	}
+
+	.common-container {
+		padding: 0;
+		width: 100%;
+	}
+
+	.donate-container {
+		padding: 15px;
+		box-shadow: none;
+		border-radius: 10px;
+		width: 100%;
+		box-sizing: border-box;
+		margin: 0;
+	}
+
+	.row {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.col-8,
+	.col-4 {
+		flex: 0 0 100%;
+		max-width: 100%;
+		padding: 0;
+		width: 100%;
+	}
+
+	.common-caption {
+		font-size: 1rem;
+		margin-bottom: 5px;
+	}
+
+	.common-heading {
+		font-size: 1.5rem;
+		margin-bottom: 10px;
+	}
+
+	.line-heading::after {
+		width: 30px;
+		height: 3px;
+	}
+
+	.donate-content {
+		font-size: 0.85rem;
+		margin-bottom: 10px;
+		overflow-wrap: break-word;
+		max-width: 100%;
+	}
+
+	.step {
+		flex-wrap: nowrap;
+		justify-content: space-around;
+		margin: 20px 0;
+		padding: 0 10px;
+		max-width: 100%;
+		overflow-x: auto;
+	}
+
+	.sub-step {
+		flex: 0 0 auto;
+		margin: 0 5px;
+		width: 80px;
+	}
+
+	.circle {
+		width: 25px;
+		height: 25px;
+		line-height: 25px;
+		font-size: 0.9rem;
+	}
+
+	.line {
+		height: 2px;
+		margin: 0 -25px;
+		margin-top: -25px;
+	}
+
+	.label {
+		font-size: 0.8rem;
+		margin-top: 4px;
+	}
+
+	.input-with-icon,
+	.form-select,
+	.form-control {
+		margin-bottom: 5px;
+	}
+
+	#donate-buttons {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		max-width: 100%;
+	}
+
+	#donate-buttons .form-label {
+		display: block;
+		margin-top: 15px;
+		text-align: center; /* Căn giữa tiêu đề */
+		font-size: 0.9rem;
+	}
+
+	#donate-buttons .button-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 5px;
+		width: 100%;
+	}
+
+	#donate-buttons .donate-btn-money {
+		padding: 6px 12px;
+		margin: 2px;
+		font-size: 0.8rem;
+		border-radius: 30px;
+	}
+
+	.contact-box {
+		padding: 15px;
+		margin-top: 50px;
+		height: auto;
+		text-align: center;
+	}
+
+	.contact-info-intro {
+		font-size: 0.85rem;
+		text-align: center;
+	}
+
+	.contact-info {
+		padding: 0;
+	}
+}
+
+/* Table */
+@media (max-width: 767px) {
+	.table-responsive {
+		overflow-x: auto; /* Thêm thanh cuộn ngang nếu bảng tràn */
+		-webkit-overflow-scrolling: touch; /* Tối ưu cuộn trên mobile */
+	}
+
+	.table-container {
+		margin-top: 10px;
+		min-height: 300px; /* Giảm chiều cao tối thiểu */
+		border-radius: 5px; /* Giảm bo góc */
+	}
+
+	.table {
+		width: 100%;
+		min-width: 600px; /* Đảm bảo bảng có chiều rộng tối thiểu để cuộn */
+	}
+
+	.table thead th {
+		font-size: 0.9rem; /* Giảm kích thước font */
+		padding: 8px; /* Giảm padding */
+	}
+
+	.table tbody td {
+		font-size: 0.85rem; /* Giảm kích thước font */
+		padding: 6px; /* Giảm padding */
+	}
+
+	.table-container table th:nth-child(1) {
+		width: 40px; /* Giảm chiều rộng cột STT */
+	}
+	.table-container table th:nth-child(2) {
+		width: 150px; /* Giảm chiều rộng cột Người ủng hộ */
+	}
+	.table-container table th:nth-child(3) {
+		width: 100px; /* Giảm chiều rộng cột Số tiền */
+	}
+	.table-container table th:nth-child(4) {
+		width: 120px; /* Giảm chiều rộng cột Thời gian */
+	}
+	.table-container table th:nth-child(5) {
+		width: 120px; /* Giảm chiều rộng cột Dự án ủng hộ */
+	}
+
+	.list-container {
+		box-shadow: none;
+	}
+
+	/* Phân trang */
+	.pagination {
+		justify-content: center !important; /* Đảm bảo căn giữa */
+	}
+
+	.pagination .page-item .page-link {
+		font-size: 0.8rem; /* Giảm kích thước font */
+		padding: 5px 8px; /* Giảm padding */
+		margin: 0 2px; /* Giảm khoảng cách */
+	}
+}

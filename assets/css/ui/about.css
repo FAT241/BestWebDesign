@@ -1,5 +1,4 @@
 @import url(./common.css);
-/* commit */
 /* Origin Story */
 .story-content-first {
 	font-style: italic; /* Chữ nghiêng cho phần đầu */
@@ -152,68 +151,6 @@
 	line-height: 1.6;
 }
 
-/* .timeline {
-	position: relative;
-	max-width: 1000px;
-	margin: 40px auto 0 auto;
-	padding: 40px 0;
-}
-
-.timeline-entry {
-	padding: 10px 40px;
-	position: relative;
-	width: 50%;
-	margin-bottom: 32px;
-}
-
-.timeline-entry::after {
-	content: "";
-	position: absolute;
-	width: 20px;
-	height: 20px;
-	right: -10px;
-	background-color: var(--color-secondary);
-	border: 4px solid white;
-	top: 15px;
-	border-radius: 50%;
-	z-index: 1;
-}
-
-.left {
-	left: 0;
-}
-
-.right {
-	left: 50%;
-}
-
-.right::after {
-	left: -10px;
-}
-
-.timeline-card {
-	padding: 20px;
-	background-color: var(--color-extra-1);
-	position: relative;
-	border-radius: 6px;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.timeline::before {
-	content: "";
-	position: absolute;
-	width: 2px;
-	background-color: #74b9ff;
-	top: 0;
-	bottom: 0;
-	left: 50%;
-	margin-left: -1px;
-}
-
-.timeline-content {
-	margin: 0;
-} */
-
 /* How we work */
 .how-we-work-section .card {
 	min-height: 250px;
@@ -273,6 +210,7 @@
 	overflow: hidden;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	border: 1px solid gray;
 }
 
 .leader-card:hover {
@@ -333,4 +271,142 @@
 	font-size: 14px;
 	font-family: "Be Vietnam Pro", sans-serif;
 	margin-bottom: 10px;
+}
+
+/* Origin Story */
+@media (max-width: 767px) {
+	.origin-story-section {
+		padding: 30px 0;
+	}
+
+	.common-heading {
+		font-size: 1.8rem;
+		margin-bottom: 15px;
+	}
+
+	.line-heading::after {
+		width: 30px;
+		height: 3px;
+	}
+
+	.story-content-first,
+	.common-content {
+		font-size: 0.9rem;
+		margin-bottom: 10px;
+	}
+
+	.story-quote {
+		font-size: 0.9rem;
+		padding-left: 15px;
+		margin: 15px 0;
+	}
+
+	.heading-style {
+		font-size: 1.5rem;
+		margin-top: 30px;
+		margin-bottom: 15px;
+	}
+	.story-quote::before {
+		display: none;
+	}
+}
+
+/* Timeline */
+@media (max-width: 767px) {
+	.timeline {
+		max-width: 100%;
+		padding: 20px 0; /* Giảm padding trên dưới */
+		margin: 0 auto; /* Căn giữa timeline */
+		display: flex;
+		flex-direction: column;
+		align-items: center; /* Căn giữa các phần tử con */
+		position: relative;
+	}
+
+	.timeline::before {
+		left: 50%; /* Đặt đường line ở giữa */
+		margin-left: -2px; /* Điều chỉnh để line chính xác ở giữa */
+		width: 4px;
+		height: 100%; /* Đảm bảo line dài hết chiều cao */
+		background: linear-gradient(to bottom, #3b82f6, #facc15);
+	}
+
+	.timeline-entry {
+		width: 100%; /* Giảm độ rộng để tạo không gian cân đối */
+		margin-bottom: 20px; /* Giữ khoảng cách hợp lý */
+		position: relative;
+		text-align: center; /* Căn giữa nội dung trong entry */
+	}
+
+	.timeline-entry.left,
+	.timeline-entry.right {
+		left: 0; /* Loại bỏ lệch trái */
+		float: none; /* Loại bỏ float để căn giữa */
+	}
+
+	.timeline-entry::after {
+		right: auto;
+		left: 50%; /* Đặt dot ở giữa */
+		margin-left: -10px; /* Điều chỉnh để dot nằm trên line */
+		top: -10px; /* Điều chỉnh vị trí dot lên trên card */
+	}
+
+	.right::after {
+		left: 50%;
+		margin-left: -10px;
+	}
+
+	.timeline-card {
+		padding: 15px;
+		border-left: none;
+		border-top: 6px solid #1e3a8a;
+		margin-left: 0; /* Đảm bảo không bị lệch */
+		text-align: center; /* Căn giữa nội dung trong card */
+	}
+
+	.timeline-card h3 {
+		font-size: 1.2rem;
+	}
+
+	.timeline-content {
+		font-size: 0.9rem;
+	}
+}
+
+/* How we work */
+@media (max-width: 767px) {
+	.common-heading {
+		font-size: 1.8rem;
+		margin-bottom: 15px;
+	}
+
+	.divider img {
+		max-width: 80px; /* Giảm kích thước divider trên mobile */
+	}
+
+	.col-3 {
+		flex: 0 0 50%; /* 2 cột trên mobile */
+		max-width: 50%;
+	}
+
+	.card {
+		padding: 15px; /* Giảm padding trong card */
+		margin-bottom: 15px;
+	}
+
+	.leader-card {
+		margin-bottom: 15px;
+	}
+
+	.card-number {
+		font-size: 1.5rem;
+	}
+
+	.card-title {
+		font-size: 1rem;
+	}
+
+	.card-text {
+		font-size: 0.9rem;
+	}
 }

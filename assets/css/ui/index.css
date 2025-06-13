@@ -9,7 +9,6 @@
 
 /* Welcome section */
 .welcome-section .row {
-	display: flex;
 	align-items: center;
 	gap: 24px;
 }
@@ -187,11 +186,11 @@
 	color: #666;
 	font-family: "Be Vietnam Pro", sans-serif;
 	margin: 0;
-	line-height: 1.4; /* Điều chỉnh khoảng cách dòng */
+	line-height: 1.4; 
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
-	text-overflow: ellipsis; /* Thêm dấu ... nếu nội dung quá dài */
+	text-overflow: ellipsis; 
 }
 
 .volunteer-carousel-item {
@@ -298,26 +297,73 @@
 	margin-right: 5px;
 }
 
-.menu-toggle {
-	display: none;
-	cursor: pointer;
-	font-size: 24px;
-	color: #fff;
+/* Welcome */
+
+
+@media (min-width: 768px) {
+	.common-img {
+		max-width: 400px;
+	}
 }
 
-@media (max-width: 768px) {
-	.common-container {
-		padding: 40px;
+/* Impact */
+@media (max-width: 767px) {
+	.impact-section .row {
+		display: block;
 	}
 
-	.common-content,
-	.common-caption,
-	.common-btn,
-	.common-intro {
-		font-size: 13px;
+	.impact-card {
+		width: 100%;
+		margin-bottom: 20px;
 	}
 
-	.common-heading {
-		font-size: 24px;
+	.impact-card-1,
+	.impact-card-2,
+	.impact-card-3 {
+		transform: none;
+	}
+
+	.impact-card-1:hover,
+	.impact-card-2:hover,
+	.impact-card-3:hover {
+		transform: none;
+	}
+
+	.impact-card:last-child {
+		margin-bottom: 0;
+	}
+}
+
+/* Volunteer */
+@media (max-width: 767px) {
+	.volunteer-section .carousel-item {
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+	}
+	.volunteer-card {
+		width: 100%;
+		min-height: auto;
+	}
+	.volunteer-img {
+		width: 100px;
+		height: 100px;
+	}
+}
+
+@media (min-width: 768px) {
+	.volunteer-card {
+		width: 280px;
+	}
+}
+
+/*Shop*/
+@media (max-width: 767px) {
+	.shop-card {
+		margin-bottom: 5px;
+	}
+	.shop-image {
+		height: 400px;
+		width: 400px;
 	}
 }

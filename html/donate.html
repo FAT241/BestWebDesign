@@ -32,6 +32,8 @@
 		<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 		<!-- Link tới Modal -->
 		<link rel="stylesheet" href="../html/modal/modals.html" />
+		<!-- Link Char -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 		<!-- Link CSS -->
 		<link rel="stylesheet" href="../assets/css/ui/common.css" />
 		<link rel="stylesheet" href="../assets/css/ui/index.css" />
@@ -39,7 +41,6 @@
 		<link rel="stylesheet" href="../assets/css/components/messenger.css" />
 		<link rel="stylesheet" href="../assets/css/components/search-style.css" />
 		<link rel="stylesheet" href="../assets/css/components/stories-style.css" />
-		<style></style>
 	</head>
 	<body>
 		<!-- Hero -->
@@ -51,12 +52,110 @@
 				<div>
 					<a href="#"><img class="logo" src="../assets/img/logo.png" alt="" /></a>
 				</div>
+
 				<!-- Navbar điều hướng -->
 				<nav class="navbar">
-					<a style="--i: 1" class="nav-link" href="index.html">Trang chủ</a>
-					<a style="--i: 2" class="nav-link" href="about.html">Về chúng tôi</a>
-					<a style="--i: 3" class="nav-link" href="volunteer.html">Tình nguyện</a>
-					<a style="--i: 4" class="nav-link active" href="donate.html">Quyên góp</a>
+					<div class="nav-item dropdown">
+						<a style="--i: 1" class="nav-link" href="index.html"
+							>Trang chủ
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke="#1c2a52"
+								stroke-width="3"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								style="margin-left: 1px"
+							>
+								<polyline points="6 9 12 15 18 9" />
+							</svg>
+						</a>
+						<div class="dropdown-menu">
+							<a href="#sumenh">Sứ mệnh của chúng tôi</a>
+							<a href="#conso">Những con số biết nói</a>
+							<a href="#tinhnguyenvien">Tình nguyện viên tiêu biểu</a>
+							<a href="#shop">MVP - Shop</a>
+						</div>
+					</div>
+					<div class="nav-item dropdown">
+						<a style="--i: 2" class="nav-link" href="about.html"
+							>Về chúng tôi
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke="#1c2a52"
+								stroke-width="3"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								style="margin-left: 1px"
+							>
+								<polyline points="6 9 12 15 18 9" />
+							</svg>
+						</a>
+						<div class="dropdown-menu">
+							<a href="about.html#cauchuyenkhoinguon">Câu chuyện khởi nguồn</a>
+							<a href="about.html#timelinehanhtrinh">Timeline hành trình</a>
+							<a href="about.html#cachchungtoilamviec">Cách chúng tôi làm việc</a>
+							<a href="about.html#doingulanhdao">Đội ngũ lãnh đạo</a>
+						</div>
+					</div>
+					<div class="nav-item dropdown">
+						<a style="--i: 3" class="nav-link" href="volunteer.html"
+							>Tình nguyện
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke="#1c2a52"
+								stroke-width="3"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								style="margin-left: 1px"
+							>
+								<polyline points="6 9 12 15 18 9" />
+							</svg>
+						</a>
+						<div class="dropdown-menu">
+							<a href="volunteer.html#meochotinhnguyenvien">Mẹo cho tình nguyện viên</a>
+							<a href="volunteer.html#doitac">Đối tác & nhà tài trợ</a>
+							<a href="volunteer.html#youtubevideo">Xem video tình nguyện</a>
+							<a href="volunteer.html#lydonenthamgia">Lý do nên đồng hành?</a>
+							<a href="volunteer.html#sukiensaptoi">Sự kiện sắp tới</a>
+							<a href="volunteer.html#volunteer-form">Đăng ký tình nguyện viên</a>
+						</div>
+					</div>
+					<div class="nav-item dropdown">
+						<a style="--i: 4" class="nav-link active" href="donate.html"
+							>Quyên góp
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke="#1c2a52"
+								stroke-width="3"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								style="margin-left: 1px"
+							>
+								<polyline points="6 9 12 15 18 9" />
+							</svg>
+						</a>
+						<div class="dropdown-menu">
+							<a href="donate.html#donate">Quyên góp</a>
+							<a href="donate.html#">Danh sách quyên góp</a>
+							<a href="#">Biểu đồ thống kê</a>
+						</div>
+					</div>
 					<a style="--i: 5" class="nav-link" href="stories.html">Câu chuyện</a>
 				</nav>
 
@@ -64,16 +163,39 @@
 					<div class="search">
 						<a href="#" id="searchToggle"><box-icon name="search-alt-2"></box-icon></a>
 						<div class="search-dropdown" id="searchDropdown">
-							<input type="text" placeholder="Tìm kiếm..." />
+							<input type="text" id="searchInput" placeholder="Tìm kiếm câu chuyện..." />
+							<div id="searchResults" class="search-results"></div>
 						</div>
 					</div>
 
+					<div class="cart">
+						<a href="#" style="position: relative" onclick="toggleCartPopup(event)">
+							<box-icon name="cart"></box-icon>
+							<span id="cart-count" class="cart-count">0</span>
+						</a>
+					</div>
+
 					<div class="register-login">
-						<a class="register" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Đăng ký</a>
+						<a class="register" href="../html/register.html">Đăng ký</a>
 						<span class="slash">/</span>
-						<a class="login" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Đăng nhập</a>
+						<a class="login" href="../html/login.html">Đăng nhập</a>
 					</div>
 				</div>
+
+				<!-- Giỏ hàng của bạn -->
+				<div id="cart-sidebar" class="cart-sidebar">
+					<div class="cart-sidebar-header">
+						<h4>Giỏ hàng của bạn</h4>
+						<button class="close-btn" onclick="document.getElementById('cart-sidebar').classList.remove('show')"></button>
+					</div>
+					<ul id="cart-items" class="cart-items"></ul>
+					<div class="cart-total">
+						<p>Tổng cộng: <span id="cart-total">0 VNĐ</span></p>
+						<button class="checkout-btn">Thanh toán</button>
+					</div>
+				</div>
+
+				<div class="cart-overlay" onclick="document.getElementById('cart-sidebar').classList.remove('show')"></div>
 			</header>
 
 			<!-- Content -->
@@ -82,22 +204,21 @@
 					<h1>Chung tay vì trẻ em.</h1>
 					<h3>Lan tỏa hi vọng!</h3>
 					<p>Mọi đóng góp của bạn sẽ giúp trẻ em vùng cao vượt qua khó khăn, tiếp cận giáo dục và xây dựng cuộc sống tốt đẹp hơn với sự hỗ trợ từ cộng đồng</p>
-					<a href="#donate" class="hero-btn btn-animation">Quyên góp ngay<i class="fa-solid fa-heart-pulse right-header-icon"></i></a>
+					<a href="#shop" class="hero-btn btn-animation">Mua sản phẩm<i class="fa-solid fa-heart-pulse right-header-icon"></i></a>
 				</div>
 			</section>
 
 			<section class="hero-footer">
 				<div class="social-media">
-					<a style="--i: 1" href="#"><box-icon type="logo" name="facebook"></box-icon></a>
-					<a style="--i: 2" href="#"><box-icon name="twitter" type="logo"></box-icon></a>
-					<a style="--i: 3" href="#"><box-icon name="instagram" type="logo"></box-icon></a>
+					<a style="--i: 1" target="_blank" href="https://www.facebook.com/login"><box-icon type="logo" name="facebook"></box-icon></a>
+					<a style="--i: 2" target="_blank" href="https://www.twitter.com/login"><box-icon name="twitter" type="logo"></box-icon></a>
+					<a style="--i: 3" target="_blank" href="https://www.instagram.com/accounts/login/"><box-icon name="instagram" type="logo"></box-icon></a>
 				</div>
 			</section>
 		</div>
 
-		<div id="modal-container"></div>
-
-		<section id="donate" class="donate-section margin-section">
+		<!-- Donate -->
+		<section id="donate" class="donate-section margin-section px-md-0 px-4">
 			<div class="container common-container donate-container" data-aos="fade-right">
 				<div class="row d-flex justify-content-center align-items-center">
 					<!-- Form Section -->
@@ -169,13 +290,15 @@
 									</div>
 
 									<div id="donate-buttons" class="col-12">
-										<label class="form-label mb-3">CHỌN SỐ TIỀN BẠN MUỐN QUYÊN GÓP: </label><br />
-										<button type="button" class="donate-btn-money">100.000</button>
-										<button type="button" class="donate-btn-money">200.000</button>
-										<button type="button" class="donate-btn-money">500.000</button>
-										<button type="button" class="donate-btn-money">1.000.000</button>
-										<button type="button" class="donate-btn-money">2.000.000</button>
-										<button type="button" class="donate-btn-money" id="customAmountBtn">CON SỐ KHÁC</button>
+										<label class="form-label">CHỌN SỐ TIỀN BẠN MUỐN QUYÊN GÓP:</label><br />
+										<div class="button-container">
+											<button type="button" class="donate-btn-money">100.000</button>
+											<button type="button" class="donate-btn-money">200.000</button>
+											<button type="button" class="donate-btn-money">500.000</button>
+											<button type="button" class="donate-btn-money">1.000.000</button>
+											<button type="button" class="donate-btn-money">2.000.000</button>
+											<button type="button" class="donate-btn-money" id="customAmountBtn">CON SỐ KHÁC</button>
+										</div>
 									</div>
 
 									<!-- Ô nhập ẩn ban đầu -->
@@ -264,7 +387,7 @@
 					</div>
 
 					<!-- Contact Info -->
-					<div id="contact-info" class="col-4" style="padding-left: 55px">
+					<div id="contact-info" class="col-4">
 						<div class="contact-box">
 							<h4 style="text-align: center">Thông Tin Liên Hệ</h4>
 							<br />
@@ -289,13 +412,13 @@
 		</section>
 
 		<!-- List -->
-		<section id="table-donate" class="list-section margin-section">
+		<section id="" class="list-section margin-section">
 			<div class="container common-container list-container" data-aos="zoom-in">
 				<h3 class="common-heading text-center">Danh sách ủng hộ</h3>
 				<!-- Search -->
 				<div class="row">
 					<div class="col">
-						<input type="text" class="form-control" placeholder="Nhập tên người ủng hộ" />
+						<input type="text" class="form-control" id="searchInput" placeholder="🔍 Tìm kiếm người ủng hộ bằng Tên, Ngày ủng hộ, Số tiền họ ủng hộ hoặc Dự án hộ ủng hộ" />
 					</div>
 				</div>
 
@@ -308,6 +431,7 @@
 								<th>Người ủng hộ</th>
 								<th>Số tiền</th>
 								<th>Thời gian</th>
+								<th>Dự án ủng hộ</th>
 							</tr>
 						</thead>
 						<tbody id="donationTableBody"></tbody>
@@ -318,6 +442,13 @@
 				<nav>
 					<ul class="pagination justify-content-center mt-3" id="pagination"></ul>
 				</nav>
+			</div>
+		</section>
+
+		<!-- Biểu đồ -->
+		<section class="list-section margin-section">
+			<div class="container common-container list-container" data-aos="zoom-in">
+				<canvas id="myChart" style="width: 100%; max-width: 900px" class="mx-auto d-block"></canvas>
 			</div>
 		</section>
 
@@ -344,7 +475,7 @@
 					<div class="col-4">
 						<h3 class="footer-heading">ĐỒNG HÀNH CÙNG CHÚNG TÔI</h3>
 						<p class="footer-content">Mỗi bước chân của bạn là nguồn cảm hứng để chúng tôi lan tỏa điều tốt đẹp mỗi ngày – Xem những tấm lòng đã đồng hành cùng chúng tôi.</p>
-						<a href="donate.html#table-donate" class="footer-btn">Xem ngay</a>
+						<a href="donate.html#" class="footer-btn">Xem ngay</a>
 					</div>
 					<div class="col-3 footer-padding">
 						<h3 class="footer-heading">LIÊN HỆ</h3>
@@ -372,10 +503,6 @@
 		<script>
 			AOS.init();
 		</script>
-		<script src="../assets/js/data.js"></script>
-		<script src="../assets/js/search.js"></script>
-		<script src="../assets/js/messenger.js"></script>
-		<script src="../assets/js/hero.js"></script>
 
 		<!-- Messenger Icon -->
 		<a href="https://m.me/ErasmusFade" target="_blank" class="messenger-icon">
@@ -393,6 +520,8 @@
 		<script src="../assets/js/search.js"></script>
 		<script src="../assets/js/messenger.js"></script>
 		<script src="../assets/js/donate-validation.js"></script>
+		<script src="../assets/js/cart.js"></script>
+		<script src="../assets/js/char.js"></script>
 
 		<!-- link Modal -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

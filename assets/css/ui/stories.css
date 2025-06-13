@@ -1,4 +1,5 @@
 @import url("common.css");
+
 .stories-container {
 	padding: 40px 60px 15px;
 	border-radius: 25px;
@@ -53,6 +54,7 @@
 	margin-bottom: 16px;
 	font-family: "Be Vietnam Pro", sans-serif;
 	transition: 0.3s ease;
+	word-wrap: break-word;
 }
 
 .story-card h3:hover {
@@ -65,6 +67,7 @@
 	line-height: 26.25px;
 	color: #555;
 	margin-bottom: 15px;
+	word-wrap: break-word;
 }
 
 .filter-container {
@@ -92,13 +95,13 @@
 .load-more-btn {
 	display: block;
 	margin: 25px auto 40px;
-	padding: 10px 20px;
+	padding: 12px 24px;
 	background-color: var(--color-primary);
 	color: var(--color-tertiary);
 	border: none;
-	border-radius: 5px;
+	border-radius: 6px;
 	font-family: "Quicksand", sans-serif;
-	font-size: 1rem;
+	font-size: 1.1rem;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
 }
@@ -111,8 +114,8 @@
 	width: 100%;
 	display: block;
 	margin: 0 auto;
-	padding: 10px 20px;
-	font-size: 14px;
+	padding: 12px 24px;
+	font-size: 15px;
 	font-weight: 500;
 	text-align: center;
 }
@@ -126,7 +129,49 @@
 }
 
 .card-text {
-	margin-bottom: 20px; /* thêm khoảng cách nếu cần */
+	margin-bottom: 20px;
+}
+
+/* Thêm kiểu dáng cho kết quả tìm kiếm và loại bỏ thanh ngang */
+.search-results {
+	max-height: 350px;
+	min-width: 300px;
+	overflow-y: auto;
+	background: var(--color-tertiary);
+	border: 2px solid var(--color-primary);
+	border-radius: 10px;
+	padding: 20px;
+	margin-top: 5px;
+	position: absolute;
+	width: auto;
+	z-index: 1000;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+	/* Loại bỏ viền dưới nếu gây nhầm lẫn */
+	border-bottom: none;
+}
+
+.search-result-item {
+	padding: 15px 12px;
+	cursor: pointer;
+	white-space: normal;
+	margin-bottom: 10px; /* Tăng khoảng cách giữa các mục */
+	/* Loại bỏ hoàn toàn border-bottom */
+	border-bottom: none; /* Xóa thanh ngang */
+}
+
+.search-result-item a {
+	color: #1e6292;
+	text-decoration: none;
+	font-family: "Be Vietnam Pro", sans-serif;
+	font-size: 16px;
+	line-height: 1.8;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	display: block;
+}
+
+.search-result-item a:hover {
+	color: var(--color-extra-3);
 }
 
 /* Responsive */
@@ -134,142 +179,6 @@
 	.stories-container {
 		padding: 20px 30px 10px;
 	}
-
-	.header.scrolled {
-		display: none;
-	}
-
-	.navbar {
-		display: none;
-	}
-
-	.hero-background {
-		width: 100%;
-		object-fit: contain; /* Phủ kín mà không méo hình */
-		display: block;
-	}
-
-	.hero-btn {
-		font-size: 14px;
-	}
-
-	.home-content {
-		padding: 0 9.5%;
-	}
 }
 
-/* Extra small devices (≤575.98px) */
-@media (max-width: 575.98px) {
-	.footer-section {
-		display: none;
-	}
 
-	.common-intro {
-		font-size: 13px;
-	}
-
-	.home-content h1 {
-		font-size: 20px;
-	}
-
-	.home-content h3 {
-		font-size: 16px;
-	}
-
-	.home-content p {
-		font-size: 13px;
-	}
-
-	.story-card img {
-		height: 160px;
-	}
-
-	.story-card h3 {
-		font-size: 1.2rem;
-	}
-}
-
-/* Small devices (≤767.98px) */
-@media (max-width: 767.98px) {
-	.footer-section {
-		display: none;
-	}
-
-	.story-card {
-		min-height: 500px;
-		margin-bottom: 15px;
-	}
-
-	.story-card img {
-		height: 200px;
-	}
-
-	.story-card h3 {
-		font-size: 1.3rem;
-	}
-
-	.story-card p {
-		font-size: 0.9rem;
-	}
-
-	.home-content h1 {
-		font-size: 22px;
-	}
-
-	.home-content h3 {
-		font-size: 18px;
-	}
-
-	.home-content p {
-		font-size: 14px;
-	}
-
-	.common-intro {
-		font-size: 14px;
-	}
-}
-
-/* Medium devices (tablets: ≥768px and <992px) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-	.story-card {
-		min-height: 700px;
-	}
-
-	.footer-heading {
-		font-size: 11.5px;
-	}
-
-	.footer-content {
-		font-size: 10.5px;
-	}
-
-	.footer-first {
-		padding-right: 5px;
-	}
-
-	.footer-padding {
-		padding-left: 5px;
-		padding-right: 5px;
-	}
-
-	.footer-btn {
-		font-size: 11px;
-		padding: 8px;
-	}
-
-	.footer-section {
-		padding: 60px 15px 30px;
-	}
-
-	.home-content h1 {
-		font-size: 32px;
-	}
-
-	.home-content h3 {
-		font-size: 24px;
-	}
-
-	.home-content p {
-		font-size: 15px;
-	}
-}

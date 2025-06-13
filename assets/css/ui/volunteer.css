@@ -134,9 +134,8 @@
 	color: #fff;
 }
 
-.blockquote p{
+.blockquote p {
 	font-weight: 500;
-
 }
 
 /* Form */
@@ -251,4 +250,139 @@ a.privacy {
 .is-invalid {
 	border: 2px solid #ffc107 !important;
 	box-shadow: 0 0 5px #ffc107;
+}
+
+/* Lý do */
+/* Responsive cho điện thoại (max-width: 767px) cho Lý do nên tham gia */
+@media (max-width: 767px) {
+	#lydonenthamgia {
+		padding: 30px 0;
+	}
+
+	.common-heading {
+		font-size: 1.8rem;
+		margin-bottom: 15px;
+	}
+
+	.col {
+		flex: 0 0 100%; /* 1 cột trên mobile */
+		max-width: 100%;
+		padding: 10px;
+	}
+
+	.card {
+		padding: 15px;
+	}
+
+	.card-title {
+		font-size: 1rem;
+	}
+
+	.card-text {
+		font-size: 0.9rem;
+	}
+
+	.fa-3x {
+		font-size: 2rem;
+		margin-bottom: 10px;
+	}
+}
+
+/* Event */
+/* Responsive cho điện thoại (max-width: 767px) cho Events */
+@media (max-width: 767px) {
+	.events-section {
+		padding: 30px 0;
+	}
+
+	.common-heading {
+		font-size: 1.8rem;
+		margin-bottom: 15px;
+	}
+
+	.common-intro {
+		font-size: 1rem;
+		margin-bottom: 20px;
+	}
+
+	.col {
+		flex: 0 0 100%; /* 1 cột trên mobile */
+		max-width: 100%;
+		padding: 10px;
+	}
+
+	.card {
+		padding: 0;
+	}
+
+	.card-title {
+		font-size: 1rem;
+	}
+
+	.card-text {
+		font-size: 0.9rem;
+	}
+
+	.card-img-top {
+		height: 200px; /* Điều chỉnh chiều cao hình ảnh trên mobile */
+		object-fit: cover;
+	}
+
+	.card-body {
+		padding: 10px;
+	}
+
+	.btn {
+		margin-top: 8px;
+		padding: 6px 12px;
+	}
+}
+
+/* Form */
+@media (max-width: 767px) {
+	.volunteer-form-section {
+		padding: 30px 0;
+	}
+
+	.volunteer-card-form {
+		padding: 60px 60px;
+	}
+
+	.common-heading {
+		font-size: 2.4rem;
+		margin-bottom: 15px;
+		text-align: center;
+	}
+
+	.volunteer-form-title {
+		font-size: 1rem;
+		margin-bottom: 10px;
+	}
+
+	.col-6,
+	.col-12 {
+		flex: 0 0 100%; 
+		max-width: 100%;
+		padding: 2px;
+	}
+
+	.input-with-icon,
+	.form-select,
+	.form-control {
+		margin-bottom: 2px; 
+	}
+
+	.form-check {
+		margin-top: 10px;
+	}
+
+	.form-check-label {
+		font-size: 0.85rem;
+	}
+
+	.btn-form {
+		padding: 8px 15px;
+		font-size: 0.9rem;
+		margin-top: 10px;
+	}
 }

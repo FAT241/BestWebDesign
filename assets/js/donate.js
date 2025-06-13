@@ -44,37 +44,54 @@ function launchFireworks() {
 
 // ----------- Donation Table & Pagination ----------
 const donations = [
-	{ name: "Sơn Tùng MTP", amount: "150.000.000", time: "13:15:07 - 10/05/2025" },
-	{ name: "Trịnh Trần Phương Tuấn", amount: "3.500.000", time: "08:58:24 - 10/05/2025" },
-	{ name: "Mono", amount: "75.000.000", time: "09:07:34 - 08/05/2025" },
-	{ name: "Phạm Thị Duyên", amount: "90.000", time: "00:42:04 - 08/05/2025" },
-	{ name: "Đỗ Minh Hòa", amount: "1.000.000", time: "19:41:10 - 06/05/2025" },
-	{ name: "Ngô Quang Huy", amount: "150.000", time: "10:59:22 - 06/05/2025" },
-	{ name: "Vũ Thị Hạnh", amount: "5.000.000", time: "10:49:29 - 06/05/2025" },
-	{ name: "Bùi Văn Khang", amount: "800.000", time: "23:42:58 - 05/05/2025" },
-	{ name: "Tạ Thị Linh", amount: "50.000", time: "12:31:23 - 04/05/2025" },
-	{ name: "Mai Văn Mạnh", amount: "20.000.000", time: "15:37:02 - 03/05/2025" },
-	{ name: "Lý Hải Nam", amount: "3.000.000", time: "10:00:00 - 03/05/2025" },
-	{ name: "Trịnh Xuân Nhật", amount: "600.000", time: "09:00:00 - 03/05/2025" },
-	{ name: "Dương Thị Oanh", amount: "12.000", time: "08:00:00 - 03/05/2025" },
-	{ name: "Hoàng Văn Phúc", amount: "1.200.000", time: "07:30:00 - 02/05/2025" },
-	{ name: "Nguyễn Thị Quỳnh", amount: "25.000.000", time: "06:15:00 - 02/05/2025" },
-	{ name: "Phan Hữu Sang", amount: "70.000", time: "05:00:00 - 02/05/2025" },
-	{ name: "Trần Minh Thắng", amount: "180.000", time: "04:45:00 - 02/05/2025" },
-	{ name: "Vũ Thị Uyên", amount: "350.000", time: "03:20:00 - 02/05/2025" },
-	{ name: "Nguyễn Văn Vinh", amount: "11.000.000", time: "02:10:00 - 01/05/2025" },
-	{ name: "Phạm Thị Xuân", amount: "950.000", time: "01:00:00 - 01/05/2025" },
-	{ name: "Lê Hồng Yến", amount: "45.000", time: "00:30:00 - 01/05/2025" },
-	{ name: "Đoàn Trọng Nam", amount: "5.000.000", time: "21:00:00 - 30/04/2025" },
+	{ name: "Sơn Tùng MTP", amount: "10.000.000đ", time: "13:15:07 - 10/05/2025", du_an: "Học bổng cho trẻ em vùng cao" },
+	{ name: "Trịnh Trần Phương Tuấn", amount: "3.500.000đ", time: "08:58:24 - 10/05/2025", du_an: "Mang lớp học đến vùng cao Điện Biên" },
+	{ name: "Mono", amount: "7.500.000đ", time: "09:07:34 - 08/05/2025", du_an: "Mùa hè ý nghĩa cùng lớp học tình nguyện" },
+	{ name: "Phạm Thị Duyên", amount: "90.000đ", time: "00:42:04 - 08/05/2025", du_an: "Quên góp sách vở cho trẻ em nghèo" },
+	{ name: "Đỗ Minh Hòa", amount: "1.000.000đ", time: "19:41:10 - 06/05/2025", du_an: "Khóa học kỹ năng sống cho trẻ em" },
+	{ name: "Ngô Quang Huy", amount: "150.000đ", time: "10:59:22 - 06/05/2025", du_an: "Hỗ trợ dinh dưỡng cho trẻ vùng cao" },
+	{ name: "Vũ Thị Hạnh", amount: "5.000.000đ", time: "10:49:29 - 06/05/2025", du_an: "Xây dựng thư viện cộng đồng tại Cao Bằng" },
+	{ name: "Bùi Văn Khang", amount: "800.000đ", time: "23:42:58 - 05/05/2025", du_an: "Hỗ trợ áo ấm mùa đông cho trẻ em " },
+	{ name: "Tạ Thị Linh", amount: "50.000đ", time: "12:31:23 - 04/05/2025", du_an: "Trại hè kỹ năng cho trẻ em miền núi" },
+	{ name: "Mai Văn Mạnh", amount: "20.000.000đ", time: "15:37:02 - 03/05/2025", du_an: "Học bổng cho trẻ em vùng cao" },
+	{ name: "Lý Hải Nam", amount: "3.000.000đ", time: "10:00:00 - 03/05/2025", du_an: "Mang lớp học đến vùng cao Điện Biên" },
+	{ name: "Trịnh Xuân Nhật", amount: "600.000đ", time: "09:00:00 - 03/05/2025", du_an: "Mùa hè ý nghĩa cùng lớp học tình nguyện" },
+	{ name: "Dương Thị Oanh", amount: "12.000đ", time: "08:00:00 - 03/05/2025", du_an: "Quyên góp sách vở cho trẻ em nghèo" },
+	{ name: "Hoàng Văn Phúc", amount: "1.200.000đ", time: "07:30:00 - 02/05/2025", du_an: "Khóa học kỹ năng sống cho trẻ em nghèo" },
+	{ name: "Nguyễn Thị Quỳnh", amount: "25.000.000đ", time: "06:15:00 - 02/05/2025", du_an: "Hỗ trợ dinh dưỡng cho trẻ em vùng cao" },
+	{ name: "Phan Hữu Sang", amount: "70.000đ", time: "05:00:00 - 02/05/2025", du_an: "Xây dựng thư viện cộng đồng tại Cao Bằng" },
+	{ name: "Trần Minh Thắng", amount: "180.000đ", time: "04:45:00 - 02/05/2025", du_an: "Hỗ trợ áo ấm mùa đông cho trẻ em nghèo" },
+	{ name: "Vũ Thị Uyên", amount: "350.000đ", time: "03:20:00 - 02/05/2025", du_an: "Trại hè kỹ năng cho trẻ em miền núi" },
+	{ name: "Nguyễn Văn Vinh", amount: "11.000.000đ", time: "02:10:00 - 01/05/2025", du_an: "Quên góp sách vở cho trẻ em nghèo" },
+	{ name: "Phạm Thị Xuân", amount: "950.000đ", time: "01:00:00 - 01/05/2025", du_an: "Hỗ trợ dinh dưỡng cho trẻ em vùng cao" },
+	{ name: "Lê Hồng Yến", amount: "45.000đ", time: "00:30:00 - 01/05/2025", du_an: "Mang lớp học đến vùng cao Điện Biên" },
+	{ name: "Đoàn Trọng Nam", amount: "5.000.000đ", time: "21:00:00 - 30/04/2025", du_an: "Xây dựng thư viện cộng đồng tại Cao Bằng" },
 ];
 
 const rowsPerPage = 8;
 let currentPage = 1;
+let filteredDonations = [...donations];
+
+function handleSearch() {
+	const keyword = document.getElementById("searchInput").value.trim().toLowerCase();
+
+	filteredDonations = donations.filter((donation) => {
+		const nameMatch = donation.name.toLowerCase().includes(keyword);
+		const dateMatch = donation.time.toLowerCase().includes(keyword);
+		const du_anMatch = donation.du_an.toLowerCase().includes(keyword);
+		const costMatch = donation.amount.toLowerCase().includes(keyword);
+		return nameMatch || dateMatch || du_anMatch || costMatch;
+	});
+
+	currentPage = 1;
+	renderTable(currentPage);
+	renderPagination();
+}
 
 function renderTable(page) {
 	const start = (page - 1) * rowsPerPage;
 	const end = start + rowsPerPage;
-	const sliced = donations.slice(start, end);
+	const sliced = filteredDonations.slice(start, end);
 
 	const tbody = document.getElementById("donationTableBody");
 	tbody.innerHTML = "";
@@ -85,6 +102,7 @@ function renderTable(page) {
 			<td>${d.name}</td>
 			<td>${d.amount}</td>
 			<td>${d.time}</td>
+			<td>${d.du_an}</td>
 		</tr>`;
 	});
 }
@@ -117,18 +135,6 @@ function setupPaymentOptions() {
 			option.classList.add("active");
 		});
 	});
-
-	// Nút bấm phương thức
-	const paymentOptions = document.querySelectorAll(".payment-option");
-	paymentOptions.forEach((option) => {
-		option.addEventListener("click", () => {
-			// Bỏ active khỏi tất cả
-			paymentOptions.forEach((opt) => opt.classList.remove("active"));
-
-			// Thêm active cho cái được chọn
-			option.classList.add("active");
-		});
-	});
 }
 
 // ----------- QR Toggle ----------
@@ -147,6 +153,13 @@ window.onload = () => {
 	renderTable(currentPage);
 	renderPagination();
 	setupPaymentOptions();
+
+	// Gắn sự kiện tìm kiếm
+	const searchInput = document.getElementById("searchInput");
+	if (searchInput) {
+		searchInput.addEventListener("input", handleSearch);
+	}
+
 	// Chọn số tiền
 	const buttons = document.querySelectorAll(".donate-btn-money");
 	const customInputDiv = document.getElementById("customAmountInput");
@@ -156,7 +169,6 @@ window.onload = () => {
 		button.addEventListener("click", () => {
 			const value = button.textContent.trim();
 
-			// Bỏ lớp active khỏi tất cả nút
 			buttons.forEach((btn) => btn.classList.remove("active"));
 
 			if (value === "CON SỐ KHÁC") {
@@ -164,9 +176,9 @@ window.onload = () => {
 				donationInput.value = "";
 				donationInput.focus();
 			} else {
-				button.classList.add("active"); // Tô màu nút đã chọn
+				button.classList.add("active");
 				customInputDiv.style.display = "none";
-				donationInput.value = value; // Gán giá trị nếu cần
+				donationInput.value = value;
 			}
 		});
 	});
