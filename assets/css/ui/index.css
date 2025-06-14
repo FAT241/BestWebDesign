@@ -1,0 +1,369 @@
+@import url(./common.css);
+.overlay {
+	background: rgba(0, 0, 0, 0.25);
+}
+
+.home-content h3 {
+	filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.4));
+}
+
+/* Welcome section */
+.welcome-section .row {
+	align-items: center;
+	gap: 24px;
+}
+
+.welcome-content {
+	padding-right: 18px;
+	margin-bottom: 24px !important;
+}
+
+/* Mission section */
+.mission-section {
+	padding: 4rem 0;
+	/* Nhiều layer background để tạo tam giác trên và dưới */
+	background:
+        /* Layer 1: Tam giác phía trên (giữ nguyên) */ linear-gradient(45deg, transparent 90%, var(--color-secondary) 10%),
+		/* Layer 2: Tam giác phía dưới */ linear-gradient(-135deg, transparent 90%, var(--color-secondary) 10%), /* Layer 3: Màu nền chính */ var(--color-primary);
+}
+
+.mission-section .common-heading,
+.mission-section .common-content {
+	color: var(--color-tertiary);
+}
+
+/* Impact section */
+.impact-section .row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.impact-card {
+	padding: 20px;
+	border-radius: 15px;
+	position: relative;
+	overflow: hidden;
+	width: calc(33% - 12px);
+	background-color: var(--color-tertiary);
+	text-align: center;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+	transition: color 0.4s;
+}
+
+.impact-card::before {
+	position: absolute;
+	content: "";
+	background-color: var(--color-secondary);
+	width: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	transition: 0.6s ease;
+}
+
+.impact-card:hover::before {
+	width: 100%;
+}
+
+.impact-card:last-child {
+	margin: 0;
+}
+
+.impact-card-1 {
+	transform: rotate(-2deg);
+}
+
+.impact-card-2 {
+	transform: translate(0, 15px);
+}
+
+.impact-card-3 {
+	transform: rotate(2deg);
+}
+
+.impact-card:hover {
+	color: #fff;
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.impact-card-1:hover {
+	transform: translate(0, -10px) rotate(2deg);
+}
+
+.impact-card-2:hover {
+	transform: translate(0, 5px);
+}
+
+.impact-card-3:hover {
+	transform: translate(0, -10px) rotate(-2deg);
+}
+
+.impact-title {
+	margin-bottom: 8px;
+}
+
+.impact-icon {
+	background-color: var(--bg-btn);
+	padding: 3px;
+	width: 60px;
+	height: 60px;
+	object-fit: contain;
+	border-radius: 50%;
+	display: block;
+	margin: 0 auto 10px;
+	border: 2px solid var(--color-primary);
+}
+
+/* Volunteer Section */
+.volunteer-section {
+	padding: 40px 0 60px 0;
+	background-image: url(../../img/bg.jpg);
+}
+
+.volunteer-section .carousel-item {
+	display: flex;
+	justify-content: center;
+	gap: 16px;
+}
+
+.volunteer-section .volunteer-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 0 15px;
+	background-color: var(--color-tertiary);
+	border: 2px solid var(--color-primary);
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+	width: 280px;
+	min-height: 380px;
+}
+
+.volunteer-section .volunteer-card:hover {
+	transform: translate(0, -15px);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Hình ảnh trong card */
+.volunteer-section .volunteer-img {
+	margin-bottom: 15px;
+	width: 180px;
+	height: 180px;
+	object-fit: cover;
+	border-radius: 50%;
+	transition: transform 0.3s ease;
+	display: block;
+}
+
+.volunteer-section .volunteer-title,
+.volunteer-section .volunteer-subtitle,
+.volunteer-section .volunteer-content {
+	text-align: center;
+}
+
+.volunteer-section .volunteer-title {
+	margin: 10px 0 8px 0;
+	font-size: 18px;
+	font-weight: 600;
+	color: var(--color-primary);
+	text-transform: uppercase;
+	font-family: "Quicksand", sans-serif;
+}
+
+.volunteer-section .volunteer-subtitle {
+	margin-bottom: 8px;
+	color: var(--color-secondary);
+	font-size: 13px;
+	font-family: "Be Vietnam Pro", sans-serif;
+	font-weight: 600;
+}
+
+.volunteer-section .volunteer-content {
+	font-size: 14px;
+	color: #666;
+	font-family: "Be Vietnam Pro", sans-serif;
+	margin: 0;
+	line-height: 1.4; 
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis; 
+}
+
+.volunteer-carousel-item {
+	padding-top: 15px;
+}
+
+/* Hiệu ứng fade cho carousel */
+.carousel-fade .carousel-item {
+	transition: opacity 0.6s ease-in-out;
+	opacity: 0;
+}
+
+.carousel-fade .carousel-item.active {
+	opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+	border-radius: 50%;
+	padding: 10px;
+	filter: brightness(0.1);
+}
+
+/* Shop Section */
+.shop-section {
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+
+.shop-intro {
+	max-width: 900px;
+	margin: 0 auto 10px auto;
+	font-size: 16px;
+	color: #555;
+	text-align: center;
+	line-height: 1.6;
+}
+
+.shop-card {
+	padding: 15px;
+	text-align: center;
+	transition: all 0.3s ease;
+	border-radius: 10px;
+	background-color: #ffffff;
+}
+
+.shop-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+	background-color: var(--color-extra-1);
+}
+
+.shop-image {
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.shop-title {
+	margin: 15px 0 8px 0;
+	font-size: 18px;
+	font-family: "Quicksand", sans-serif;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #333333;
+}
+
+.shop-price {
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--color-secondary);
+	margin-bottom: 10px;
+}
+
+.shop-number {
+	font-size: 14px;
+	font-family: "Be Vietnam Pro", sans-serif;
+	color: #555;
+	line-height: 1.6;
+	margin-bottom: 15px;
+}
+
+.shop-btn {
+	display: inline-block;
+	padding: 8px 20px;
+	border: none;
+	border-radius: 5px;
+	font-family: "Quicksand", sans-serif;
+	background-color: var(--color-primary);
+	color: var(--color-tertiary);
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.shop-btn:hover {
+	background-color: var(--color-secondary);
+	color: var(--color-tertiary);
+}
+
+.shop-btn i {
+	margin-right: 5px;
+}
+
+/* Welcome */
+
+
+@media (min-width: 768px) {
+	.common-img {
+		max-width: 400px;
+	}
+}
+
+/* Impact */
+@media (max-width: 767px) {
+	.impact-section .row {
+		display: block;
+	}
+
+	.impact-card {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.impact-card-1,
+	.impact-card-2,
+	.impact-card-3 {
+		transform: none;
+	}
+
+	.impact-card-1:hover,
+	.impact-card-2:hover,
+	.impact-card-3:hover {
+		transform: none;
+	}
+
+	.impact-card:last-child {
+		margin-bottom: 0;
+	}
+}
+
+/* Volunteer */
+@media (max-width: 767px) {
+	.volunteer-section .carousel-item {
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+	}
+	.volunteer-card {
+		width: 100%;
+		min-height: auto;
+	}
+	.volunteer-img {
+		width: 100px;
+		height: 100px;
+	}
+}
+
+@media (min-width: 768px) {
+	.volunteer-card {
+		width: 280px;
+	}
+}
+
+/*Shop*/
+@media (max-width: 767px) {
+	.shop-card {
+		margin-bottom: 5px;
+	}
+	.shop-image {
+		height: 400px;
+		width: 400px;
+	}
+}

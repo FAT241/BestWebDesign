@@ -1,0 +1,388 @@
+@import url(./common.css);
+
+/* Volunteer Tips */
+.volunteer-tips .card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	min-height: 180px;
+	background-color: var(--color-extra-4);
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.volunteer-tips .card:hover {
+	transform: translate(0, -16px);
+}
+
+.volunteer-tips .card-body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+.volunteer-tips .card-title {
+	font-size: 18px;
+	font-family: "Quicksand", sans-serif;
+	font-weight: 600;
+	color: #333333;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.volunteer-tips .card-text {
+	font-size: 14px;
+	color: #555;
+	line-height: 1.6;
+	text-align: center;
+}
+
+.volunteer-tips .volunteer-tip-img {
+	margin-bottom: 15px;
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Partners */
+.partners-img {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.partners-img img {
+	max-height: 64px;
+	margin: 0 10px;
+	object-fit: contain;
+}
+
+.img-fluid:hover {
+	transform: scale(1.05);
+	transition: transform 0.3s ease;
+}
+
+/* Video */
+.video-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Events Section */
+.events-section .card {
+	transition: 0.4s;
+	padding-bottom: 25px;
+}
+
+.events-section .card:hover {
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.events-section .card-img-top {
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
+	border-radius: 10px;
+	transition: 0.7s ease;
+}
+
+.events-section .card-img-top:hover {
+	transform: scale(1.03434) rotate(0.940885deg);
+}
+
+.events-section .card-body {
+	padding: 15px 12px;
+}
+.events-section .card-text {
+	font-size: 14px;
+	color: #555;
+	text-align: justify;
+	padding: 0 0px;
+}
+
+/* Testimonials Section */
+.testimonials-section .blockquote {
+	padding: 24px;
+	border-radius: 8px;
+}
+
+.blockquote {
+	position: relative;
+	border-radius: 15px;
+	padding: 20px;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+	border-left: 6px solid #4d69b6;
+	transition: transform 0.5s ease;
+}
+
+.blockquote:hover {
+	background-color: #ffbe76 !important;
+	transform: translate(-10px, 0);
+	color: #fff;
+}
+
+.blockquote p {
+	font-weight: 500;
+}
+
+/* Form */
+.volunteer-form-section {
+	background: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80") no-repeat center center fixed;
+	background-size: cover;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	padding: 150px 0;
+	position: relative;
+	margin-bottom: 80px;
+}
+
+.container {
+	max-width: 900px;
+}
+
+.volunteer-card-form {
+	background-color: transparent;
+	padding: 40px 100px;
+	border-radius: 15px;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+	color: #333;
+	position: relative;
+	z-index: 1;
+}
+
+/* Tạo nền xanh dương bằng lớp giả với đổ bóng */
+.volunteer-card-form::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(180deg, #1e88e5 0%, #0d47a1 100%);
+	border-radius: 15px;
+	z-index: -1;
+	box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.2);
+	opacity: 0.95;
+}
+
+textarea.form-control {
+	border-radius: 10px !important;
+	min-height: 100px;
+	resize: vertical;
+}
+
+.form-check-label {
+	color: #fff;
+	font-size: 0.9em;
+	margin-bottom: 32px;
+}
+
+.form-check-input:checked {
+	background-color: #28a745;
+	border-color: #28a745;
+}
+
+.volunteer-form-title {
+	font-size: 15px;
+	margin-bottom: 24px;
+	padding: 0;
+	color: #fff;
+}
+
+a.privacy {
+	color: greenyellow;
+}
+
+.volunteer-card-form .form-control:focus,
+.volunteer-card-form .form-select:focus {
+	border-width: 3px;
+	border-color: #41dbb2;
+	box-shadow: 0 0 8px #41dbb2, 0 0 15px #41dbb2, 0 0 25px #41dbb2;
+	outline: none;
+}
+
+.volunteer-input-with-icon-1 {
+	background-image: url("../../img/user.png");
+}
+
+.volunteer-input-with-icon-2 {
+	background-image: url(../../img/schedule.png);
+}
+
+.volunteer-input-with-icon-3 {
+	background-image: url(../../img/email.png);
+}
+
+.volunteer-input-with-icon-4 {
+	background-image: url(../../img/phone.png);
+}
+
+.volunteer-input-with-icon-5 {
+	background-image: url(../../img/house.png);
+}
+
+.volunteer-input-with-icon-6 {
+	background-image: url(../../img/farmer.png);
+}
+
+.volunteer-input-with-icon-7 {
+	background-image: url(../../img/clock.png);
+}
+
+.volunteer-input-with-icon-8 {
+	background-image: url(../../img/satisfaction.png);
+}
+
+.is-invalid {
+	border: 2px solid #ffc107 !important;
+	box-shadow: 0 0 5px #ffc107;
+}
+
+/* Lý do */
+/* Responsive cho điện thoại (max-width: 767px) cho Lý do nên tham gia */
+@media (max-width: 767px) {
+	#lydonenthamgia {
+		padding: 30px 0;
+	}
+
+	.common-heading {
+		font-size: 1.8rem;
+		margin-bottom: 15px;
+	}
+
+	.col {
+		flex: 0 0 100%; /* 1 cột trên mobile */
+		max-width: 100%;
+		padding: 10px;
+	}
+
+	.card {
+		padding: 15px;
+	}
+
+	.card-title {
+		font-size: 1rem;
+	}
+
+	.card-text {
+		font-size: 0.9rem;
+	}
+
+	.fa-3x {
+		font-size: 2rem;
+		margin-bottom: 10px;
+	}
+}
+
+/* Event */
+/* Responsive cho điện thoại (max-width: 767px) cho Events */
+@media (max-width: 767px) {
+	.events-section {
+		padding: 30px 0;
+	}
+
+	.common-heading {
+		font-size: 1.8rem;
+		margin-bottom: 15px;
+	}
+
+	.common-intro {
+		font-size: 1rem;
+		margin-bottom: 20px;
+	}
+
+	.col {
+		flex: 0 0 100%; /* 1 cột trên mobile */
+		max-width: 100%;
+		padding: 10px;
+	}
+
+	.card {
+		padding: 0;
+	}
+
+	.card-title {
+		font-size: 1rem;
+	}
+
+	.card-text {
+		font-size: 0.9rem;
+	}
+
+	.card-img-top {
+		height: 200px; /* Điều chỉnh chiều cao hình ảnh trên mobile */
+		object-fit: cover;
+	}
+
+	.card-body {
+		padding: 10px;
+	}
+
+	.btn {
+		margin-top: 8px;
+		padding: 6px 12px;
+	}
+}
+
+/* Form */
+@media (max-width: 767px) {
+	.volunteer-form-section {
+		padding: 30px 0;
+	}
+
+	.volunteer-card-form {
+		padding: 60px 60px;
+	}
+
+	.common-heading {
+		font-size: 2.4rem;
+		margin-bottom: 15px;
+		text-align: center;
+	}
+
+	.volunteer-form-title {
+		font-size: 1rem;
+		margin-bottom: 10px;
+	}
+
+	.col-6,
+	.col-12 {
+		flex: 0 0 100%; 
+		max-width: 100%;
+		padding: 2px;
+	}
+
+	.input-with-icon,
+	.form-select,
+	.form-control {
+		margin-bottom: 2px; 
+	}
+
+	.form-check {
+		margin-top: 10px;
+	}
+
+	.form-check-label {
+		font-size: 0.85rem;
+	}
+
+	.btn-form {
+		padding: 8px 15px;
+		font-size: 0.9rem;
+		margin-top: 10px;
+	}
+}

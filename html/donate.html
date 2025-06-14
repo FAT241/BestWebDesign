@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Qũy từ thiện MVP - Quyên góp</title>
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="../assets/img/logo.png" />
+		<!-- Nhúng font chữ -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Nhúng font awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+			integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<!-- Hiệu ứng -->
+		<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+		<!-- Nhúng boxicons -->
+		<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+		<!-- CSS của AOS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+		<!-- Link Bootstrap-->
+		<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+		<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- Link Char -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+		<!-- Link CSS -->
+		<link rel="stylesheet" href="../assets/css/ui/common.css" />
+		<link rel="stylesheet" href="../assets/css/ui/index.css" />
+		<link rel="stylesheet" href="../assets/css/ui/donate.css" />
+		<link rel="stylesheet" href="../assets/css/components/messenger.css" />
+		<link rel="stylesheet" href="../assets/css/components/search-style.css" />
+		<link rel="stylesheet" href="../assets/css/components/stories-style.css" />
+	</head>
+	<body>
+		<!-- Hero -->
+		<div class="hero-section">
+			<img class="hero-background" src="../assets/img/anh-quyen-gop.png" alt="" />
+			<div class="overlay"></div>
+			<!-- Thanh Header -->
+			<header class="header">
+				<div>
+					<a href="#"><img class="logo" src="../assets/img/logo.png" alt="" /></a>
+				</div>
+
+				<!-- Navbar điều hướng -->
+				<nav class="navbar">
+					<div class="nav-item dropdown">
+						<a style="--i: 1" class="nav-link" href="index.html"
+							>Trang chủ
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke="#1c2a52"
+								stroke-width="3"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								style="margin-left: 1px"
+							>
+								<polyline points="6 9 12 15 18 9" />
+							</svg>
+						</a>
+						<div class="dropdown-menu">
+							<a href="#sumenh">Sứ mệnh của chúng tôi</a>
+							<a href="#conso">Những con số biết nói</a>
+							<a href="#tinhnguyenvien">Tình nguyện viên tiêu biểu</a>
+							<a href="#shop">MVP - Shop</a>
+						</div>
+					</div>
+					<div class="nav-item dropdown">
+						<a style="--i: 2" class="nav-link" href="about.html"
+							>Về chúng tôi
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke="#1c2a52"
+								stroke-width="3"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								style="margin-left: 1px"
+							>
+								<polyline points="6 9 12 15 18 9" />
+							</svg>
+						</a>
+						<div class="dropdown-menu">
+							<a href="about.html#cauchuyenkhoinguon">Câu chuyện khởi nguồn</a>
+							<a href="about.html#timelinehanhtrinh">Timeline hành trình</a>
+							<a href="about.html#cachchungtoilamviec">Cách chúng tôi làm việc</a>
+							<a href="about.html#doingulanhdao">Đội ngũ lãnh đạo</a>
+						</div>
+					</div>
+					<div class="nav-item dropdown">
+						<a style="--i: 3" class="nav-link" href="volunteer.html"
+							>Tình nguyện
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke="#1c2a52"
+								stroke-width="3"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								style="margin-left: 1px"
+							>
+								<polyline points="6 9 12 15 18 9" />
+							</svg>
+						</a>
+						<div class="dropdown-menu">
+							<a href="volunteer.html#meochotinhnguyenvien">Mẹo cho tình nguyện viên</a>
+							<a href="volunteer.html#doitac">Đối tác & nhà tài trợ</a>
+							<a href="volunteer.html#youtubevideo">Xem video tình nguyện</a>
+							<a href="volunteer.html#lydonenthamgia">Lý do nên đồng hành?</a>
+							<a href="volunteer.html#sukiensaptoi">Sự kiện sắp tới</a>
+							<a href="volunteer.html#volunteer-form">Đăng ký tình nguyện viên</a>
+						</div>
+					</div>
+					<div class="nav-item dropdown">
+						<a style="--i: 4" class="nav-link active" href="donate.html"
+							>Quyên góp
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke="#1c2a52"
+								stroke-width="3"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								style="margin-left: 1px"
+							>
+								<polyline points="6 9 12 15 18 9" />
+							</svg>
+						</a>
+						<div class="dropdown-menu">
+							<a href="donate.html#donate">Quyên góp</a>
+							<a href="donate.html#danhsachungho">Danh sách quyên góp</a>
+							<a href="donate.html#bieudo">Biểu đồ thống kê</a>
+						</div>
+					</div>
+					<a style="--i: 5" class="nav-link" href="stories.html">Câu chuyện</a>
+				</nav>
+
+				<div class="right-header">
+					<div class="search">
+						<a href="#" id="searchToggle"><box-icon name="search-alt-2"></box-icon></a>
+						<div class="search-dropdown" id="searchDropdown">
+							<input type="text" id="searchInput" placeholder="Tìm kiếm câu chuyện..." />
+							<div id="searchResults" class="search-results"></div>
+						</div>
+					</div>
+
+					<div class="cart">
+						<a href="#" style="position: relative" onclick="toggleCartPopup(event)">
+							<box-icon name="cart"></box-icon>
+							<span id="cart-count" class="cart-count">0</span>
+						</a>
+					</div>
+
+					<div class="register-login">
+						<a class="register" href="../html/register.html">Đăng ký</a>
+						<span class="slash">/</span>
+						<a class="login" href="../html/login.html">Đăng nhập</a>
+					</div>
+				</div>
+
+				<!-- Giỏ hàng của bạn -->
+				<div id="cart-sidebar" class="cart-sidebar">
+					<div class="cart-sidebar-header">
+						<h4>Giỏ hàng của bạn</h4>
+						<button class="close-btn" onclick="document.getElementById('cart-sidebar').classList.remove('show')"></button>
+					</div>
+					<ul id="cart-items" class="cart-items"></ul>
+					<div class="cart-total">
+						<p>Tổng cộng: <span id="cart-total">0 VNĐ</span></p>
+						<button class="checkout-btn">Thanh toán</button>
+					</div>
+				</div>
+
+				<div class="cart-overlay" onclick="document.getElementById('cart-sidebar').classList.remove('show')"></div>
+			</header>
+
+			<!-- Content -->
+			<section class="home">
+				<div class="home-content">
+					<h1>Chung tay vì trẻ em.</h1>
+					<h3>Lan tỏa hi vọng!</h3>
+					<p>Mọi đóng góp của bạn sẽ giúp trẻ em vùng cao vượt qua khó khăn, tiếp cận giáo dục và xây dựng cuộc sống tốt đẹp hơn với sự hỗ trợ từ cộng đồng</p>
+					<a href="#shop" class="hero-btn btn-animation">Mua sản phẩm<i class="fa-solid fa-heart-pulse right-header-icon"></i></a>
+				</div>
+			</section>
+
+			<section class="hero-footer">
+				<div class="social-media">
+					<a style="--i: 1" target="_blank" href="https://www.facebook.com/login"><box-icon type="logo" name="facebook"></box-icon></a>
+					<a style="--i: 2" target="_blank" href="https://www.twitter.com/login"><box-icon name="twitter" type="logo"></box-icon></a>
+					<a style="--i: 3" target="_blank" href="https://www.instagram.com/accounts/login/"><box-icon name="instagram" type="logo"></box-icon></a>
+				</div>
+			</section>
+		</div>
+
+		<!-- Donate -->
+		<section id="donate" class="donate-section margin-section px-md-0 px-4">
+			<div class="container common-container donate-container" data-aos="fade-right">
+				<div class="row d-flex justify-content-center align-items-center">
+					<!-- Form Section -->
+					<div class="col-8">
+						<h3 class="common-caption">Hỗ trợ quỹ từ thiện MVP</h3>
+						<h3 class="common-heading line-heading">CHUNG TAY CÙNG CHÚNG TÔI</h3>
+						<p class="donate-content">
+							Từ thiện là hành động mang đến sự giúp đỡ và chia sẻ cho những người có hoàn cảnh khó khăn. Nó không chỉ thể hiện lòng nhân ái mà còn góp phần tạo nên một cộng đồng đoàn
+							kết và yêu thương. Qua những chương trình từ thiện, mỗi người có thể góp một phần công sức, dù nhỏ, để làm thay đổi cuộc sống của người khác. Từ thiện không chỉ là trao đi
+							vật chất, mà còn là sự chia sẻ tình cảm và hy vọng.
+						</p>
+
+						<!-- Stepper -->
+						<div class="step">
+							<div class="sub-step">
+								<div class="circle active" id="circle1">1</div>
+								<div class="label" id="label1">ĐÓNG GÓP</div>
+							</div>
+							<div class="line" id="line1"></div>
+
+							<div class="sub-step">
+								<div class="circle" id="circle2">2</div>
+								<div class="label" id="label2">DANH TÍNH</div>
+							</div>
+							<div class="line" id="line2"></div>
+
+							<div class="sub-step">
+								<div class="circle" id="circle3">3</div>
+								<div class="label" id="label3">THANH TOÁN</div>
+							</div>
+							<div class="line" id="line3"></div>
+
+							<div class="sub-step">
+								<div class="circle" id="circle4">4</div>
+								<div class="label" id="label4">KẾT QUẢ</div>
+							</div>
+						</div>
+
+						<!-- Step 1 -->
+						<div id="step1">
+							<form>
+								<div class="row">
+									<div class="col-12">
+										<select required class="form-select input-with-icon donate-input-with-icon-1">
+											<option value="" selected disabled hidden>Chọn Quốc gia</option>
+											<option value="Vietnam">Việt Nam</option>
+											<option value="Korea">Hàn Quốc</option>
+											<option value="Japan">Nhật Bản</option>
+										</select>
+									</div>
+
+									<div class="col-12">
+										<select required class="form-select input-with-icon donate-input-with-icon-2">
+											<option value="" selected disabled hidden>Dự án đóng góp</option>
+											<option value="HocBongTreEmVungCao">Học bổng cho trẻ em vùng cao</option>
+											<option value="LopHocDienBien">Mang lớp học đến vùng cao Điện Biên</option>
+											<option value="MuaHeTinhNguyen">Mùa hè ý nghĩa cùng lớp học tình nguyện</option>
+											<option value="QuyenGopSachVo">Quyên góp sách vở cho trẻ em nghèo</option>
+											<option value="KhoaHocKyNangSong">Khóa học kỹ năng sống cho trẻ em</option>
+											<option value="HoTroDinhDuong">Hỗ trợ dinh dưỡng cho trẻ em vùng cao</option>
+											<option value="ThuVienCaoBang">Xây dựng thư viện cộng đồng tại Cao Bằng</option>
+											<option value="AoAmMuaDong">Hỗ trợ áo ấm mùa đông cho trẻ em</option>
+											<option value="TraiHeKyNang">Trại hè kỹ năng cho trẻ em miền núi</option>
+										</select>
+									</div>
+
+									<div class="col-12">
+										<input type="text" class="form-control input-with-icon donate-input-with-icon-3" placeholder="Ngày muốn quyên góp" />
+									</div>
+
+									<div id="donate-buttons" class="col-12">
+										<label class="form-label">CHỌN SỐ TIỀN BẠN MUỐN QUYÊN GÓP:</label><br />
+										<div class="button-container">
+											<button type="button" class="donate-btn-money">100.000</button>
+											<button type="button" class="donate-btn-money">200.000</button>
+											<button type="button" class="donate-btn-money">500.000</button>
+											<button type="button" class="donate-btn-money">1.000.000</button>
+											<button type="button" class="donate-btn-money">2.000.000</button>
+											<button type="button" class="donate-btn-money" id="customAmountBtn">CON SỐ KHÁC</button>
+										</div>
+									</div>
+
+									<!-- Ô nhập ẩn ban đầu -->
+									<div id="customAmountInput" style="display: none" class="mt-2">
+										<input type="text" id="donationAmount" class="form-control" placeholder="Nhập số tiền bạn mong muốn" />
+									</div>
+								</div>
+								<div style="display: flex; justify-content: center; margin-top: 20px; gap: 10px">
+									<button type="button" class="common-btn btn-next">Tiếp Tục</button>
+								</div>
+							</form>
+						</div>
+
+						<!-- Step 2 -->
+						<div id="step2" class="hidden">
+							<form>
+								<div class="row">
+									<div class="col-12">
+										<input type="text" class="form-control input-with-icon donate-input-with-icon-4" placeholder="Họ và tên" />
+									</div>
+									<div class="col-12">
+										<input type="text" class="form-control input-with-icon donate-input-with-icon-5" placeholder="Email" />
+									</div>
+									<div class="col-12">
+										<input type="text" class="form-control input-with-icon donate-input-with-icon-6" placeholder="Số điện thoại" />
+									</div>
+									<div class="col-12">
+										<input type="text" class="form-control input-with-icon donate-input-with-icon-7" placeholder="Địa chỉ" />
+									</div>
+								</div>
+
+								<div style="display: flex; justify-content: center; margin-top: 20px; gap: 10px">
+									<button type="button" class="common-btn btn-back">Trở Lại</button>
+									<button type="button" class="common-btn btn-next">Tiếp Tục</button>
+								</div>
+							</form>
+						</div>
+
+						<!-- Step 3 -->
+						<div id="step3" class="hidden">
+							<form>
+								<div class="row">
+									<label class="form-label">PHƯƠNG THỨC THANH TOÁN</label>
+									<div id="payment-methods">
+										<div class="payment-option">Thẻ Tín Dụng / Ghi Nợ <span>💳</span></div>
+										<div class="payment-option">Thẻ ATM / Tài Khoản Ngân Hàng <span>🏦</span></div>
+										<div class="payment-option">Quyên Góp Qua Mã QR (Hình Bên)<span>📱</span></div>
+										<div class="payment-option">Thanh Toán Bằng Tiền Mặt<span>🇻🇳</span></div>
+									</div>
+									<div class="form-check mt-3">
+										<input class="form-check-input" type="checkbox" id="agree1" />
+										<label class="form-check-label" for="agree1"> Đã đọc và đồng ý với các điều khoản trước khi quyên góp </label>
+									</div>
+
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="agree3" />
+										<label class="form-check-label" for="agree3"> Ẩn danh đóng góp </label>
+									</div>
+								</div>
+
+								<div style="display: flex; justify-content: center; margin-top: 20px; gap: 10px">
+									<button type="button" class="common-btn btn-back">Trở Lại</button>
+									<button type="button" class="common-btn btn-next">Xác nhận quyên góp</button>
+								</div>
+							</form>
+						</div>
+
+						<!-- Step 4 -->
+						<div id="step4" class="hidden">
+							<form>
+								<div class="row">
+									<h3 class="step4-heading text-center">Cảm ơn bạn đã ủng hộ ❤️</h3>
+									<p class="text-center">
+										Chúng tôi chân thành cảm ơn sự đóng góp của bạn. Vui lòng kiểm tra email để nhận Biên nhận đóng góp chính thức. Nếu có câu hỏi hoặc thắc mắc, xin đừng ngần ngại
+										liên hệ với chúng tôi, bạn nhé.
+									</p>
+									<p class="text-center">Hãy kiểm tra email hoặc tin nhắn để nhận xác nhận.</p>
+								</div>
+
+								<div style="display: flex; justify-content: center; margin-top: 20px; gap: 10px">
+									<button type="button" class="common-btn btn-back">Trở Lại</button>
+									<button type="button" class="common-btn btn-next">Hoàn Tất</button>
+								</div>
+							</form>
+						</div>
+					</div>
+
+					<!-- Contact Info -->
+					<div id="contact-info" class="col-4">
+						<div class="contact-box">
+							<h4 style="text-align: center">Thông Tin Liên Hệ</h4>
+							<br />
+							<p class="contact-info-intro">
+								MVP là quỹ từ thiện được xây dựng với sứ mệnh hỗ trợ trẻ em vùng cao có hoàn cảnh khó khăn. Chúng tôi mong muốn trở thành cầu nối giữa những tấm lòng hảo tâm và các em
+								nhỏ đang thiếu thốn điều kiện học tập, sinh hoạt. Thông qua nền tảng trực tuyến, MVP tạo điều kiện thuận lợi để mọi người cùng chung tay đóng góp và lan tỏa yêu thương
+								đến những nơi cần được giúp đỡ.
+							</p>
+
+							📞 <strong>0123456789</strong><br />
+							📍 <strong>TP. Đà Nẵng</strong><br />
+							📩 <strong>Email: MVP@gmail.com </strong>
+						</div>
+
+						<!-- QR Code -->
+						<div id="qr-info" style="display: none">
+							<img src="../assets/img/qr.jpg" alt="QR Code" style="width: 100%" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- List -->
+		<section id="danhsachungho" class="list-section margin-section">
+			<div class="container common-container list-container" data-aos="zoom-in">
+				<h3 class="common-heading text-center">Danh sách ủng hộ</h3>
+				<!-- Search -->
+				<div class="row">
+					<div class="col">
+						<input type="text" class="form-control" id="searchInputDonation" placeholder="🔍 Tìm kiếm người ủng hộ bằng Tên, Ngày ủng hộ, Số tiền họ ủng hộ hoặc Dự án hộ ủng hộ" />
+					</div>
+				</div>
+				<!-- Table -->
+				<div class="table-responsive table-container">
+					<table class="table table-bordered table-hover table-striped">
+						<thead class="table-light">
+							<tr>
+								<th>STT</th>
+								<th>Người ủng hộ</th>
+								<th>Số tiền</th>
+								<th>Thời gian</th>
+								<th>Dự án ủng hộ</th>
+							</tr>
+						</thead>
+						<tbody id="donationTableBody"></tbody>
+					</table>
+				</div>
+				<!-- Pagination -->
+				<nav>
+					<ul class="pagination justify-content-center mt-3" id="pagination"></ul>
+				</nav>
+			</div>
+		</section>
+
+		<!-- Biểu đồ -->
+		<section id="bieudo" class="list-section margin-section">
+			<div class="container common-container list-container" data-aos="zoom-in">
+				<canvas id="myChart" style="width: 100%; max-width: 900px" class="mx-auto d-block"></canvas>
+			</div>
+		</section>
+
+		<!-- Footer Section -->
+		<footer class="footer-section">
+			<div class="container common-container">
+				<div class="row">
+					<div class="col-3 footer-first">
+						<div class="d-flex align-items-center footer-logo-margin">
+							<img src="../assets/img/logo.png" alt="Logo MVP" height="40px" />
+							<h3 class="ms-2 mb-0 footer-heading">Lan tỏa yêu thương</h3>
+						</div>
+						<p class="footer-content footer-content-first">Chúng tôi tạo ra một không gian sẻ chia - nơi mỗi hành động nhỏ đều có thể mang lại thay đổi lớn</p>
+					</div>
+					<div class="col-2 footer-padding">
+						<h3 class="footer-heading">KHÁM PHÁ MVP</h3>
+						<ul class="footer-link list-unstyled">
+							<li><a href="./about.html" class="footer-content link-1">Về chúng tôi</a></li>
+							<li><a href="./volunteer.html" class="footer-content link-2">Tình nguyện</a></li>
+							<li><a href="./donate.html" class="footer-content link-3">Quyên góp</a></li>
+							<li><a href="./stories.html" class="footer-content link-4">Câu chuyện</a></li>
+						</ul>
+					</div>
+					<div class="col-4">
+						<h3 class="footer-heading">ĐỒNG HÀNH CÙNG CHÚNG TÔI</h3>
+						<p class="footer-content">Mỗi bước chân của bạn là nguồn cảm hứng để chúng tôi lan tỏa điều tốt đẹp mỗi ngày – Xem những tấm lòng đã đồng hành cùng chúng tôi.</p>
+						<a href="donate.html#" class="footer-btn">Xem ngay</a>
+					</div>
+					<div class="col-3 footer-padding">
+						<h3 class="footer-heading">LIÊN HỆ</h3>
+						<ul class="footer-content list-unstyled">
+							<li><i class="fas fa-envelope me-2"></i> lienhe@mvp.org</li>
+							<li><i class="fas fa-phone me-2"></i> 0123 456 789</li>
+							<li><i class="fas fa-map-marker-alt me-2"></i> 470 Trần Đại Nghĩa, Phường Hòa <span class="address">Quý, Quận Ngũ Hành Sơn, Đà Nẵng</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer-bottom text-center mt-4 pt-4 border-top">
+					<p class="footer-content mb-1">© 2025 MVP. Mỗi hành động nhỏ, một thay đổi lớn</p>
+					<div class="footer-social">
+						<a href="https://www.facebook.com/login" target="_blank" class="me-2"><i class="fab fa-facebook-f"></i></a>
+						<a href="https://www.instagram.com/accounts/login/" target="_blank" class="me-2"><i class="fab fa-instagram"></i></a>
+						<a href="https://www.twitter.com/login" target="_blank" class="me-2"><i class="fab fa-twitter"></i></a>
+						<a href="https://www.tiktok.com/login" target="_blank" class="me-2"><i class="fa-brands fa-tiktok"></i></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+		<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+		<script>
+			AOS.init();
+		</script>
+
+		<!-- Messenger Icon -->
+		<a href="https://m.me/ErasmusFade" target="_blank" class="messenger-icon">
+			<i class="fa-brands fa-facebook-messenger"></i>
+		</a>
+
+		<!-- AOS -->
+		<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+		<script src="../assets/js/aos.js"></script>
+		<!-- js -->
+		<script src="../assets/js/donate.js"></script>
+		<script src="../assets/js/hero.js"></script>
+		<script src="../assets/js/data.js"></script>
+		<script src="../assets/js/search.js"></script>
+		<script src="../assets/js/messenger.js"></script>
+		<script src="../assets/js/donate-validation.js"></script>
+		<script src="../assets/js/cart.js"></script>
+		<script src="../assets/js/char.js"></script>
+
+		<!-- link Modal -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<script src="../assets/js/modal.js"></script>
+	</body>
+</html>
